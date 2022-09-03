@@ -596,7 +596,7 @@ if [[ $frontend == 'PEGASUS' ]]; then
 		bash ~/scrap.sh	
 	else
 		clear	
-		echo -e  "${STRONG}If you want to compress or scrape more roms, update or uninstall Pegasus Installer:${NONE}"
+		echo -e  "${STRONG}If you want to compress or scrape more roms, update or uninstall EmuDeck:${NONE}"
 		echo -e  "Just open the Termux app again"
 		echo -e  "Press the ${RED}A button${NONE} to exit"
 		read pause

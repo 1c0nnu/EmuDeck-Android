@@ -19,14 +19,14 @@ echo -e  "${BOLD}You must hide the virtual keyboard to continue so you can read 
 echo -e  "Press the ${RED}A button${NONE} when ready"
 read clear
 while true; do
-	selected_option=$(whiptail --title "Pegasus Installer Menu" --radiolist "Move using your DPAD and select your options with the Y button. Press the A button to select." 20 80 15 \
-	"1" "Update & Configure Pegasus Installer" ON \
+	selected_option=$(whiptail --title "EmuDeck Menu" --radiolist "Move using your DPAD and select your options with the Y button. Press the A button to select." 20 80 15 \
+	"1" "Update & Configure EmuDeck" ON \
 	"2" "Scrape your Roms" OFF \
 	"3" "Compress your Roms" OFF \
 	"4" "Change SNES Aspect Ratio" OFF \
 	"5" "Turn Bezels ON/OFF" OFF \
 	"6" "Reset Screen Scraper credentials" OFF \
-	"7" "Uninstall Pegasus Installer" OFF \
+	"7" "Uninstall EmuDeck" OFF \
 	"8" "Open Termux CLI" OFF \
 	"9" "Reinstall Termux dependencies" OFF \
 	"10" "Exit" OFF \

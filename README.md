@@ -90,10 +90,6 @@ We're also including a Retroarch configuration preset that will do the following
 
 This configuration is based on [RGC RG552 Linux Setup](https://retrogamecorps.com/2021/12/27/anbernic-rg552-linux-setup-guide/)
 
-# Installing this pack
-
-Just follow the steps on [Pegasus Installer Website](https://www.pegasus-installer.com)
-
 If want to help me buy more systems so I can test my themes and scripts please consider a donation on [Patreon](https://www.patreon.com/dragoonDorise)
 
 # Some Tips
