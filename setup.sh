@@ -1,7 +1,7 @@
 #!/bin/sh
-export NEWT_COLORS="
-root=,red
-roottext=yellow,red"
+# export NEWT_COLORS="
+# root=,red
+# roottext=yellow,red"
 NONE='\033[00m'
 RED='\033[01;31m'
 GREEN='\033[01;32m'
