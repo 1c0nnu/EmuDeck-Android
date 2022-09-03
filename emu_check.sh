@@ -126,6 +126,14 @@ fi
 #Only ODIN & ANDROID
 if [[ $handheldModel == "ODIN" ]] || [[ $handheldModel == "ANDROID" ]]; then
 	echo "### Emus only for ODIN $ Android "  &>> ~/storage/shared/emudeck.log
+	
+	echo -ne "Nintendo Switch - Skyline..."
+	if [ $hasSkyline == true ]; then
+		echo -e  "${GREEN}Installed${NONE}"
+	else
+		echo -e  "${RED}Not installed${NONE}"
+	fi
+	
 	echo -ne "PS2 - AetherSX2..."
 	if [ $hasAether == true ]; then
 		echo -e  "${GREEN}Installed${NONE}"

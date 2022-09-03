@@ -37,16 +37,16 @@ echo -e "EmuDeck for ${GREEN}Android${NONE}"
 echo -e  "${BOLD}You must hide the virtual keyboard to continue so you can read all the instructions${NONE}"
 echo -e  "Press the ${RED}A button${NONE} when ready"
 read clear
-
+clear
 echo -e  "${BOLD}Hi!${NONE} We're gonna start configuring your device"
 echo -e  "${RED}Read before continuing${NONE}"
 echo -e  "If you are going to store your roms in the SD Card make sure your SD Card is inserted"
 echo -e  "${BOLD}This script will create all the rom folders for you in your device${NONE}"
-echo -e  "${BOLD}We recommend you to hide the virtual keyboard by swiping from the left of the screen.${NONE}"
+echo -e ""
 echo -e  "${BOLD}Controls${NONE}"
-echo -e  "${RED}DPAD${NONE} = Move around options"
+echo -e  "DPAD = Move around options"
 echo -e  "${RED}A button${NONE} = Accept"
-echo -e  "${BLUE}Y button${NONE} = Select option"
+echo -e  "${CYAN}Y button${NONE} = Select option"
 echo -e  "Press the ${RED}A button${NONE} to start"
 read clear
 
@@ -66,7 +66,7 @@ cd ~/emudeck &>> ~/storage/shared/emudeck.log
 echo -e "${GREEN}OK${NONE}"
 
 echo "### Cloning the git repo"  &>> ~/storage/shared/emudeck.log
-echo -e "Downloading Metadata Pack for Android, please be patient..."
+echo -e "Downloading EmuDeck Android, please be patient..."
 #Download Pegasus Metadata files
 git clone https://github.com/EmuDeck/EmuDeck-Android.git ~/emudeck/backend
 #Validate
@@ -188,7 +188,7 @@ while true; do
    --radiolist "Move using your DPAD and select your platforms with the Y button. Press the A button to select." 10 80 4 \
 	"PEGASUS" "Pegasus - Automatic configuration" OFF \
 	"DAIJISHO" "Daihisho - Needs manual configuration" OFF \
-	"DIG" "Dig - Needs manual configuration" OFF \ 
+	"DIG" "Dig - Needs manual configuration" OFF \
 	"LAUNCHBOX" "Daihisho - Needs manual configuration" OFF \
 	"RESET" "Reset Collection - Paid - Needs manual configuration" OFF \
 	"ARC" "Arc Browser - Paid - Needs manual configuration" OFF \

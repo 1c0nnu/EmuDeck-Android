@@ -27,7 +27,7 @@ else
 fi
 
 #cat ~/emudeck/backend/logo.ans
-echo -ne "Deleting Metadata Pack for Android..."
+echo -ne "Deleting EmuDeck..."
 rm -rf ~/emudeck  &>> ~/storage/shared/emudeck.log
 echo -e "${GREEN}OK${NONE}"
 #Restoring Pegasus
