@@ -1,5 +1,7 @@
 #!/bin/sh
-
+export NEWT_COLORS="
+root=,red
+roottext=yellow,red"
 NONE='\033[00m'
 RED='\033[01;31m'
 GREEN='\033[01;32m'
@@ -113,9 +115,6 @@ chmod +x "$PATH"/maxcso &>> ~/storage/shared/emudeck.log
 echo "### Handheld selection "  &>> ~/storage/shared/emudeck.log
 
 while true; do
-export NEWT_COLORS="
-root=,red
-roottext=yellow,red"
 	handheldModel=$(whiptail --title "What Android Device do you have" \
    --radiolist "Move using your DPAD and select your platforms with the Y button. Press the A button to select." 10 80 4 \
 	"RG552" "Anbernic RG552" OFF \
@@ -151,36 +150,139 @@ done
 
 cat ~/emudeck/backend/logo.ans
 
-#Detect installed emulators
+#Storage Selection
+if (whiptail --title "Android Version" --yesno "Do you have Android 11 or newer?" 8 78); then
+	echo "### Has Android 11"  &>> ~/storage/shared/emudeck.log
+	clear
+	echo -e ""
+	echo -e "${RED}IMPORTANT${NONE}"
+	echo -e ""
+	echo -e "As of today this script can't store your games on your SD Card if you are using Android 11 or newer, you'll only be able to use Internal Storage"
+	echo -e "If you want to use your SD Card Space we recommend you to format it as Internal Storage"
+	storageOption='Internal'
+	read pause
+else
+	while true; do
+		storageOption=$(whiptail --title "Where do you want to store your roms?" \
+	   --radiolist "Move using your DPAD and select your platforms with the Y button. Press the A button to select." 10 80 4 \
+		"SDCard" "The roms will be stored in your SD Card or external HD" ON \
+		"Internal" "The roms will be stored in your Internal Storage " OFF \
+	   3>&1 1<&2 2>&3)
+		case $storageOption in
+			[SDCard]* ) break;;
+			[Internal]* ) break;;
+			* ) echo "Please answer yes or no.";;
+		esac
+	   
+	 done
+	
+fi
 
+#Detect installed emulators
 /bin/bash ~/emudeck/backend/emu_check.sh
 
-echo "### Downloading Pegasus "  &>> ~/storage/shared/emudeck.log
 
-#Download Pegasus
-echo -e "Downloading Pegasus, please be patient..."
-wget   -q --show-progress https://github.com/mmatyas/pegasus-frontend/releases/download/weekly_2022w30/pegasus-fe_alpha16-42-g996720eb_android.apk -P ~/emudeck
-echo "### Pegasus downloaded"  &>> ~/storage/shared/emudeck.log
+# Chose your frontend
+while true; do
+	frontend=$(whiptail --title "Choose your frontend" \
+   --radiolist "Move using your DPAD and select your platforms with the Y button. Press the A button to select." 10 80 4 \
+	"PEGASUS" "Pegasus - Automatic configuration" OFF \
+	"DAIJISHO" "Daihisho - Needs manual configuration" OFF \
+	"DIG" "Dig - Needs manual configuration" OFF \ 
+	"LAUNCHBOX" "Daihisho - Needs manual configuration" OFF \
+	"RESET" "Reset Collection - Paid - Needs manual configuration" OFF \
+	"ARC" "Arc Browser - Paid - Needs manual configuration" OFF \
+   3>&1 1<&2 2>&3)
+	case $frontend in
+		[PEGASUS]* ) break;;
+		[DAIJISHO]* ) break;;
+		[DIG]* ) break;;
+		[LAUNCHBOX]* ) break;;
+		[RESET]* ) break;;
+		[ARC]* ) break;;
+		* ) echo "Please choose.";;
+	esac
+ done
+echo "### Frontend Selected : ${frontend} "  &>> ~/storage/shared/emudeck.log
 
-echo -e  "Now let's install ${RED}Pegasus${NONE}"
-echo -e  "Press the ${RED}A button${NONE} to install Pegasus, when Pegasus is installed click ${BOLD}DONE${NONE} in the installation window so you can come back to continue the next steps"
-read pause
-clear
-echo -ne  "Installing ${RED}Pegasus${NONE}..."
-#Launch Pegasus
-xdg-open ~/emudeck/pegasus-fe_alpha16-42-g996720eb_android.apk
-echo -e  "${GREEN}OK${NONE}"
-echo ""
-echo "### Pegasus installed"  &>> ~/storage/shared/emudeck.log
+if [[ $frontend == 'PEGASUS']]; then
+	
+	echo "### Downloading Pegasus "  &>> ~/storage/shared/emudeck.log
+	DIR=~/storage/shared/Android/data/org.pegasus_frontend.android
+	if [ ! -d "$DIR" ]; then
+		#Download Pegasus
+		echo -e "Downloading Pegasus, please be patient..."
+		wget   -q --show-progress https://github.com/mmatyas/pegasus-frontend/releases/download/weekly_2022w30/pegasus-fe_alpha16-42-g996720eb_android.apk -P ~/emudeck
+		echo "### Pegasus downloaded"  &>> ~/storage/shared/emudeck.log
+		
+		echo -e  "Now let's install ${RED}Pegasus${NONE}"
+		echo -e  "Press the ${RED}A button${NONE} to install Pegasus, when Pegasus is installed click ${BOLD}DONE${NONE} in the installation window so you can come back to continue the next steps"
+		read pause
+		clear
+		echo -ne  "Installing ${RED}Pegasus${NONE}..."
+		#Launch Pegasus
+		xdg-open ~/emudeck/pegasus-fe_alpha16-42-g996720eb_android.apk
+		echo -e  "${GREEN}OK${NONE}"
+		echo ""
+		echo "### Pegasus installed"  &>> ~/storage/shared/emudeck.log
+		
+		
+		#Configure Pegasus
+		echo "### Configuring Pegasus "  &>> ~/storage/shared/emudeck.log
+		echo -ne "Configuring Pegasus..."
+		mkdir ~/storage/shared/pegasus-frontend &>> ~/storage/shared/emudeck.log
+		mkdir ~/storage/shared/pegasus-frontend/themes &>> ~/storage/shared/emudeck.log
+		echo -e "${GREEN}OK${NONE}"
+		echo "### Pegasus configured"  &>> ~/storage/shared/emudeck.log
+	fi
+fi
 
 
-#Configure Pegasus
-echo "### Configuring Pegasus "  &>> ~/storage/shared/emudeck.log
-echo -ne "Configuring Pegasus..."
-mkdir ~/storage/shared/pegasus-frontend &>> ~/storage/shared/emudeck.log
-mkdir ~/storage/shared/pegasus-frontend/themes &>> ~/storage/shared/emudeck.log
-echo -e "${GREEN}OK${NONE}"
-echo "### Pegasus configured"  &>> ~/storage/shared/emudeck.log
+if [[ $frontend == 'DAIJISHO']]; then
+	DIR=~/storage/shared/Android/data/com.magneticchen.daijishou
+	if [ ! -d "$DIR" ]; then
+		echo -e  "Press the ${RED}A button${NONE} to install Daijisho, when it is installed come back to continue the next steps"
+		read pause
+		termux-open "https://play.google.com/store/apps/details?id=com.magneticchen.daijishou"
+	fi
+fi
+
+if [[ $frontend == 'DIG']]; then
+	DIR=~/storage/shared/Android/data/com.magneticchen.daijishou
+	if [ ! -d "$DIR" ]; then
+		echo -e  "Press the ${RED}A button${NONE} to install Dig, when it is installed come back to continue the next steps"
+		read pause
+		termux-open "https://play.google.com/store/apps/details?id=com.digdroid.alman.dig"
+	fi
+fi
+
+if [[ $frontend == 'LAUNCHBOX']]; then
+	DIR=~/storage/shared/Android/data/com.magneticchen.daijishou
+	if [ ! -d "$DIR" ]; then
+		echo -e  "Press the ${RED}A button${NONE} to go to LaunchBox website, when it is installed come back to continue the next steps"
+		read pause
+		termux-open "https://www.launchbox-app.com/android-download"
+	fi
+fi
+
+if [[ $frontend == 'RESET']]; then
+	DIR=~/storage/shared/Android/data/com.magneticchen.daijishou
+	if [ ! -d "$DIR" ]; then
+		echo -e  "Press the ${RED}A button${NONE} to install Reset Collection, when it is installed come back to continue the next steps"
+		read pause
+		termux-open "https://play.google.com/store/apps/details?id=com.retroloungelab.resetcollection"
+	fi
+fi
+
+if [[ $frontend == 'ARC']]; then
+	DIR=~/storage/shared/Android/data/com.magneticchen.daijishou
+	if [ ! -d "$DIR" ]; then
+		echo -e  "Press the ${RED}A button${NONE} to install Arc Browser, when it is installed come back to continue the next steps"
+		read pause
+		termux-open "https://play.google.com/store/apps/details?id=net.floatingpoint.android.arcturus"
+	fi
+fi
+
 #Backup
 echo "### Creating Backups "  &>> ~/storage/shared/emudeck.log
 
@@ -213,32 +315,6 @@ echo -e "${GREEN}OK${NONE}"
 clear
 echo "### Storage selection & Android version "  &>> ~/storage/shared/emudeck.log
 
-if (whiptail --title "Android Version" --yesno "Do you have Android 11 or newer?" 8 78); then
-	echo "### Has Android 11"  &>> ~/storage/shared/emudeck.log
-	clear
-	echo -e ""
-	echo -e "${RED}IMPORTANT${NONE}"
-	echo -e ""
-	echo -e "As of today this script can't store your games on your SD Card if you are using Android 11 or newer, you'll only be able to use Internal Storage"
-	echo -e "If you want to use your SD Card Space we recommend you to format it as Internal Storage"
-	storageOption='Internal'
-	read pause
-else
-	while true; do
-		storageOption=$(whiptail --title "Where do you want to store your roms?" \
-	   --radiolist "Move using your DPAD and select your platforms with the Y button. Press the A button to select." 10 80 4 \
-		"SDCard" "The roms will be stored in your SD Card or external HD" ON \
-		"Internal" "The roms will be stored in your Internal Storage " OFF \
-	   3>&1 1<&2 2>&3)
-		case $storageOption in
-			[SDCard]* ) break;;
-			[Internal]* ) break;;
-			* ) echo "Please answer yes or no.";;
-		esac
-	   
-	 done
-	
-fi
 
 
 echo "### Storage Selected: ${storageOption}"  &>> ~/storage/shared/emudeck.log
@@ -302,8 +378,6 @@ if [ -f "$FILE" ]; then
 	useInternalStorage=true
 fi
 
-
- echo "### Configuring Pegasus folders "  &>> ~/storage/shared/emudeck.log
  
 echo -ne "Configuring Rom Storage..."
 if [ $useInternalStorage == false ]; then
@@ -311,8 +385,6 @@ if [ $useInternalStorage == false ]; then
 else
 	sed -i "s/0000-0000/emulated\/0\/roms/g" ~/storage/shared/pegasus-frontend/game_dirs.txt &>> ~/storage/shared/emudeck.log 
 fi
-echo "### Pegasus Rom folders configured"  &>> ~/storage/shared/emudeck.log
-
 
 echo "### Creating roms folders "  &>> ~/storage/shared/emudeck.log
 # Instaling roms folders
@@ -373,47 +445,52 @@ echo -ne "Configuring Retroarch..."
 /bin/bash ~/emudeck/backend/emus_config.sh
 
 clear
-echo "### Downloading themes "  &>> ~/storage/shared/emudeck.log
-# Install Themes for Pegasus
-echo -ne "Downloading Pegasus Theme : RP Epic Noir..."
-git clone https://github.com/dragoonDorise/RP-epic-noir.git ~/emudeck/themes/RP-epic-noir &>> ~/storage/shared/emudeck.log
-echo -e "${GREEN}OK${NONE}"
 
-echo -ne "Downloading Pegasus Theme : RP Switch..."
-#We delete the theme, for previous users
-rm -rf ~/storage/shared/pegasus-frontend/themes/RP-switch &>> ~/storage/shared/emudeck.log
-git clone https://github.com/dragoonDorise/RP-switch.git ~/emudeck/themes/RP-switch &>> ~/storage/shared/emudeck.log
-
-echo -e "${GREEN}OK${NONE}"
-	echo -ne "Downloading Pegasus Theme : Retro Mega..."
-git clone https://github.com/plaidman/retromega-next.git ~/emudeck/themes/retromega &>> ~/storage/shared/emudeck.log
-echo -e "${GREEN}OK${NONE}"
-
-if [ $handheldModel != 'RP2+' ]; then
-
-	echo -ne "Downloading Pegasus Theme : GameOS..."
-	git clone https://github.com/PlayingKarrde/gameOS.git ~/emudeck/themes/gameOS &>> ~/storage/shared/emudeck.log
-	echo -e "${GREEN}OK${NONE}"
-
-	echo -ne "Downloading Pegasus Theme : ClearOS..."
-	git clone https://github.com/PlayingKarrde/clearOS.git ~/emudeck/themes/clearOS &>> ~/storage/shared/emudeck.log
+if [[ $frontend == 'PEGASUS']]; then
+	
+	echo "### Downloading themes "  &>> ~/storage/shared/emudeck.log
+	# Install Themes for Pegasus
+	echo -ne "Downloading Pegasus Theme : RP Epic Noir..."
+	git clone https://github.com/dragoonDorise/RP-epic-noir.git ~/emudeck/themes/RP-epic-noir &>> ~/storage/shared/emudeck.log
 	echo -e "${GREEN}OK${NONE}"
 	
-	echo -ne "Downloading Pegasus Theme : NeoRetro Dark..."
-	git clone https://github.com/TigraTT-Driver/neoretro-dark.git ~/emudeck/themes/neoretro-dark &>> ~/storage/shared/emudeck.log
-	echo -e "${GREEN}OK${NONE}"
-	echo "### Themes installed"  &>> ~/storage/shared/emudeck.log
+	echo -ne "Downloading Pegasus Theme : RP Switch..."
+	#We delete the theme, for previous users
+	rm -rf ~/storage/shared/pegasus-frontend/themes/RP-switch &>> ~/storage/shared/emudeck.log
+	git clone https://github.com/dragoonDorise/RP-switch.git ~/emudeck/themes/RP-switch &>> ~/storage/shared/emudeck.log
 	
+	echo -e "${GREEN}OK${NONE}"
+		echo -ne "Downloading Pegasus Theme : Retro Mega..."
+	git clone https://github.com/plaidman/retromega-next.git ~/emudeck/themes/retromega &>> ~/storage/shared/emudeck.log
+	echo -e "${GREEN}OK${NONE}"
+	
+	if [ $handheldModel != 'RP2+' ]; then
+	
+		echo -ne "Downloading Pegasus Theme : GameOS..."
+		git clone https://github.com/PlayingKarrde/gameOS.git ~/emudeck/themes/gameOS &>> ~/storage/shared/emudeck.log
+		echo -e "${GREEN}OK${NONE}"
+	
+		echo -ne "Downloading Pegasus Theme : ClearOS..."
+		git clone https://github.com/PlayingKarrde/clearOS.git ~/emudeck/themes/clearOS &>> ~/storage/shared/emudeck.log
+		echo -e "${GREEN}OK${NONE}"
+		
+		echo -ne "Downloading Pegasus Theme : NeoRetro Dark..."
+		git clone https://github.com/TigraTT-Driver/neoretro-dark.git ~/emudeck/themes/neoretro-dark &>> ~/storage/shared/emudeck.log
+		echo -e "${GREEN}OK${NONE}"
+		echo "### Themes installed"  &>> ~/storage/shared/emudeck.log
+		
+	fi
+		
+	
+		echo -e "The default theme on Pegasus is RP Epic Noir"
+		echo -e "You can change it anytime on Pegasus."
+		echo -e  "Press the ${RED}A button${NONE} to continue to next step"
+		read pause
+	
+	echo "### Rsync the dl themes "  &>> ~/storage/shared/emudeck.log
+	rsync -r ~/emudeck/themes/ ~/storage/shared/pegasus-frontend/themes/ &>> ~/storage/shared/emudeck.log
+
 fi
-	
-
-	echo -e "The default theme on Pegasus is RP Epic Noir"
-	echo -e "You can change it anytime on Pegasus."
-	echo -e  "Press the ${RED}A button${NONE} to continue to next step"
-	read pause
-
-echo "### Rsync the dl themes "  &>> ~/storage/shared/emudeck.log
-rsync -r ~/emudeck/themes/ ~/storage/shared/pegasus-frontend/themes/ &>> ~/storage/shared/emudeck.log
 
 echo "/bin/bash ~/startup.sh" > ~/.bashrc
 echo "### Startup created"  &>> ~/storage/shared/emudeck.log
