@@ -20,6 +20,7 @@ hasDolphinMMJ=false
 hasRetroArch=false
 hasCitra=false
 hasAether=false
+hasSkyline=false
 
 #Handheld model
 handheldModel=$(cat ~/emudeck/.device)
@@ -81,6 +82,12 @@ fi
 FOLDER=~/storage/shared/dolphin-mmjr
 if [ -d "$FOLDER" ]; then
 	hasDolphinMMJ=true
+fi
+
+#Citra?
+FOLDER=~/storage/shared/skyline
+if [ -d "$FOLDER" ]; then
+	hasSkyline=true
 fi
 
 clear
@@ -221,12 +228,24 @@ if [ $hasRedDream == false ]; then
 	echo -e  "Press the ${RED}A button${NONE} to install the next emulator"
 	
 fi
+
+
 if [ $hasDolphinMMJ == false ]; then
 	echo -e "Nintendo Wii & GameCube - Dolphin MMJR..."
 	wget  -q --show-progress https://github.com/Bankaimaster999/Dolphin-MMJR/releases/download/1.0-11505/app-release.apk -P ~/emudeck/
 	echo -e  "Press the ${RED}A button${NONE} to install Dolphin"
 	read pause		
 	xdg-open ~/emudeck/app-release.apk
+	echo -e  "Press the ${RED}A button${NONE} to install the next emulator"
+	read pause
+fi
+
+if [ $hasSkyline == false ]; then
+	echo -e "Nintendo Switch - Skyline..."
+	wget  -q --show-progress https://skyline-builds.alula.gay/cache/2982132369/skyline-1340-release.apk -P ~/emudeck/
+	echo -e  "Press the ${RED}A button${NONE} to install Skyline"
+	read pause		
+	xdg-open ~/emudeck/skyline-1340-release.apk
 	echo -e  "Press the ${RED}A button${NONE} to install the next emulator"
 	read pause
 fi
