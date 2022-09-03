@@ -1,16 +1,10 @@
-# Work in progress, only for testing purposes!
+# EmuDeck - Android
 
 <img src="https://github.com/dragoonDorise/RP-epic-noir/blob/main/screenshots/hero-odin.jpg?raw=true">
 
-## Android - Pegasus metadata pack
+EmuDeck port for Android.
 
-Component used on Pegasus Installer for configuration & installation automation for Pegasus Frontend.
-
-Website: [Pegasus Installer](https://www.pegasus-installer.com)
-
-## Pegasus Metadata
-
-This pack offers support for the following systems with their respective emulators, you'll need to download them on your own.
+This pack offers support for the following systems with their respective emulators.
 
 | System                    | Emulator                                 | Status      | Bezels |
 | ------------------------- | ---------------------------------------- | ----------- | ------ |
@@ -37,6 +31,7 @@ This pack offers support for the following systems with their respective emulato
 | Nintendo NES              | Retroarch 1.9 Nestopia core              | Working     | Yes    |
 | Nintendo 64               | Mupen64plus FZ                           | Working     | -      |
 | Nintendo Wii              | Dolphin                                  | Working     | -      |
+| Nintendo Switch              | Skyline                                  | Working     | -      |
 | PC engine                 | Retroarch 1.9 Mednafen pce fast core     | Working     | Yes    |
 | Playstation               | Retroarch 1.9 PCSX Rearmed core          | Working     | Yes    |
 | Playstation 2             | Aether SX2                               | Working     | -      |
