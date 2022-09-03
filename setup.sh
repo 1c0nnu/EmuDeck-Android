@@ -46,12 +46,12 @@ echo -e ""
 echo -e  "${BOLD}Controls${NONE}"
 echo -e  "DPAD = Move around options"
 echo -e  "${RED}A button${NONE} = Accept"
-echo -e  "${CYAN}Y button${NONE} = Select option"
+echo -e  "${GREEN}Y button${NONE} = Select option"
 echo -e  "Press the ${RED}A button${NONE} to start"
 read clear
 
 echo "### Installing pkgs"  &>> ~/storage/shared/emudeck.log
-echo -n "Installing components, please be patient, these will take several minutes..."
+echo -e "Installing components, please be patient, these will take several minutes..."
 export DEBIAN_FRONTEND=noninteractive
 apt-get update && 
 	apt-get -o "Dpkg::Options::=--force-confold"  upgrade -q -y --force-yes &&
@@ -205,7 +205,7 @@ while true; do
  done
 echo "### Frontend Selected : ${frontend} "  &>> ~/storage/shared/emudeck.log
 
-if [[ $frontend == 'PEGASUS']]; then
+if [[ $frontend == 'PEGASUS' ]]; then
 	
 	echo "### Downloading Pegasus "  &>> ~/storage/shared/emudeck.log
 	DIR=~/storage/shared/Android/data/org.pegasus_frontend.android
@@ -238,7 +238,7 @@ if [[ $frontend == 'PEGASUS']]; then
 fi
 
 
-if [[ $frontend == 'DAIJISHO']]; then
+if [[ $frontend == 'DAIJISHO' ]]; then
 	DIR=~/storage/shared/Android/data/com.magneticchen.daijishou
 	if [ ! -d "$DIR" ]; then
 		echo -e  "Press the ${RED}A button${NONE} to install Daijisho, when it is installed come back to continue the next steps"
@@ -247,7 +247,7 @@ if [[ $frontend == 'DAIJISHO']]; then
 	fi
 fi
 
-if [[ $frontend == 'DIG']]; then
+if [[ $frontend == 'DIG' ]]; then
 	DIR=~/storage/shared/Android/data/com.magneticchen.daijishou
 	if [ ! -d "$DIR" ]; then
 		echo -e  "Press the ${RED}A button${NONE} to install Dig, when it is installed come back to continue the next steps"
@@ -256,7 +256,7 @@ if [[ $frontend == 'DIG']]; then
 	fi
 fi
 
-if [[ $frontend == 'LAUNCHBOX']]; then
+if [[ $frontend == 'LAUNCHBOX' ]]; then
 	DIR=~/storage/shared/Android/data/com.magneticchen.daijishou
 	if [ ! -d "$DIR" ]; then
 		echo -e  "Press the ${RED}A button${NONE} to go to LaunchBox website, when it is installed come back to continue the next steps"
@@ -265,7 +265,7 @@ if [[ $frontend == 'LAUNCHBOX']]; then
 	fi
 fi
 
-if [[ $frontend == 'RESET']]; then
+if [[ $frontend == 'RESET' ]]; then
 	DIR=~/storage/shared/Android/data/com.magneticchen.daijishou
 	if [ ! -d "$DIR" ]; then
 		echo -e  "Press the ${RED}A button${NONE} to install Reset Collection, when it is installed come back to continue the next steps"
@@ -274,7 +274,7 @@ if [[ $frontend == 'RESET']]; then
 	fi
 fi
 
-if [[ $frontend == 'ARC']]; then
+if [[ $frontend == 'ARC' ]]; then
 	DIR=~/storage/shared/Android/data/com.magneticchen.daijishou
 	if [ ! -d "$DIR" ]; then
 		echo -e  "Press the ${RED}A button${NONE} to install Arc Browser, when it is installed come back to continue the next steps"
@@ -447,7 +447,7 @@ echo -ne "Configuring Retroarch..."
 
 clear
 
-if [[ $frontend == 'PEGASUS']]; then
+if [[ $frontend == 'PEGASUS' ]]; then
 	
 	echo "### Downloading themes "  &>> ~/storage/shared/emudeck.log
 	# Install Themes for Pegasus
