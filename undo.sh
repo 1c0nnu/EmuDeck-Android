@@ -19,7 +19,7 @@ useInternalStorage=false
 FILE=~/emudeck/.storageInternal
 if [ -f "$FILE" ]; then
 	useInternalStorage=true
-	storageLocation="shared/roms"
+	storageLocation="shared/Emulation/roms"
 else
 	useInternalStorage=false
 	storageLocation="external-1"

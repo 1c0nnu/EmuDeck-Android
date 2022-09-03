@@ -22,7 +22,7 @@ useInternalStorage=false
 FILE=~/emudeck/.storageInternal
 if [ -f "$FILE" ]; then
 	useInternalStorage=true
-	storageLocation="shared/roms"
+	storageLocation="shared/Emulation/roms"
 else
 	useInternalStorage=false
 	storageLocation="external-1"
@@ -36,7 +36,7 @@ fi
 echo -e "Detecting model...${GREEN}$handheldModel${NONE}"
 echo -ne "Creating config files & backup old ones..."
 echo "### RA config files "  &>> ~/storage/shared/emudeck.log
-mkdir ~/storage/shared/RetroArch/overlays/ &>> ~/storage/shared/emudeck.log
+mkdir -p ~/storage/shared/RetroArch/overlays/ &>> ~/storage/shared/emudeck.log
 rsync -r ~/emudeck/backend/internal/common/RetroArch/config/ ~/storage/shared/RetroArch/config/ &>> ~/storage/shared/emudeck.log
 echo -e "${GREEN}OK${NONE}"
 echo -ne "Installing overlays..."

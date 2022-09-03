@@ -60,7 +60,7 @@ pkg autoclean
 pkg update -y && pkg upgrade -y
 pkg install git wget jq rsync unzip whiptail binutils build-essential liblz4 libuv ninja -y
 echo "### Creating Emudeck Folder "  &>> ~/storage/shared/emudeck.log
-mkdir ~/emudeck &>> ~/storage/shared/emudeck.log
+mkdir -p ~/emudeck &>> ~/storage/shared/emudeck.log
 cd ~/emudeck &>> ~/storage/shared/emudeck.log
 
 echo -e "${GREEN}OK${NONE}"
@@ -96,7 +96,7 @@ echo -e "Downloading CHDMAN, please be patient..."
 git clone https://github.com/CharlesThobe/chdman.git ~/emudeck/CHDMAN/ &>> ~/storage/shared/emudeck.log
 echo -e "Compiling CHDMAN..." &>> ~/storage/shared/emudeck.log
 cd ~/emudeck/CHDMAN/ &>> ~/storage/shared/emudeck.log
-mkdir build && cd build &>> ~/storage/shared/emudeck.log
+mkdir -p build && cd build &>> ~/storage/shared/emudeck.log
 cmake -G Ninja .. && ninja &>> ~/storage/shared/emudeck.log
 echo "Moving CHDMAN to PATH and making it executable" &>> ~/storage/shared/emudeck.log
 cp ./chdman "$PATH"/chdman &>> ~/storage/shared/emudeck.log
@@ -230,8 +230,8 @@ if [[ $frontend == 'PEGASUS']]; then
 		#Configure Pegasus
 		echo "### Configuring Pegasus "  &>> ~/storage/shared/emudeck.log
 		echo -ne "Configuring Pegasus..."
-		mkdir ~/storage/shared/pegasus-frontend &>> ~/storage/shared/emudeck.log
-		mkdir ~/storage/shared/pegasus-frontend/themes &>> ~/storage/shared/emudeck.log
+		mkdir -p ~/storage/shared/pegasus-frontend &>> ~/storage/shared/emudeck.log
+		mkdir -p ~/storage/shared/pegasus-frontend/themes &>> ~/storage/shared/emudeck.log
 		echo -e "${GREEN}OK${NONE}"
 		echo "### Pegasus configured"  &>> ~/storage/shared/emudeck.log
 	fi
@@ -323,7 +323,7 @@ rm ~/emudeck/.storageSD &> /dev/null
 echo -ne "Storage Selected..."
 if [[ $storageOption == 'Internal' ]]; then
 	touch ~/emudeck/.storageInternal &> /dev/null
-	storageLocation="shared/roms"
+	storageLocation="shared/Emulation/roms"
 	echo -e "${GREEN}Internal${NONE}"
 else
 	touch ~/emudeck/.storageSD &> /dev/null
@@ -368,7 +368,7 @@ else
 		 
 	 fi
 	 
-	mkdir ~/storage/shared/roms &> /dev/null
+	mkdir -p ~/storage/shared/Emulation/roms &> /dev/null
 	echo -e "${GREEN}SD Card${NONE}"
 fi
 

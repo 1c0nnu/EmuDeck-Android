@@ -6,7 +6,7 @@ useInternalStorage=false
 FILE=~/emudeck/.storageInternal
 if [ -f "$FILE" ]; then
 	useInternalStorage=true
-	storageLocation="shared/roms"
+	storageLocation="shared/Emulation/roms"
 else
 	useInternalStorage=false
 	storageLocation="external-1"
@@ -487,10 +487,10 @@ for scraper in ${scrapers[@]};
 			 message=$device_name
 			 system="${message//'"'/}"            
 			 #ls ~/storage/$storageLocation/$system
-			 mkdir ~/storage/$storageLocation/$system/media &> /dev/null
-			 mkdir ~/storage/$storageLocation/$system/media/screenshot &> /dev/null
-			 mkdir ~/storage/$storageLocation/$system/media/box2dfront &> /dev/null
-			 mkdir ~/storage/$storageLocation/$system/media/wheel &> /dev/null
+			 mkdir -p ~/storage/$storageLocation/$system/media &> /dev/null
+			 mkdir -p ~/storage/$storageLocation/$system/media/screenshot &> /dev/null
+			 mkdir -p ~/storage/$storageLocation/$system/media/box2dfront &> /dev/null
+			 mkdir -p ~/storage/$storageLocation/$system/media/wheel &> /dev/null
 			 
 			 #Retroarch system folder name
 			 get_ra_alias $system
@@ -612,10 +612,10 @@ for scraper in ${scrapers[@]};
 			 message=$device_name
 			 system="${message//'"'/}"            
 			 #ls ~/storage/$storageLocation/$system
-			 mkdir ~/storage/$storageLocation/$system/media &> /dev/null
-			 mkdir ~/storage/$storageLocation/$system/media/screenshot &> /dev/null
-			 mkdir ~/storage/$storageLocation/$system/media/box2dfront &> /dev/null
-			 mkdir ~/storage/$storageLocation/$system/media/wheel &> /dev/null
+			 mkdir -p ~/storage/$storageLocation/$system/media &> /dev/null
+			 mkdir -p ~/storage/$storageLocation/$system/media/screenshot &> /dev/null
+			 mkdir -p ~/storage/$storageLocation/$system/media/box2dfront &> /dev/null
+			 mkdir -p ~/storage/$storageLocation/$system/media/wheel &> /dev/null
 			 
 			#Roms loop
 			  for entry in ~/storage/$storageLocation/$system/*
@@ -814,10 +814,10 @@ for scraper in ${scrapers[@]};
 		do			
 			message=$device_name
 			system="${message//'"'/}"            
-			mkdir ~/storage/$storageLocation/$system/media &> /dev/null
-			mkdir ~/storage/$storageLocation/$system/media/screenshot &> /dev/null
-			mkdir ~/storage/$storageLocation/$system/media/box2dfront &> /dev/null
-			mkdir ~/storage/$storageLocation/$system/media/wheel &> /dev/null
+			mkdir -p ~/storage/$storageLocation/$system/media &> /dev/null
+			mkdir -p ~/storage/$storageLocation/$system/media/screenshot &> /dev/null
+			mkdir -p ~/storage/$storageLocation/$system/media/box2dfront &> /dev/null
+			mkdir -p ~/storage/$storageLocation/$system/media/wheel &> /dev/null
 				
 			#ScreenScraper system ID
 			get_sc_id $system
