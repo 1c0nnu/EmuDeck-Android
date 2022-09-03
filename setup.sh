@@ -148,7 +148,7 @@ while true; do
 	   3>&1 1<&2 2>&3)
 done
 
-cat ~/emudeck/backend/logo.ans
+#cat ~/emudeck/backend/logo.ans
 
 #Storage Selection
 if (whiptail --title "Android Version" --yesno "Do you have Android 11 or newer?" 8 78); then

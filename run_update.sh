@@ -52,7 +52,7 @@ else
 	storageLocation="external-1"
 	
 fi
-cat ~/emudeck/backend/logo.ans
+#cat ~/emudeck/backend/logo.ans
 version=$(cat ~/emudeck/backend/version.md)
 #Detect installed emulators
 hasRetroArch64=false

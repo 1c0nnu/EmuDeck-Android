@@ -26,7 +26,7 @@ else
 	
 fi
 
-cat ~/emudeck/backend/logo.ans
+#cat ~/emudeck/backend/logo.ans
 echo -ne "Deleting Metadata Pack for Android..."
 rm -rf ~/emudeck  &>> ~/storage/shared/emudeck.log
 echo -e "${GREEN}OK${NONE}"

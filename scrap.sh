@@ -458,7 +458,7 @@ BOLD='\033[1m'
 UNDERLINE='\033[4m'
 BLINK='\x1b[5m'
 clear
-cat ~/emudeck/backend/logo.ans
+#cat ~/emudeck/backend/logo.ans
  
  $selected_device_descriptions = "ALL"
 
