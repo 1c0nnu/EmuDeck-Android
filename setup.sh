@@ -505,11 +505,16 @@ echo -e  "We've finished the first step!"
 echo -e  ""
 if [ $useInternalStorage == false ]; then
 	echo -e  "You can now remove your SD Card and start copying your roms"
-	echo -e  "Insert your SD Card in your computer and go to this folder in your SD Card: ${GREEN}/Android/data/com.termux/files/${NONE}"
-	echo -e  "Because of Android Restrictions you need to have your roms there, ${BOLD}they cannot be on another folder${NONE}"
+	echo -e  "Insert your SD Card in your computer and go to this folder in your SD Card: ${GREEN}/Android/data/com.termux/files/Emulation/roms${NONE}"
+	if [[ $frontend == 'PEGASUS' ]]; then
+		echo -e  "If you want to use Pegasus you need to keep your roms there so we can scrap your artwork"
+	else	
+		echo -e  "You can configure your Frontend to point to that directory"
+
+	fi
 	echo -e  "You will see that every system has its own folder, just copy your roms to the corresponding folder."
 else
-	echo -e  "You can now copy your roms in the ${BOLD}roms${NONE} directory in the Internal Storage of your device"
+	echo -e  "You can now copy your roms in the ${BOLD}Emulation/roms${NONE} directory in the Internal Storage of your device"
 	echo -e  "You will see that every system has its own folder, just copy your roms to the corresponding folder."
 fi
 echo -e  "${BOLD}We recommend roms named after no-intro romsets${NONE}"
