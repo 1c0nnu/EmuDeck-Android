@@ -1,6 +1,8 @@
 #!/bin/sh
 #
-
+export NEWT_COLORS="
+root=,red
+roottext=yellow,red"
 NONE='\033[00m'
 RED='\033[01;31m'
 GREEN='\033[01;32m'
@@ -17,7 +19,7 @@ echo -e  "${BOLD}You must hide the virtual keyboard to continue so you can read 
 echo -e  "Press the ${RED}A button${NONE} when ready"
 read clear
 while true; do
-	selected_option=$(whiptail --title "Pegasus Installer Menu" --radiolist "Move using your DPAD and select your options with the Y button. Press the A button to select." 20 40 15 \
+	selected_option=$(whiptail --title "Pegasus Installer Menu" --radiolist "Move using your DPAD and select your options with the Y button. Press the A button to select." 20 80 15 \
 	"1" "Update & Configure Pegasus Installer" ON \
 	"2" "Scrape your Roms" OFF \
 	"3" "Compress your Roms" OFF \
