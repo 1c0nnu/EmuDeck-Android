@@ -325,9 +325,10 @@ if [[ $storageOption == 'Internal' ]]; then
 	touch ~/emudeck/.storageInternal &> /dev/null
 	storageLocation="shared/Emulation/roms"
 	echo -e "${GREEN}Internal${NONE}"
+	mkdir -p ~/storage/shared/Emulation/roms &> /dev/null
 else
 	touch ~/emudeck/.storageSD &> /dev/null
-	storageLocation="external-1"
+	storageLocation="external-1/Emulation/roms"
 	#We get the SD Card Volume name
 	sdcardID=false
 	for entry in /storage/*
@@ -367,8 +368,8 @@ else
 		read sdcardID
 		 
 	 fi
-	 
-	mkdir -p ~/storage/shared/Emulation/roms &> /dev/null
+	 mkdir -p ~/storage/external-1/Emulation/roms &> /dev/null
+	
 	echo -e "${GREEN}SD Card${NONE}"
 fi
 

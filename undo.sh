@@ -22,7 +22,7 @@ if [ -f "$FILE" ]; then
 	storageLocation="shared/Emulation/roms"
 else
 	useInternalStorage=false
-	storageLocation="external-1"
+	storageLocation="external-1/Emulation/roms"
 	
 fi
 
