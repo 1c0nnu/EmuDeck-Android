@@ -85,7 +85,7 @@ if [ -d "$FOLDER" ]; then
 fi
 
 #Citra?
-FOLDER=~/storage/shared/skyline
+FOLDER=~/storage/shared/Android/data/skyline.emu
 if [ -d "$FOLDER" ]; then
 	hasSkyline=true
 fi
