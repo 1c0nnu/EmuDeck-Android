@@ -150,7 +150,7 @@ fi
 
 
 #Only ODIN & ANDROID
-if [[ $handheldModel == "ODIN" ]] || [[ $handheldModel == "ANDROID" ]]; then
+if [[ $handheldModel == "ODIN" ]]; then
 	echo "### Emus only for ODIN $ Android "  &>> ~/storage/shared/emudeck.log
 	
 	echo -ne "Nintendo Switch - Skyline..."

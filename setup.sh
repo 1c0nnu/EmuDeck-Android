@@ -37,7 +37,7 @@ mv "${LOGFILE}" "$HOME/storage/shared/emudeck/emudeck.last.log" #backup last log
 echo "${@}" > "${LOGFILE}" #might as well log out the parameters of the run
 exec > >(tee "${LOGFILE}") 2>&1
 clear
-echo -e "EmuDeck for ${GREEN}Android${NONE} ${RED}BETA 0.1.2${NONE}"
+echo -e "EmuDeck for ${GREEN}Android${NONE} ${RED}BETA 0.1.3${NONE}"
 echo -e  "${BOLD}You must hide the virtual keyboard to continue so you can read all the instructions${NONE}"
 echo -e  "Press the ${RED}A button${NONE} when ready"
 read clear
@@ -71,7 +71,6 @@ cd ~/emudeck &>> ~/storage/shared/emudeck.log
 
 echo "### Cloning the git repo"  &>> ~/storage/shared/emudeck.log
 clear
-echo -e "Installing components, please be patient, these will take several minutes...${GREEN}OK${NONE}"
 echo -e "Downloading EmuDeck Android, please be patient..."
 #Download Pegasus Metadata files
 git clone https://github.com/EmuDeck/EmuDeck-Android.git ~/emudeck/backend
