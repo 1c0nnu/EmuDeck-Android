@@ -14,7 +14,7 @@ UNDERLINE='\033[4m'
 BLINK='\x1b[5m'
 clear
 #Uninstall everything first
-rm -rf ~/emudeck  &>> /dev/null
+#rm -rf ~/emudeck  &>> /dev/null
 rm -f scrap.sh &>> /dev/null
 rm -f compress.sh &>> /dev/null
 rm -f update.sh  &>> /dev/null
@@ -37,7 +37,7 @@ mv "${LOGFILE}" "$HOME/storage/shared/emudeck/emudeck.last.log" #backup last log
 echo "${@}" > "${LOGFILE}" #might as well log out the parameters of the run
 exec > >(tee "${LOGFILE}") 2>&1
 clear
-echo -e "EmuDeck for ${GREEN}Android${NONE} ${RED}BETA 0.1.4${NONE}"
+echo -e "EmuDeck for ${GREEN}Android${NONE} ${RED}BETA 0.1.5${NONE}"
 echo -e  "${BOLD}You must hide the virtual keyboard to continue so you can read all the instructions${NONE}"
 echo -e  "Press the ${RED}A button${NONE} when ready"
 read clear
@@ -73,7 +73,14 @@ echo "### Cloning the git repo"  &>> ~/storage/shared/emudeck.log
 clear
 echo -e "Downloading EmuDeck Android, please be patient..."
 #Download Pegasus Metadata files
-git clone https://github.com/EmuDeck/EmuDeck-Android.git ~/emudeck/backend
+
+FOLDER=~/emudeck/backend/
+if [ -d "$FOLDER" ]; then
+	cd ~/emudeck/backend/ && git reset --hard && git pull
+else
+	git clone https://github.com/EmuDeck/EmuDeck-Android.git ~/emudeck/backend
+fi
+
 #Validate
 FOLDER=~/emudeck/backend/
 if [ -d "$FOLDER" ]; then
