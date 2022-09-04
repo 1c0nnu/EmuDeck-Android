@@ -136,7 +136,7 @@ done
 if (whiptail --title "Android Version" --yesno "Do you have Android 11 or newer?" 8 78); then
 	echo "### Has Android 11"  &>> ~/storage/shared/emudeck.log
 	clear
-	if (whiptail --title "Android Version" --yesno "As of today this script can't store your games on your SD Card if you are using Android 11 or newer, you'll only be able to use Internal Storage. If you want to use your SD Card Space we recommend you to format it as Internal Storage. Do you want to continue?" 8 78); then		
+	if (whiptail --title "Android 11+ limitations" --yesno "Only internal Storage is available, if you want to use your SD Card, format it as internal. Do you want to continue? " 8 78); then		
 		echo "### Continue Android 11"  &>> ~/storage/shared/emudeck.log
 	else
 		echo "### Exit Android 11"  &>> ~/storage/shared/emudeck.log
