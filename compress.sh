@@ -1,5 +1,32 @@
 #!/bin/bash
 
+
+
+DIR=~/emudeck/CHDMAN/
+if [ ! -d "$DIR" ]; then
+
+	#Getting CHDMAN & Maxcso for compression
+	echo "### Downloading & Installing Compression binaries"  &>> ~/storage/shared/emudeck.log
+	echo -e "Downloading CHDMAN, please be patient..."
+	git clone https://github.com/CharlesThobe/chdman.git ~/emudeck/CHDMAN/ &>> ~/storage/shared/emudeck.log
+	echo -e "Compiling CHDMAN..." &>> ~/storage/shared/emudeck.log
+	cd ~/emudeck/CHDMAN/ &>> ~/storage/shared/emudeck.log
+	mkdir -p build && cd build &>> ~/storage/shared/emudeck.log
+	cmake -G Ninja .. && ninja &>> ~/storage/shared/emudeck.log
+	echo "Moving CHDMAN to PATH and making it executable" &>> ~/storage/shared/emudeck.log
+	cp ./chdman "$PATH"/chdman &>> ~/storage/shared/emudeck.log
+	chmod +x "$PATH"/chdman &>> ~/storage/shared/emudeck.log
+	
+	echo -e "Downloading Maxcso, please be patient..."
+	git clone https://github.com/unknownbrackets/maxcso.git ~/emudeck/Maxcso/ &>> ~/storage/shared/emudeck.log
+	echo -e "Compiling Maxcso..." &>> ~/storage/shared/emudeck.log
+	cd ~/emudeck/Maxcso/ &>> ~/storage/shared/emudeck.log
+	make &>> ~/storage/shared/emudeck.log
+	echo "Moving Maxcso to PATH and making it executable" &>> ~/storage/shared/emudeck.log
+	cp ./maxcso "$PATH"/maxcso &>> ~/storage/shared/emudeck.log
+	chmod +x "$PATH"/maxcso &>> ~/storage/shared/emudeck.log
+
+fi
 touch ~/storage/shared/emudeck.log
 echo "##### COMPRESS #####" >> ~/storage/shared/emudeck.log
 
