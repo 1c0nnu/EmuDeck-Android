@@ -189,7 +189,7 @@ while true; do
 	"PEGASUS" "Pegasus - Automatic configuration" OFF \
 	"DAIJISHO" "Daihisho - Needs manual configuration" OFF \
 	"DIG" "Dig - Needs manual configuration" OFF \
-	"LAUNCHBOX" "Daihisho - Needs manual configuration" OFF \
+	"LAUNCHBOX" "Launchbox - Needs manual configuration" OFF \
 	"RESET" "Reset Collection - Paid - Needs manual configuration" OFF \
 	"ARC" "Arc Browser - Paid - Needs manual configuration" OFF \
    3>&1 1<&2 2>&3)
