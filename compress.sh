@@ -3,7 +3,9 @@
 
 
 DIR=~/emudeck/CHDMAN/
-if [ ! -d "$DIR" ]; then
+FOLDER=$(test -d "$DIR" && echo -n "true")
+case $FOLDER in
+  *"true"*)
 
 	#Getting CHDMAN & Maxcso for compression
 	echo "### Downloading & Installing Compression binaries"  &>> ~/storage/shared/emudeck.log
@@ -25,8 +27,8 @@ if [ ! -d "$DIR" ]; then
 	echo "Moving Maxcso to PATH and making it executable" &>> ~/storage/shared/emudeck.log
 	cp ./maxcso "$PATH"/maxcso &>> ~/storage/shared/emudeck.log
 	chmod +x "$PATH"/maxcso &>> ~/storage/shared/emudeck.log
-
-fi
+	;;
+esac
 touch ~/storage/shared/emudeck.log
 echo "##### COMPRESS #####" >> ~/storage/shared/emudeck.log
 

@@ -220,7 +220,7 @@ echo -e ""
 echo -e "We're going to download all missing emulators."
 echo -e "${BOLD}Remember to open every emulator right after installing it and to grant them folder permissions.${NONE}"
 echo -e "Come back in here after every installation to continue the installation."
-echo -e  "Press the ${RED}A button${NONE} to install the missing emulators."
+echo -e  "Press the ${RED}A button${NONE} to start installing all the missing emulators."
 read pause
 clear
 echo "### Downloading missing emus start "  &>> ~/storage/shared/emudeck.log

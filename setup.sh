@@ -186,8 +186,11 @@ echo "### Frontend Selected : ${frontend} "  &>> ~/storage/shared/emudeck.log
 if [[ $frontend == 'PEGASUS' ]]; then
 	
 	echo "### Downloading Pegasus "  &>> ~/storage/shared/emudeck.log
+
 	DIR=~/storage/shared/Android/data/org.pegasus_frontend.android
-	if [ ! -d "$DIR" ]; then
+	FOLDER=$(test -d "$DIR" && echo -n "true")
+	case $FOLDER in
+	  *"true"*)
 		#Download Pegasus
 		echo -e "Downloading Pegasus, please be patient..."
 		wget   -q --show-progress https://github.com/mmatyas/pegasus-frontend/releases/download/weekly_2022w30/pegasus-fe_alpha16-42-g996720eb_android.apk -P ~/emudeck
@@ -212,53 +215,75 @@ if [[ $frontend == 'PEGASUS' ]]; then
 		mkdir -p ~/storage/shared/pegasus-frontend/themes &>> ~/storage/shared/emudeck.log
 		echo -e "${GREEN}OK${NONE}"
 		echo "### Pegasus configured"  &>> ~/storage/shared/emudeck.log
-	fi
+		
+		;;
+	esac
 fi
 
 
 if [[ $frontend == 'DAIJISHO' ]]; then
 	DIR=~/storage/shared/Android/data/com.magneticchen.daijishou
-	if [ ! -d "$DIR" ]; then
+	FOLDER=$(test -d "$DIR" && echo -n "true")
+	case $FOLDER in
+	  *"true"*)
 		echo -e  "Press the ${RED}A button${NONE} to install Daijisho, when it is installed come back to continue the next steps"
 		read pause
 		termux-open "https://play.google.com/store/apps/details?id=com.magneticchen.daijishou"
-	fi
+		
+		;;
+	esac
 fi
 
 if [[ $frontend == 'DIG' ]]; then
 	DIR=~/storage/shared/Android/data/com.magneticchen.daijishou
-	if [ ! -d "$DIR" ]; then
+	FOLDER=$(test -d "$DIR" && echo -n "true")
+	case $FOLDER in
+	  *"true"*)
 		echo -e  "Press the ${RED}A button${NONE} to install Dig, when it is installed come back to continue the next steps"
 		read pause
 		termux-open "https://play.google.com/store/apps/details?id=com.digdroid.alman.dig"
-	fi
+		
+		;;
+	esac
 fi
 
 if [[ $frontend == 'LAUNCHBOX' ]]; then
 	DIR=~/storage/shared/Android/data/com.magneticchen.daijishou
-	if [ ! -d "$DIR" ]; then
+	FOLDER=$(test -d "$DIR" && echo -n "true")
+	case $FOLDER in
+	  *"true"*)
 		echo -e  "Press the ${RED}A button${NONE} to go to LaunchBox website, when it is installed come back to continue the next steps"
 		read pause
 		termux-open "https://www.launchbox-app.com/android-download"
-	fi
+		
+		;;
+	esac
 fi
 
 if [[ $frontend == 'RESET' ]]; then
 	DIR=~/storage/shared/Android/data/com.magneticchen.daijishou
-	if [ ! -d "$DIR" ]; then
+	FOLDER=$(test -d "$DIR" && echo -n "true")
+	case $FOLDER in
+	  *"true"*)
 		echo -e  "Press the ${RED}A button${NONE} to install Reset Collection, when it is installed come back to continue the next steps"
 		read pause
 		termux-open "https://play.google.com/store/apps/details?id=com.retroloungelab.resetcollection"
-	fi
+		
+		;;
+	esac
 fi
 
 if [[ $frontend == 'ARC' ]]; then
 	DIR=~/storage/shared/Android/data/com.magneticchen.daijishou
-	if [ ! -d "$DIR" ]; then
+	FOLDER=$(test -d "$DIR" && echo -n "true")
+	case $FOLDER in
+	  *"true"*)
 		echo -e  "Press the ${RED}A button${NONE} to install Arc Browser, when it is installed come back to continue the next steps"
 		read pause
 		termux-open "https://play.google.com/store/apps/details?id=net.floatingpoint.android.arcturus"
-	fi
+		
+		;;
+	esac
 fi
 
 #Backup
