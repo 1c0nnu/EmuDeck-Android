@@ -25,7 +25,11 @@ rm -f snes_config.sh  &>> /dev/null
 rm -f ~/storage/shared/scrap.log  &>> /dev/null
 rm -rf ~/storage &>> /dev/null
 
-termux-setup-storage
+FOLDER=~/storage
+if [ ! -d "$FOLDER" ]; then	
+	termux-setup-storage
+fi
+
 
 #Creating log file
 LOGFILE="$HOME/storage/shared/emudeck.log"
