@@ -37,7 +37,7 @@ mv "${LOGFILE}" "$HOME/storage/shared/emudeck/emudeck.last.log" #backup last log
 echo "${@}" > "${LOGFILE}" #might as well log out the parameters of the run
 exec > >(tee "${LOGFILE}") 2>&1
 clear
-echo -e "EmuDeck for ${GREEN}Android${NONE}  ${RED}BETA 0.1.2${NONE}"
+echo -e "EmuDeck for ${GREEN}Android${NONE} ${RED}BETA 0.1.2${NONE}"
 echo -e  "${BOLD}You must hide the virtual keyboard to continue so you can read all the instructions${NONE}"
 echo -e  "Press the ${RED}A button${NONE} when ready"
 read clear
@@ -67,9 +67,11 @@ echo "### Creating Emudeck Folder "  &>> ~/storage/shared/emudeck.log
 mkdir -p ~/emudeck &>> ~/storage/shared/emudeck.log
 cd ~/emudeck &>> ~/storage/shared/emudeck.log
 
-echo -e "${GREEN}OK${NONE}"
+
 
 echo "### Cloning the git repo"  &>> ~/storage/shared/emudeck.log
+clear
+echo -e "Installing components, please be patient, these will take several minutes...${GREEN}OK${NONE}"
 echo -e "Downloading EmuDeck Android, please be patient..."
 #Download Pegasus Metadata files
 git clone https://github.com/EmuDeck/EmuDeck-Android.git ~/emudeck/backend
@@ -136,7 +138,7 @@ done
 if (whiptail --title "Android Version" --yesno "Do you have Android 11 or newer?" 8 78); then
 	echo "### Has Android 11"  &>> ~/storage/shared/emudeck.log
 	clear
-	if (whiptail --title "Android 11+ limitations" --yesno "Only internal Storage is available, if you want to use your SD Card, format it as internal. Do you want to continue? " 8 78); then		
+	if (whiptail --title "Android 11+ limitations" --yesno "Only Internal Storage is available to store your romes, if you want to use your SD Card, format it as internal. Do you want to continue? " 8 78); then		
 		echo "### Continue Android 11"  &>> ~/storage/shared/emudeck.log
 	else
 		echo "### Exit Android 11"  &>> ~/storage/shared/emudeck.log
