@@ -134,17 +134,17 @@ done
 #cat ~/emudeck/backend/logo.ans
 
 #Storage Selection
-if (whiptail --title "Android Version" --yesno "Do you have Android 11 or newer?" 8 78); then
-	echo "### Has Android 11"  &>> ~/storage/shared/emudeck.log
-	clear
-	if (whiptail --title "Android 11+ limitations" --yesno "Only Internal Storage is available to store your romes, if you want to use your SD Card, format it as internal. Do you want to continue? " 8 78); then		
-		echo "### Continue Android 11"  &>> ~/storage/shared/emudeck.log
-		storageOption == 'Internal'
-	else
-		echo "### Exit Android 11"  &>> ~/storage/shared/emudeck.log
-		exit		
-	fi
-else
+# if (whiptail --title "Android Version" --yesno "Do you have Android 11 or newer?" 8 78); then
+# 	echo "### Has Android 11"  &>> ~/storage/shared/emudeck.log
+# 	clear
+# 	if (whiptail --title "Android 11+ limitations" --yesno "Only Internal Storage is available to store your romes, if you want to use your SD Card, format it as internal. Do you want to continue? " 8 78); then		
+# 		echo "### Continue Android 11"  &>> ~/storage/shared/emudeck.log
+# 		storageOption == 'Internal'
+# 	else
+# 		echo "### Exit Android 11"  &>> ~/storage/shared/emudeck.log
+# 		exit		
+# 	fi
+# else
 	while true; do
 		storageOption=$(whiptail --title "Where do you want to store your roms?" \
 	   --radiolist "Move using your DPAD and select your platforms with the Y button. Press the A button to select." 10 80 4 \
@@ -159,7 +159,7 @@ else
 	   
 	 done
 	
-fi
+# fi
 
 #Detect installed emulators
 /bin/bash ~/emudeck/backend/emu_check.sh
@@ -369,32 +369,20 @@ else
 			  sdcardID="${firstString/"/storage/"/"$secondString"}"   
 		 fi
 	 done	
-
+	 
+	 #Android 11
 	 if [ $sdcardID == false ]; then
-	 	echo "### no SD Card Detected"  &>> ~/storage/shared/emudeck.log
-		 echo -e "We couldn't find your SD Card ID name"
-		echo -e "Maybe you are using an extenal HD Drive" 
-		echo -e "Please type the ID name of the right storage."
-		echo -e "You can find the ID using Retroarch built in file explorer"
-		echo -e "The ID Name looks something like 23S4-SF23, it's not a regular name"
-		echo -e "${BOLD}This is case sensitive${NONE}."
-		echo ""			
-			for entry in /storage/*
-			 do
-				 
-				 #echo $entry
-				 if [ $entry != '/storage/emulated' ] && [ $entry != '/storage/self' ]; then
-					 firstString=$entry
-					 secondString=""
-					 path="${firstString/"/storage/"/"$secondString"}"   
-					 echo $path 
-				 fi
-			 done			
-		echo ""
-		echo -e "Then press the ${RED}A button${NONE}" 		
-		read sdcardID
-		 
-	 fi
+	  
+		  SDPath=$(readlink ~/storage/external-1)
+		  firstString=$SDPath
+		  secondString=""
+		  sdcardID="${firstString/"/storage/"/"$secondString"}"   
+	  		
+	   		firstString=$sdcardID
+	   		secondString=""
+	   		sdcardID="${firstString/"/Android/data/com.termux/files"/"$secondString"}" 
+		  
+	  fi
 	 mkdir -p ~/storage/external-1/Emulation/roms &> /dev/null
 	
 	echo -e "${GREEN}SD Card${NONE}"
