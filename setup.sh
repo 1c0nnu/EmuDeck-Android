@@ -141,17 +141,17 @@ done
 #cat ~/emudeck/backend/logo.ans
 
 #Storage Selection
-# if (whiptail --title "Android Version" --yesno "Do you have Android 11 or newer?" 8 78); then
-# 	echo "### Has Android 11"  &>> ~/storage/shared/emudeck.log
-# 	clear
-# 	if (whiptail --title "Android 11+ limitations" --yesno "Only Internal Storage is available to store your romes, if you want to use your SD Card, format it as internal. Do you want to continue? " 8 78); then		
-# 		echo "### Continue Android 11"  &>> ~/storage/shared/emudeck.log
-# 		storageOption == 'Internal'
-# 	else
-# 		echo "### Exit Android 11"  &>> ~/storage/shared/emudeck.log
-# 		exit		
-# 	fi
-# else
+if (whiptail --title "Android Version" --yesno "Do you have Android 11 or newer?" 8 78); then
+	echo "### Has Android 11"  &>> ~/storage/shared/emudeck.log
+	clear
+	if (whiptail --title "Android 11+ limitations" --yesno "Only Internal Storage is available to store your roms, if you want to use your SD Card, format it as internal. Do you want to continue? " 8 78); then		
+		echo "### Continue Android 11"  &>> ~/storage/shared/emudeck.log
+		storageOption == 'Internal'
+	else
+		echo "### Exit Android 11"  &>> ~/storage/shared/emudeck.log
+		exit		
+	fi
+else
 	while true; do
 		storageOption=$(whiptail --title "Where do you want to store your roms?" \
 	   --radiolist "Move using your DPAD and select your platforms with the Y button. Press the A button to select." 10 80 4 \
@@ -166,7 +166,7 @@ done
 	   
 	 done
 	
-# fi
+fi
 
 #Detect installed emulators
 /bin/bash ~/emudeck/backend/emu_check.sh
