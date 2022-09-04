@@ -37,7 +37,7 @@ mv "${LOGFILE}" "$HOME/storage/shared/emudeck/emudeck.last.log" #backup last log
 echo "${@}" > "${LOGFILE}" #might as well log out the parameters of the run
 exec > >(tee "${LOGFILE}") 2>&1
 clear
-echo -e "EmuDeck for ${GREEN}Android${NONE}  ${GREEN}0.1.1${NONE}"
+echo -e "EmuDeck for ${GREEN}Android${NONE}  ${RED}BETA 0.1.1${NONE}"
 echo -e  "${BOLD}You must hide the virtual keyboard to continue so you can read all the instructions${NONE}"
 echo -e  "Press the ${RED}A button${NONE} when ready"
 read clear
