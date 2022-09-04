@@ -139,6 +139,7 @@ if (whiptail --title "Android Version" --yesno "Do you have Android 11 or newer?
 	clear
 	if (whiptail --title "Android 11+ limitations" --yesno "Only Internal Storage is available to store your romes, if you want to use your SD Card, format it as internal. Do you want to continue? " 8 78); then		
 		echo "### Continue Android 11"  &>> ~/storage/shared/emudeck.log
+		storageOption == 'Internal'
 	else
 		echo "### Exit Android 11"  &>> ~/storage/shared/emudeck.log
 		exit		
@@ -188,13 +189,18 @@ while true; do
 echo "### Frontend Selected : ${frontend} "  &>> ~/storage/shared/emudeck.log
 
 if [[ $frontend == 'PEGASUS' ]]; then
-	
 	echo "### Downloading Pegasus "  &>> ~/storage/shared/emudeck.log
-
+	
+	installPegasus=true
 	DIR=~/storage/shared/Android/data/org.pegasus_frontend.android
 	FOLDER=$(test -d "$DIR" && echo -n "true")
 	case $FOLDER in
 	  *"true"*)
+		installPegasus=false
+		;;
+	esac
+	
+	if [[  $installPegasus == true ]]; then
 		#Download Pegasus
 		echo -e "Downloading Pegasus, please be patient..."
 		wget   -q --show-progress https://github.com/mmatyas/pegasus-frontend/releases/download/weekly_2022w30/pegasus-fe_alpha16-42-g996720eb_android.apk -P ~/emudeck
@@ -219,9 +225,7 @@ if [[ $frontend == 'PEGASUS' ]]; then
 		mkdir -p ~/storage/shared/pegasus-frontend/themes &>> ~/storage/shared/emudeck.log
 		echo -e "${GREEN}OK${NONE}"
 		echo "### Pegasus configured"  &>> ~/storage/shared/emudeck.log
-		
-		;;
-	esac
+	fi
 fi
 
 
@@ -354,9 +358,8 @@ else
 		 echo -e "We couldn't find your SD Card ID name"
 		echo -e "Maybe you are using an extenal HD Drive" 
 		echo -e "Please type the ID name of the right storage."
-		echo -e "You can find the ID name using any file explorer"
-		echo -e "like Retroarch built in file explorer"
-		echo -e "The ID Name looks something like 23S4-SF23"
+		echo -e "You can find the ID using Retroarch built in file explorer"
+		echo -e "The ID Name looks something like 23S4-SF23, it's not a regular name"
 		echo -e "${BOLD}This is case sensitive${NONE}."
 		echo ""			
 			for entry in /storage/*
