@@ -120,13 +120,11 @@ while true; do
 	"RG552" "Anbernic RG552" OFF \
 	"ODIN" "16:9 Devices like Odin or RP3" OFF \
 	"RP2+" "4:3 Devices Like RP2+ and RG553" OFF \
-	"ANDROID" "A regular Android Device" OFF \
    3>&1 1<&2 2>&3)
 	case $handheldModel in
 		[RG552]* ) break;;
 		[ODIN]* ) break;;
 		[RP2+]* ) break;;
-		[ANDROID]* ) break;;
 		* ) echo "Please answer yes or no.";;
 	esac
  done
@@ -144,7 +142,6 @@ while true; do
 		"RG552" "Anbernic RG552" OFF \
 		"ODIN" "AYN Odin" OFF \
 		"RP2+" "Retroid Pocket 2+" OFF \
-		"ANDROID" "A regular Android Device" OFF \
 	   3>&1 1<&2 2>&3)
 done
 

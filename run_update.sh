@@ -29,7 +29,6 @@ else
 			[RG552]* ) break;;
 			[ODIN]* ) break;;
 			[RP2+]* ) break;;
-			[ANDROID]* ) break;;
 			* ) echo "Please answer yes or no.";;
 		esac
 	 done
