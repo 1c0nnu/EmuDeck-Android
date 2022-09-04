@@ -37,7 +37,7 @@ mv "${LOGFILE}" "$HOME/storage/shared/emudeck/emudeck.last.log" #backup last log
 echo "${@}" > "${LOGFILE}" #might as well log out the parameters of the run
 exec > >(tee "${LOGFILE}") 2>&1
 clear
-echo -e "EmuDeck for ${GREEN}Android${NONE} ${RED}BETA 0.1.3${NONE}"
+echo -e "EmuDeck for ${GREEN}Android${NONE} ${RED}BETA 0.1.4${NONE}"
 echo -e  "${BOLD}You must hide the virtual keyboard to continue so you can read all the instructions${NONE}"
 echo -e  "Press the ${RED}A button${NONE} when ready"
 read clear
@@ -230,68 +230,85 @@ fi
 
 
 if [[ $frontend == 'DAIJISHO' ]]; then
+	installDaihisho=true
 	DIR=~/storage/shared/Android/data/com.magneticchen.daijishou
 	FOLDER=$(test -d "$DIR" && echo -n "true")
 	case $FOLDER in
 	  *"true"*)
+	  	installDaihisho=false
+		;;
+	esac
+	if [[  $installDaihisho == true ]]; then
 		echo -e  "Press the ${RED}A button${NONE} to install Daijisho, when it is installed come back to continue the next steps"
 		read pause
 		termux-open "https://play.google.com/store/apps/details?id=com.magneticchen.daijishou"
-		
-		;;
-	esac
+	fi
 fi
 
 if [[ $frontend == 'DIG' ]]; then
+	installDig=true
 	DIR=~/storage/shared/Android/data/com.magneticchen.daijishou
 	FOLDER=$(test -d "$DIR" && echo -n "true")
 	case $FOLDER in
 	  *"true"*)
-		echo -e  "Press the ${RED}A button${NONE} to install Dig, when it is installed come back to continue the next steps"
-		read pause
-		termux-open "https://play.google.com/store/apps/details?id=com.digdroid.alman.dig"
-		
+	  	installDig=false
 		;;
 	esac
+	if [[  $installDig == true ]]; then
+		echo -e  "Press the ${RED}A button${NONE} to install Dig, when it is installed come back to continue the next steps"
+		read pause
+		termux-open "https://play.google.com/store/apps/details?id=com.digdroid.alman.dig"	
+	fi
 fi
 
 if [[ $frontend == 'LAUNCHBOX' ]]; then
+	installLaunch=true
 	DIR=~/storage/shared/Android/data/com.magneticchen.daijishou
 	FOLDER=$(test -d "$DIR" && echo -n "true")
 	case $FOLDER in
 	  *"true"*)
+	  	installLaunch=false
+		;;
+	esac
+	if [[  $installLaunch == true ]]; then
 		echo -e  "Press the ${RED}A button${NONE} to go to LaunchBox website, when it is installed come back to continue the next steps"
 		read pause
 		termux-open "https://www.launchbox-app.com/android-download"
-		
-		;;
-	esac
+	fi
 fi
 
 if [[ $frontend == 'RESET' ]]; then
+	installReset=true
 	DIR=~/storage/shared/Android/data/com.magneticchen.daijishou
 	FOLDER=$(test -d "$DIR" && echo -n "true")
 	case $FOLDER in
 	  *"true"*)
-		echo -e  "Press the ${RED}A button${NONE} to install Reset Collection, when it is installed come back to continue the next steps"
-		read pause
-		termux-open "https://play.google.com/store/apps/details?id=com.retroloungelab.resetcollection"
+	  	installReset=false
 		
 		;;
 	esac
+	if [[  $installReset == true ]]; then
+		echo -e  "Press the ${RED}A button${NONE} to install Reset Collection, when it is installed come back to continue the next steps"
+		read pause
+		termux-open "https://play.google.com/store/apps/details?id=com.retroloungelab.resetcollection"
+	fi
 fi
 
 if [[ $frontend == 'ARC' ]]; then
+	installArc=true
 	DIR=~/storage/shared/Android/data/com.magneticchen.daijishou
 	FOLDER=$(test -d "$DIR" && echo -n "true")
 	case $FOLDER in
 	  *"true"*)
+	  	installArc=false
+		;;
+	esac
+	if [[  $installArc == true ]]; then
 		echo -e  "Press the ${RED}A button${NONE} to install Arc Browser, when it is installed come back to continue the next steps"
 		read pause
 		termux-open "https://play.google.com/store/apps/details?id=net.floatingpoint.android.arcturus"
 		
-		;;
-	esac
+	fi
 fi
 
 #Backup
