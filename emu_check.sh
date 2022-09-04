@@ -26,69 +26,91 @@ hasSkyline=false
 handheldModel=$(cat ~/emudeck/.device)
 
 #Retroarch?
-FOLDER=~/storage/shared/RetroArch
-if [ -d "$FOLDER" ]; then
+FOLDER=$(test -d ~/storage/shared/RetroArch && echo -n "true")
+case $FOLDER in
+  *"true"*)
 	hasRetroArch=true
-fi
+	;;
+esac
 
 #Aether?
-FOLDER=~/storage/shared/Android/data/xyz.aethersx2.android
-if [ -d "$FOLDER" ]; then
+FOLDER=$(test -d ~/storage/shared/Android/data/xyz.aethersx2.android && echo "true")
+case $FOLDER in
+  *"true"*)
 	hasAether=true
-fi
+esac
 #Citra?
-FOLDER=~/storage/shared/citra-emu
-if [ -d "$FOLDER" ]; then
+FOLDER=$(test -d ~/storage/shared/citra-emu && echo "true")
+case $FOLDER in
+  *"true"*)
 	hasCitra=true
-fi
+esac
 
 #RedDream?
-FOLDER=~/storage/shared/Android/data/io.recompiled.redream
-if [ -d "$FOLDER" ]; then
+FOLDER=$(test -d ~/storage/shared/Android/data/io.recompiled.redream && echo "true")
+case $FOLDER in
+  *"true"*)
 	hasRedDream=true
-fi
+esac
 #YabaSanshioro?
-FOLDER=~/storage/shared/Android/data/org.devmiyax.yabasanshioro2.pro
+FOLDER=$(test -d ~/storage/shared/Android/data/org.devmiyax.yabasanshioro2.pro && echo "true")
 FOLDERPRO=~/storage/shared/Android/data/org.devmiyax.yabasanshioro2
-if [ -d "$FOLDER" ]; then
+case $FOLDER in
+  *"true"*)
 	hasYaba=true
-fi
-if [ -d "$FOLDERPRO" ]; then
+esac
+case $FOLDER in
+  *"true"*)
 	hasYaba=true
-fi
+esac
 #Mupen64
-FOLDER=~/storage/shared/Android/data/org.mupen64plusae.v3.fzurita
+FOLDER=$(test -d ~/storage/shared/Android/data/org.mupen64plusae.v3.fzurita && echo "true")
 FOLDERPRO=~/storage/shared/Android/data/org.mupen64plusae.v3.fzurita.pro
-if [ -d "$FOLDER" ] || [ -d "$FOLDERPRO" ]; then
+case $FOLDERPRO in
+  *"true"*)
 	hasMupen=true
-fi
+esac
+case $FOLDER in
+  *"true"*)
+	hasMupen=true
+esac
 #PPSSPP
-FOLDER=~/storage/shared/Android/data/org.ppsspp.ppsspp
+FOLDER=$(test -d ~/storage/shared/Android/data/org.ppsspp.ppsspp && echo "true")
 FOLDERGOLD=~/storage/shared/Android/data/org.ppsspp.ppssppgold
-if [ -d "$FOLDER" ] || [ -d "$FOLDERGOLD" ]; then
+case $FOLDER in
+  *"true"*)
 	hasPPSSPP=true
-fi
+esac
+case $FOLDERGOLD in
+  *"true"*)
+	hasPPSSPP=true
+esac
 #duckstation
-FOLDER=~/storage/shared/duckstation
-if [ -d "$FOLDER" ]; then
+FOLDER=$(test -d ~/storage/shared/duckstation && echo "true")
+case $FOLDER in
+  *"true"*)
 	hasDuckstation=true
-fi
+esac
 #Drastic
-FOLDER=~/storage/shared/DraStic
-if [ -d "$FOLDER" ]; then
+FOLDER=$(test -d ~/storage/shared/DraStic && echo "true")
+case $FOLDER in
+  *"true"*)
 	hasDrastic=true
-fi
+esac
 #DolphinMMJ
-FOLDER=~/storage/shared/dolphin-mmjr
-if [ -d "$FOLDER" ]; then
+FOLDER=$(test -d ~/storage/shared/dolphin-mmjr && echo "true")
+case $FOLDER in
+  *"true"*)
 	hasDolphinMMJ=true
-fi
+esac
 
 #Citra?
-FOLDER=~/storage/shared/Android/data/skyline.emu
-if [ -d "$FOLDER" ]; then
+FOLDER=$(test -d ~/storage/shared/Android/data/skyline.emu && echo "true")
+case $FOLDER in
+  *"true"*)
 	hasSkyline=true
-fi
+esac
+
 
 clear
 echo "### Checking emulators "  &>> ~/storage/shared/emudeck.log
@@ -121,6 +143,10 @@ if [ $hasDrastic == true ]; then
 else
 	echo -e  "${RED}Not installed${NONE}"
 fi
+
+
+
+#STR=$(test -d ~/storage/shared/Android/data/io.recompiled.redream && echo "yes")
 
 
 #Only ODIN & ANDROID
