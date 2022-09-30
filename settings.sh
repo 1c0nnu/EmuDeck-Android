@@ -30,7 +30,7 @@ doInstallSkyline=false
 doSetupDrastic=false
 
 #Default RetroArch configuration 
-RABezels=true
+RABezels=false
 RAautoSave=false
 
 #Default installation folders

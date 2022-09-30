@@ -1,19 +1,20 @@
 #!/bin/sh
-while true; do
-	question=$(whiptail --title "Choose your Storage" \
-   --radiolist "Where do you want to store your roms? " 10 80 4 \
-	"INTERNAL" "We will create your rom folders on your Android's Internal Storage" OFF \
-	"SDCARD" "If your device has a SDCARD " OFF \
-   3>&1 1<&2 2>&3)
-	case $question in
-		[EASY]* ) break;;
-		[CUSTOM]* ) break;;
-		* ) echo "Please answer yes or no.";;
-	esac
-done
 
-if [ $question == 'EASY' ]; then
-	setSetting expert false
-else
-	setSetting expert true
+if [ $android <= 10 ]; then
+	question=$(whiptail --title "RetroAchievments" \
+	--inputbox "Do you want to configure RetroAchievments? Insert your username..." 10 80 4 \
+	3>&1 1<&2 2>&3)
+	status=$?
+	
+	if [ $status = 0 ]; then
+		setSetting achievementsUser $question
+		question=$(whiptail --title "RetroAchievments" \
+		--inputbox "...and your password" 10 80 4 \
+		3>&1 1<&2 2>&3)
+		status=$?
+		if [ $status = 0 ]; then
+			setSetting achievementsUser $question
+		fi
+		
+	fi
 fi

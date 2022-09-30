@@ -95,10 +95,10 @@ if [ $expert == true ]; then
 	source "$EMUDECKGIT/pages/EmulatorConfigurationPage.sh"
 	
 	# Retroachievements
-	# source "$EMUDECKGIT/pages/RAAchievementsPage.sh"
+	source "$EMUDECKGIT/pages/RAAchievementsPage.sh"
 	
 	# Bezels
-	# source "$EMUDECKGIT/pages/RABezelsPage.sh"
+	source "$EMUDECKGIT/pages/RABezelsPage.sh"
 
 	# AR Sega Classic
 	# source "$EMUDECKGIT/pages/AspectRatioSegaPage.sh"
