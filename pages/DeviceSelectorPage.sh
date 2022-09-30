@@ -14,7 +14,7 @@ while true; do
 		[ODINLITE]* ) break;;
 		[RG552]* ) break;;
 		[GENERIC]* ) break;;
-		* ) echo "Please answer yes or no.";;
+		* ) echo "Please choose your device.";;
 	esac
 done
 
@@ -52,7 +52,7 @@ case $question in
 				[7]* ) break;;
 				[9]* ) break;;
 				[11]* ) break;;
-				* ) echo "Please answer yes or no.";;
+				* ) echo "What android version do you have.";;
 			esac
 		done
 		case $androidV in
@@ -81,7 +81,7 @@ case $question in
 			case $androidV in				
 				[10]* ) break;;
 				[11]* ) break;;
-				* ) echo "Please answer yes or no.";;
+				* ) echo "What android version do you have.";;
 			esac
 		done
 		case $androidV in
@@ -104,7 +104,7 @@ case $question in
 			case $sdcardV in
 				[YES]* ) break;;
 				[NO]* ) break;;
-				* ) echo "Please answer yes or no.";;
+				* ) echo "Do you have a SD Card?";;
 			esac
 		done
 		case $sdcardV in
@@ -129,7 +129,7 @@ case $question in
 				[HIGH]* ) break;;
 				[MEDIUM]* ) break;;
 				[LOW]* ) break;;
-				* ) echo "Please answer yes or no.";;
+				* ) echo "What CPU do you have..";;
 			esac
 		done
 		case $cpuV in
@@ -157,7 +157,7 @@ case $question in
 			case $arV in
 				[YES]* ) break;;
 				[NO]* ) break;;
-				* ) echo "Please answer yes or no.";;
+				* ) echo "What AR do you have..";;
 			esac
 		done
 		case $arV in

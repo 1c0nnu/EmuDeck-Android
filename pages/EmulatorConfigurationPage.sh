@@ -21,7 +21,7 @@ case $devicePower in
 			[CITRA]* ) break;;
 			[PPSSPP]* ) break;;
 			[SKYLINE]* ) break;;
-			* ) echo "Please answer yes or no.";;
+			* ) echo "Please which emus you want to update 0";;
 		esac
 	done
 ;;
@@ -45,7 +45,7 @@ case $devicePower in
 			[CITRA]* ) break;;
 			[PPSSPP]* ) break;;
 			[SKYLINE]* ) break;;
-			* ) echo "Please answer yes or no.";;
+			* ) echo "Please which emus you want to update 1";;
 		esac
 	done
 ;;
@@ -69,7 +69,7 @@ case $devicePower in
 			[CITRA]* ) break;;
 			[PPSSPP]* ) break;;
 			[SKYLINE]* ) break;;
-			* ) echo "Please answer yes or no.";;
+			* ) echo "Please which emus you want to update. 2";;
 		esac
 	done	
 ;;

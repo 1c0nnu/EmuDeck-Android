@@ -14,7 +14,7 @@ while true; do
 		[MEGA]* ) break;;
 		[GAMEOS]* ) break;;
 		[NEORETRO]* ) break;;
-		* ) echo "Please answer yes or no.";;
+		* ) echo "Please select your theme.";;
 	esac
 done
 

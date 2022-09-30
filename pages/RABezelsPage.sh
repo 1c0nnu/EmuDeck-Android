@@ -9,7 +9,7 @@ if [ $deviceAR === 169 ] || [ $deviceAR === 53 ]; then
 		case $question in
 			[YES]* ) break;;
 			[NO]* ) break;;
-			* ) echo "Please answer yes or no.";;
+			* ) echo "Do you want bezels?";;
 		esac
 	done
 	

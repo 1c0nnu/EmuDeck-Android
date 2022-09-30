@@ -8,7 +8,7 @@ while true; do
 	case $question in
 		[ON]* ) break;;
 		[OFF]* ) break;;
-		* ) echo "Please answer yes or no.";;
+		* ) echo "Please select if you want a shader.";;
 	esac
 done
 

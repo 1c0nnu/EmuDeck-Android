@@ -8,7 +8,7 @@ while true; do
 	case $question in
 		[43]* ) break;;
 		[32]* ) break;;
-		* ) echo "Please answer yes or no.";;
+		* ) echo "Please select your AR for Sega.";;
 	esac
 done
 

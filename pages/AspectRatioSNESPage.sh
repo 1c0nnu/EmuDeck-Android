@@ -10,7 +10,7 @@ while true; do
 		[43]* ) break;;
 		[87]* ) break;;
 		[32]* ) break;;
-		* ) echo "Please answer yes or no.";;
+		* ) echo "Please select your AR for Nintendo.";;
 	esac
 done
 

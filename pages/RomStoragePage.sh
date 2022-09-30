@@ -11,7 +11,7 @@ if [ $hasSDCARD == true ]; then
 		case $question in
 			[INTERNAL]* ) break;;
 			[SDCARD]* ) break;;
-			* ) echo "Please answer yes or no.";;
+			* ) echo "Please choose your Storage.";;
 		esac
 	done
 	

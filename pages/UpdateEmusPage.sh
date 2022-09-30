@@ -8,7 +8,7 @@ while true; do
 	case $question in
 		[EASY]* ) break;;
 		[CUSTOM]* ) break;;
-		* ) echo "Please answer yes or no.";;
+		* ) echo "Please which emus you want to update.";;
 	esac
 done
 

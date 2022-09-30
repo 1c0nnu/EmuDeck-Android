@@ -8,7 +8,7 @@ while true; do
 	case $question in
 		[ON]* ) break;;
 		[OFF]* ) break;;
-		* ) echo "Please answer yes or no.";;
+		* ) echo "Enable LCD Shaders?";;
 	esac
 done
 
