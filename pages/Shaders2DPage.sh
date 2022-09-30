@@ -1,19 +1,19 @@
 #!/bin/sh
 while true; do
-	question=$(whiptail --title "Choose your Storage" \
-   --radiolist "Where do you want to store your roms? " 10 80 4 \
-	"INTERNAL" "We will create your rom folders on your Android's Internal Storage" OFF \
-	"SDCARD" "If your device has a SDCARD " OFF \
+	question=$(whiptail --title "Configure CRT Shader for Classic 2D Games" \
+   --radiolist "Enabling a CRT Shader gives your classic systems a faux retro CRT vibe" 10 80 4 \
+	"ON" "Enable" OFF \
+	"OFF" "Disable" OFF \
    3>&1 1<&2 2>&3)
 	case $question in
-		[EASY]* ) break;;
-		[CUSTOM]* ) break;;
+		[ON]* ) break;;
+		[OFF]* ) break;;
 		* ) echo "Please answer yes or no.";;
 	esac
 done
 
-if [ $question == 'EASY' ]; then
-	setSetting expert false
+if [ $question == 'ON' ]; then
+	setSetting RAHandClassic2D true
 else
-	setSetting expert true
+	setSetting RAHandClassic2D false
 fi

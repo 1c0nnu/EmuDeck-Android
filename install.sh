@@ -101,10 +101,10 @@ if [ $expert == true ]; then
 	source "$EMUDECKGIT/pages/RABezelsPage.sh"
 
 	# AR Sega Classic
-	# source "$EMUDECKGIT/pages/AspectRatioSegaPage.sh"
+	source "$EMUDECKGIT/pages/AspectRatioSegaPage.sh"
 	
 	# AR SNES + NES
-	# source "$EMUDECKGIT/pages/AspectRatioSNESPage.sh"
+	source "$EMUDECKGIT/pages/AspectRatioSNESPage.sh"
 	
 	# AR 3D Classics
 	# source "$EMUDECKGIT/pages/AspectRatio3DPage.sh"
