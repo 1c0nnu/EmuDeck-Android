@@ -14,7 +14,7 @@ BLINK='\x1b[5m'
 #
 #Setup Termux
 #
-
+clear
 setupTermux(){
 	export DEBIAN_FRONTEND=noninteractive
 	apt-get update && 
@@ -31,21 +31,21 @@ setupTermux(){
 	
 }
 
-setupTermux
+#setupTermux
 
 
 #
 #Clone Files
 #
-EMUDECKGIT="$HOME//EmuDeck/backend"
+EMUDECKGIT="$HOME/EmuDeck/backend"
 if [ -d "$EMUDECKGIT" ]; then
-	cd $EMUDECKGIT && git pull && cd $HOME
+	cd $EMUDECKGIT && git checkout beta && git pull && cd $HOME
 else
 	git clone https://github.com/EmuDeck/EmuDeck-Android.git "$EMUDECKGIT"
 	git checkout beta
 fi
 
-if [ !-d "$EMUDECKGIT" ]; then
+if [ ! -d "$EMUDECKGIT" ]; then
 
 	echo "### Termux Mirrors seems to be down"  &>> ~/storage/shared/emudeck.log
 	echo -e "${RED}ERROR${NONE}"
@@ -63,6 +63,7 @@ source "$EMUDECKGIT/functions/all.sh"
 #
 #Log file
 #
+mkdir -p "$HOME/storage/shared/emudeck/"
 LOGFILE="$HOME/storage/shared/emudeck/emudeck.log"
 mv "${LOGFILE}" "$HOME/storage/shared/emudeck/emudeck.last.log"
 
@@ -70,12 +71,14 @@ echo "${@}" > "${LOGFILE}" #might as well log out the parameters of the run
 exec > >(tee "${LOGFILE}") 2>&1
 date "+%Y.%m.%d-%H:%M:%S %Z"
 
+
+
 #Mark if this not a fresh install
-#FOLDER="$HOME//EmuDeck/"
+#FOLDER="$HOME/EmuDeck/"
 #if [ -d "$FOLDER" ]; then
-#	echo "" > "$HOME//EmuDeck/.finished"
+#	echo "" > "$HOME/EmuDeck/.finished"
 #fi
-#SECONDTIME="$HOME//EmuDeck/.finished"
+#SECONDTIME="$HOME/EmuDeck/.finished"
 
 
 
@@ -171,7 +174,7 @@ fi
 # Android 11 instructions
 
 # Bye bye screen
-echo "" > "$HOME//EmuDeck/.finished"
+echo "" > "$HOME/EmuDeck/.finished"
 
 # source "$EMUDECKGIT/pages/EndPage.sh"
 

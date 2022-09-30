@@ -1,12 +1,12 @@
 #!/bin/bash
 emuDecksettingsFile="$HOME/storage/shared/emudeck/settings.sh"
 
-export NEWT_COLORS='
-window=,red
-border=white,red
-textbox=white,red
-button=black,white
-'
+# export NEWT_COLORS='
+# window=,red
+# border=white,red
+# textbox=white,red
+# button=black,white
+# '
 
 #Settings
 if [ -f "emuDecksettingsFile" ]; then
