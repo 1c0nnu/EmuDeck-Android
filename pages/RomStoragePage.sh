@@ -16,7 +16,7 @@ if [ $hasSDCARD == true ]; then
 	done
 	
 	if [ $question == 'INTERNAL' ]; then
-		PATH=$HOME
+		PATH=$HOME/storage/shared/
 	else		
 		SDPath=$(readlink ~/storage/external-1)
 		firstString=$SDPath
@@ -30,7 +30,7 @@ if [ $hasSDCARD == true ]; then
 	
 
 else
-	PATH=$HOME
+	PATH=$HOME/storage/shared/
 fi
 
 setSetting emulationPath $PATH/Emulation
