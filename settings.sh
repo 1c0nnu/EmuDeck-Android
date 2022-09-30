@@ -51,3 +51,16 @@ arSnes=43
 RAHandClassic2D=false
 RAHandHeldShader=true
 doSetupSaveSync=false
+
+doInstallPegasus=false
+doInstallDaijisho=false
+doInstallDig=false
+doInstallLaunchbox=false
+doInstallReset=false
+doInstallArc=false
+
+doInstallThemeEpic=false
+doInstallThemeSwitch=false
+doInstallThemeMega=false
+doInstallThemeGameOS=false
+doInstallThemeNeoRetro=false

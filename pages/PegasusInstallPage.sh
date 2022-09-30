@@ -1,19 +1,44 @@
-#!/bin/sh
 while true; do
-	question=$(whiptail --title "Choose your Storage" \
-   --radiolist "Where do you want to store your roms? " 10 80 4 \
-	"INTERNAL" "We will create your rom folders on your Android's Internal Storage" OFF \
-	"SDCARD" "If your device has a SDCARD " OFF \
+	frontend=$(whiptail --title "Choose your frontend" \
+   --checklist "Move using your DPAD and select your platforms with the Y button. Press the A button to select." 10 80 4 \
+	"PEGASUS" "Pegasus - Automatic configuration, you need to scrap your artwork on a PC" OFF \
+	"DAIJISHO" "Daihisho - Needs manual configuration" OFF \
+	"DIG" "Dig - Needs manual configuration" OFF \
+	"LAUNCHBOX" "Launchbox - Needs manual configuration" OFF \
+	"RESET" "Reset Collection - Paid - Needs manual configuration" OFF \
+	"ARC" "Arc Browser - Paid - Needs manual configuration" OFF \
    3>&1 1<&2 2>&3)
-	case $question in
-		[EASY]* ) break;;
-		[CUSTOM]* ) break;;
-		* ) echo "Please answer yes or no.";;
+	case $frontend in
+		[PEGASUS]* ) break;;
+		[DAIJISHO]* ) break;;
+		[DIG]* ) break;;
+		[LAUNCHBOX]* ) break;;
+		[RESET]* ) break;;
+		[ARC]* ) break;;
+		* ) echo "Please choose.";;
 	esac
-done
-
-if [ $question == 'EASY' ]; then
-	setSetting expert false
-else
-	setSetting expert true
-fi
+ done
+ 
+ case $question in
+	 "PEGASUS")
+		 setSetting doInstallPegasus true
+	 ;;
+	 "DAIJISHO")
+		 setSetting doInstallDaijisho true
+	 ;;
+	 "DIG")
+		 setSetting doInstallDig true
+	 ;;
+	 "LAUNCHBOX")
+		 setSetting doInstallLaunchbox true
+	 ;;
+	 "RESET")
+		 setSetting doInstallReset true
+	 ;;
+	 "ARC")
+		 setSetting doInstallArc true
+	;;	 
+	 *)
+		 echo "default"
+	 ;;
+ esac

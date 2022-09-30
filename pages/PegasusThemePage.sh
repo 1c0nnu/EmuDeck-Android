@@ -1,19 +1,40 @@
 #!/bin/sh
 while true; do
-	question=$(whiptail --title "Choose your Storage" \
-   --radiolist "Where do you want to store your roms? " 10 80 4 \
-	"INTERNAL" "We will create your rom folders on your Android's Internal Storage" OFF \
-	"SDCARD" "If your device has a SDCARD " OFF \
+	question=$(whiptail --title "Pegasus Theme" \
+   --checklist "What Pegasus theme do you want to install" 10 80 4 \
+	"EPIC" "RP - Epic Noir" ON \
+	"SWITCH" "RP - Switch" OFF \
+	"MEGA" "Retro Mega" OFF \
+	"GAMEOS" "GameOS" OFF \
+	"NEORETRO" "NeoRetro Dark" OFF \
    3>&1 1<&2 2>&3)
 	case $question in
-		[EASY]* ) break;;
-		[CUSTOM]* ) break;;
+		[EPIC]* ) break;;
+		[SWITCH]* ) break;;
+		[MEGA]* ) break;;
+		[GAMEOS]* ) break;;
+		[NEORETRO]* ) break;;
 		* ) echo "Please answer yes or no.";;
 	esac
 done
 
-if [ $question == 'EASY' ]; then
-	setSetting expert false
-else
-	setSetting expert true
-fi
+case $question in
+	 "EPIC")
+		 setSetting doInstallThemeEpic true
+	 ;;
+	 "SWITCH")
+		 setSetting doInstallThemeSwitch true
+	 ;;
+	 "MEGA")
+		 setSetting doInstallThemeMega true
+	 ;;
+	 "GAMEOS")
+		 setSetting doInstallThemeGameOS true
+	 ;;
+	 "NEORETRO")
+		 setSetting doInstallThemeNeoRetro true
+	 ;;
+	 *)
+		 echo "default"
+	 ;;
+ esac

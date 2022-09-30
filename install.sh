@@ -107,23 +107,25 @@ if [ $expert == true ]; then
 	source "$EMUDECKGIT/pages/AspectRatioSNESPage.sh"
 	
 	# AR 3D Classics
-	# source "$EMUDECKGIT/pages/AspectRatio3DPage.sh"
+	source "$EMUDECKGIT/pages/AspectRatio3DPage.sh"
 	
 	# AR Gamecube
-	# source "$EMUDECKGIT/pages/AspectRatioDolphinPage.sh"
+	source "$EMUDECKGIT/pages/AspectRatioDolphinPage.sh"
 	
 	# LCD Shader Handhelds
-	# source "$EMUDECKGIT/pages/ShadersHandheldsPage.sh"
+	source "$EMUDECKGIT/pages/ShadersHandheldsPage.sh"
 	
 	# CRT Shader Handhelds
-	# source "$EMUDECKGIT/pages/Shaders2DPage.sh"
+	source "$EMUDECKGIT/pages/Shaders2DPage.sh"
 	
 	# Frontend
-	# source "$EMUDECKGIT/pages/PegasusInstallPage.sh"
+	source "$EMUDECKGIT/pages/PegasusInstallPage.sh"
 	
 	# Pegasus Theme
-	# source "$EMUDECKGIT/pages/PegasusThemePage.sh"
-
+	
+	if [ $doInstallPegasus == true ]; then
+		source "$EMUDECKGIT/pages/PegasusThemePage.sh"
+	fi
 
 fi
 
