@@ -1,6 +1,4 @@
 #!/bin/bash
-echo $devicePower
-read pepe
 case $devicePower in
 '0')		
 		question=$(whiptail --title "Emulators" \
@@ -42,7 +40,16 @@ case $devicePower in
 	
 ;;
 *)
-	echo "no device"
+		question=$(whiptail --title "Emulators" \
+   --checklist "These are the emulators you can install. We've disabled those not recommended for your device. You can disable more emulators if you don't want to install all of them" 10 80 4 \
+	"RA" "RetroArch - Classic 2D and 3D Games" ON \
+	"DOLPHIN" "Dolphin - GameCube and Wii" ON \
+	"DUCK" "Duckstation - Playstation 1" ON \
+	"AETHERSX2" "AetherSX2 - Playstation 2" OFF \
+	"CITRA" "Citra - Nintendo 3DS" OFF \
+	"PPSSPP" "PPSSPP - Sony PSP" ON \
+	"SKYLINE" "PPSSPP - Nintendo Switch" OFF \
+   3>&1 1<&2 2>&3)
 ;;
 esac
 
