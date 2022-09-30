@@ -1,5 +1,6 @@
 #!/bin/bash
-
+echo $devicePower
+read pepe
 case $devicePower in
 0)		
 		question=$(whiptail --title "Emulators" \
@@ -41,7 +42,7 @@ case $devicePower in
 	
 ;;
 *)
-	echo "default"
+	echo "no device"
 ;;
 esac
 

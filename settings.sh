@@ -5,7 +5,7 @@ expert=false
 
 #Device customs
 hasSDCARD=false
-devicePower=0 # 0, 1, 2
+devicePower=0
 deviceAR=169
 android=10
 
