@@ -5,6 +5,10 @@ expert=false
 
 #Device customs
 hasSDCARD=false
+devicePower=0 # 0, 1, 2
+deviceAR=169
+android=10
+
 
 #Default settings for all systems
 doSetupRA=true

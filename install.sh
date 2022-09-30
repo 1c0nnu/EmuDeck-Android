@@ -73,14 +73,10 @@ createUpdateSettingsFile
 #
 
 # Welcome, Quick or custom?
-
 source "$EMUDECKGIT/pages/WelcomePage.sh"
 
 # Device?
-
 source "$EMUDECKGIT/pages/DeviceSelectorPage.sh"
-
-hasSDCARD
 
 # Location
 source "$EMUDECKGIT/pages/RomStoragePage.sh"

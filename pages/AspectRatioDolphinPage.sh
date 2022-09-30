@@ -7,7 +7,7 @@ while true; do
    3>&1 1<&2 2>&3)
 	case $question in
 		[EASY]* ) break;;
-		[CUSTOM]* ) break;;		
+		[CUSTOM]* ) break;;
 		* ) echo "Please answer yes or no.";;
 	esac
 done
