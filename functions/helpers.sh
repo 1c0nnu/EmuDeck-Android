@@ -2,6 +2,7 @@ function createUpdateSettingsFile(){
 	#!/bin/bash
 
 	if [ ! -e "$emuDecksettingsFile" ]; then
+		mkdir -p $HOME/storage/shared/emudeck/
 		echo "#!/bin/bash"> "$emuDecksettingsFile"
 	fi
 	local defaultSettingsList=()	
