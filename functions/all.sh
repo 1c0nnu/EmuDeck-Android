@@ -9,7 +9,7 @@ emuDecksettingsFile="$HOME/storage/shared/emudeck/settings.sh"
 # '
 
 #Settings
-if [ -f "emuDecksettingsFile" ]; then
+if [ -f "$emuDecksettingsFile" ]; then
 	# shellcheck source=./settings.sh
 	source "$emuDecksettingsFile"
 else
