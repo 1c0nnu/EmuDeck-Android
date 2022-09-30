@@ -1,19 +1,187 @@
 #!/bin/sh
 while true; do
-	question=$(whiptail --title "Choose your Storage" \
-   --radiolist "Where do you want to store your roms? " 10 80 4 \
-	"INTERNAL" "We will create your rom folders on your Android's Internal Storage" OFF \
-	"SDCARD" "If your device has a SDCARD " OFF \
+	question=$(whiptail --title "Choose your Device" \
+   --radiolist "We tailor the experience depending on the selected device, each device has its own special configuration, different emulators and adjusted bezels." 10 80 4 \
+	"RP2" "Retroid Pocket 2+" OFF \
+	"ODIN" "ODIN Base or Pro" OFF \
+	"ODINLITE" "ODIN Lite" OFF \
+	"RG552" "Anbernic RG552" OFF \
+	"ANDROID" "Other Android Device" OFF \
    3>&1 1<&2 2>&3)
 	case $question in
-		[EASY]* ) break;;
-		[CUSTOM]* ) break;;		
+		[RP2]* ) break;;
+		[ODIN]* ) break;;
+		[ODINLITE]* ) break;;
+		[RG552]* ) break;;
+		[GENERIC]* ) break;;
 		* ) echo "Please answer yes or no.";;
 	esac
 done
 
-if [ $question == 'EASY' ]; then
-	setSetting expert false
-else
-	setSetting expert true
-fi
+case $question in
+  "RP2")
+		setSetting hasSDCARD true
+		setSetting devicePower 1
+		setSetting deviceAR 43
+		setSetting android 10
+  ;;
+  "ODIN")
+		setSetting hasSDCARD true
+		setSetting devicePower 2
+		setSetting deviceAR 169
+		setSetting android 10		
+	;;  
+	"ODINLITE")		
+		setSetting hasSDCARD true
+		setSetting devicePower 2
+		setSetting deviceAR 169
+		setSetting android 11
+	;;  
+	"RG552")		
+		setSetting hasSDCARD false
+		setSetting devicePower 0
+		setSetting deviceAR 53
+		while true; do
+			androidV=$(whiptail --title "Android Version" \
+		   --radiolist "What Android Version are you running?" 10 80 4 \
+			"7" "Android 7. The version that comes preinstalled" ON \
+			"9" "Android 9" OFF \
+			"11" "Android 11" OFF \
+		   3>&1 1<&2 2>&3)
+			case $androidV in
+				[7]* ) break;;
+				[9]* ) break;;
+				[11]* ) break;;
+				* ) echo "Please answer yes or no.";;
+			esac
+		done
+		case $androidV in
+			"7")
+				setSetting android 10
+			;;
+			"9")
+				setSetting android 9
+			;;  
+			"11")
+				setSetting android 11
+			;;  
+			*)
+				  echo "default"
+			;;
+		esac
+		
+	;;  
+	"ANDROID")
+		while true; do
+			androidV=$(whiptail --title "Android Version" \
+	   	--radiolist "What Android Version are you running?" 10 80 4 \
+			"7" "Android 7. The version that comes preinstalled" ON \
+			"9" "Android 9" OFF \
+			"11" "Android 11" OFF \
+	   	3>&1 1<&2 2>&3)
+			case $androidV in
+				[7]* ) break;;
+				[9]* ) break;;
+				[11]* ) break;;
+				* ) echo "Please answer yes or no.";;
+			esac
+		done
+		case $androidV in
+			"7")
+				setSetting android 10
+			;;
+			"9")
+				setSetting android 9
+			;;  
+			"11")
+				setSetting android 11
+			;;  
+			*)
+			  	echo "default"
+			;;
+		esac
+		while true; do
+			sdcardV=$(whiptail --title "SD Card" \
+		   --radiolist "Does your device have a SD Card?" 10 80 4 \
+			"YES" "Yes" OFF \
+			"NO" "No" OFF \
+		   3>&1 1<&2 2>&3)
+			case $sdcardV in
+				[YES]* ) break;;
+				[NO]* ) break;;
+				* ) echo "Please answer yes or no.";;
+			esac
+		done
+		case $sdcardV in
+			"YES")
+				setSetting hasSDCARD true
+			;;
+			"NO")
+				setSetting hasSDCARD false
+			;;  
+			*)
+				  echo "default"
+			;;
+		esac
+		while true; do
+			cpuV=$(whiptail --title "Device CPU" \
+		   --radiolist "What is your Android CPU power grade?" 10 80 4 \
+			"HIGH" "Snapdragon 845, Dimensity D900 or superior" OFF \
+			"MEDIUM" "It's a midrage Android Phone" OFF \
+			"LOW" "It's an entry level Android Phone" OFF \
+		   3>&1 1<&2 2>&3)
+			case $cpuV in
+				[YES]* ) break;;
+				[NO]* ) break;;
+				* ) echo "Please answer yes or no.";;
+			esac
+		done
+		case $cpuV in
+			"HIGH")
+				setSetting devicePower 2
+			;;
+			"MEDIUM")
+				setSetting devicePower 1
+			;;  
+			"NO")
+				setSetting devicePower 0
+			;;
+			*)
+				  echo "default"
+			;;
+		esac
+		
+		while true; do
+			arV=$(whiptail --title "Screen Aspect Ratio" \
+		   --radiolist "What is your Android Device Aspect Ratio?" 10 80 4 \
+			"169" "16:9" OFF \
+			"43" "4:3" OFF \
+			"OTHER" "Another" OFF \
+		   3>&1 1<&2 2>&3)
+			case $arV in
+				[YES]* ) break;;
+				[NO]* ) break;;
+				* ) echo "Please answer yes or no.";;
+			esac
+		done
+		case $arV in
+			"169")
+				setSetting deviceAR 169
+			;;
+			"43")
+				setSetting deviceAR 43
+			;;  
+			"OTHER")
+				setSetting deviceAR 0
+			;;
+			*)
+				echo "default"
+			;;
+		esac
+	
+	;;  
+	
+  *)
+  	echo "default"
+  ;;
+esac
