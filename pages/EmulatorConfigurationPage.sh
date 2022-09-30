@@ -2,7 +2,7 @@
 
 case $devicePower in
 "0")	
-	while true; do
+	
 		question=$(whiptail --title "Emulators" \
 	   --checklist "If you want to keep your custom setting for some emus, leave them unchecked. Checked means we will overwrite your configuration" 10 80 4 \
 		"RA" "RetroArch - Classic 2D and 3D Games" ON \
@@ -13,20 +13,10 @@ case $devicePower in
 		"PPSSPP" "PPSSPP - Sony PSP" ON \
 		"SKYLINE" "PPSSPP - Nintendo Switch" ON \
 	   3>&1 1<&2 2>&3)
-		case $question in
-			[RA]* ) break;;
-			[DOLPHIN]* ) break;;
-			[DUCK]* ) break;;
-			[AETHERSX2]* ) break;;
-			[CITRA]* ) break;;
-			[PPSSPP]* ) break;;
-			[SKYLINE]* ) break;;
-			* ) echo "Please which emus you want to update 0";;
-		esac
-	done
+		
 ;;
 "1")	
-	while true; do
+	
 		question=$(whiptail --title "Emulators" \
 	   --checklist "If you want to keep your custom setting for some emus, leave them unchecked. Checked means we will overwrite your configuration" 10 80 4 \
 		"RA" "RetroArch - Classic 2D and 3D Games" ON \
@@ -37,20 +27,10 @@ case $devicePower in
 		"PPSSPP" "PPSSPP - Sony PSP" ON \
 		"SKYLINE" "PPSSPP - Nintendo Switch" ON \
 	   3>&1 1<&2 2>&3)
-		case $question in
-			[RA]* ) break;;
-			[DOLPHIN]* ) break;;
-			[DUCK]* ) break;;
-			[AETHERSX2]* ) break;;
-			[CITRA]* ) break;;
-			[PPSSPP]* ) break;;
-			[SKYLINE]* ) break;;
-			* ) echo "Please which emus you want to update 1";;
-		esac
-	done
+
 ;;
 "2")
-	while true; do
+	
 		question=$(whiptail --title "Emulators" \
 	   --checklist "If you want to keep your custom setting for some emus, leave them unchecked. Checked means we will overwrite your configuration" 10 80 4 \
 		"RA" "RetroArch - Classic 2D and 3D Games" ON \
@@ -61,17 +41,6 @@ case $devicePower in
 		"PPSSPP" "PPSSPP - Sony PSP" ON \
 		"SKYLINE" "PPSSPP - Nintendo Switch" ON \
 	   3>&1 1<&2 2>&3)
-		case $question in
-			[RA]* ) break;;
-			[DOLPHIN]* ) break;;
-			[DUCK]* ) break;;
-			[AETHERSX2]* ) break;;
-			[CITRA]* ) break;;
-			[PPSSPP]* ) break;;
-			[SKYLINE]* ) break;;
-			* ) echo "Please which emus you want to update. 2";;
-		esac
-	done	
 ;;
 *)
 	echo "default"
