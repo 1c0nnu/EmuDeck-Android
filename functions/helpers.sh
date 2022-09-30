@@ -22,6 +22,11 @@ function escapeSedValue(){
 	printf '%s\n' "$INPUT" | sed -e 's/[\/&]/\\&/g'
 }
 
+function getSetting(){
+	local setting=$1
+	cut -d "=" -f2 <<< "$(grep -r "^${setting}=" "$emuDecksettingsFile")"
+}
+
 function createUpdateSettingsFile(){
 	#!/bin/bash
 
