@@ -3,7 +3,7 @@
 PCSX2QT_emuName="PCSX2-QT"
 PCSX2QT_emuType="AppImage"
 PCSX2QT_emuPath="$HOME/Applications/pcsx2-Qt.AppImage"
-PCSX2QT_configFile="$HOME/.config/PCSX2/inis/PCSX2.ini"
+PCSX2QT_configFile="$HOME//PCSX2/inis/PCSX2.ini"
 
 #cleanupOlderThings
 PCSX2QT_cleanup(){
@@ -19,7 +19,7 @@ PCSX2QT_install(){
 #ApplyInitialSettings
 PCSX2QT_init(){
 	setMSG "Initializing $PCSX2QT_emuName settings."	
-	configEmuAI "$PCSX2QT_emuName" "config" "$HOME/.config/PCSX2" "$EMUDECKGIT/configs/pcsx2qt/.config/PCSX2" "true"
+	configEmuAI "$PCSX2QT_emuName" "config" "$HOME//PCSX2" "$EMUDECKGIT/configs/pcsx2qt//PCSX2" "true"
 	PCSX2QT_setEmulationFolder
 	PCSX2QT_setupStorage
 	PCSX2QT_setupSaves #
@@ -29,7 +29,7 @@ PCSX2QT_init(){
 #update
 PCSX2QT_update(){
 	setMSG "Updating $PCSX2QT_emuName settings."
-	configEmuAI "$PCSX2QT_emuName" "config" "$HOME/.config/PCSX2" "$EMUDECKGIT/configs/pcsx2qt/.config/PCSX2"
+	configEmuAI "$PCSX2QT_emuName" "config" "$HOME//PCSX2" "$EMUDECKGIT/configs/pcsx2qt//PCSX2"
 	PCSX2QT_setEmulationFolder
 	PCSX2QT_setupStorage
 	PCSX2QT_setupSaves
@@ -92,7 +92,7 @@ PCSX2QT_setupStorage(){
 #WipeSettings
 PCSX2QT_wipe(){
 	setMSG "Wiping $PCSX2QT_emuName settings."
-   rm -rf "$HOME/.config/PCSX2"
+   rm -rf "$HOME//PCSX2"
    # prob not cause roms are here
 }
 

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 
 rm ~/storage/shared/emudeck.log &>> /dev/null

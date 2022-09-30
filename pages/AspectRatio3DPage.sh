@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 while true; do
 	question=$(whiptail --title "Aspect Ratio" \
    --radiolist "Choose your aspect ratio for your Dreamcast, Nintendo 64 and Playstation 1 Games" 10 80 4 \

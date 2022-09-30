@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 while true; do
 	question=$(whiptail --title "Choose your Storage" \
    --radiolist "Where do you want to store your roms? " 10 80 4 \

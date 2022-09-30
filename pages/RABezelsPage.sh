@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 if [ $deviceAR === 169 ] || [ $deviceAR === 53 ]; then
 	while true; do
 		question=$(whiptail --title "Game Bezels" \

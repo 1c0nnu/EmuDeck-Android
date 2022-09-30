@@ -43,23 +43,23 @@ SRM_createDesktopShortcut(){
 
 SRM_init(){			
 	setMSG "Configuring Steam Rom Manager"
-	mkdir -p "$HOME/.config/steam-rom-manager/userData/"	
-	cp "$EMUDECKGIT/configs/steam-rom-manager/userData/userConfigurations.json" "$HOME/.config/steam-rom-manager/userData/userConfigurations.json"
-	cp "$EMUDECKGIT/configs/steam-rom-manager/userData/userSettings.json" "$HOME/.config/steam-rom-manager/userData/userSettings.json"	
+	mkdir -p "$HOME//steam-rom-manager/userData/"	
+	cp "$EMUDECKGIT/configs/steam-rom-manager/userData/userConfigurations.json" "$HOME//steam-rom-manager/userData/userConfigurations.json"
+	cp "$EMUDECKGIT/configs/steam-rom-manager/userData/userSettings.json" "$HOME//steam-rom-manager/userData/userSettings.json"	
 	sleep 3
 	tmp=$(mktemp)
 	jq -r --arg STEAMDIR "$HOME/.steam/steam" '.environmentVariables.steamDirectory = "\($STEAMDIR)"' \
-	"$HOME/.config/steam-rom-manager/userData/userSettings.json"  > "$tmp"\
-	 && mv "$tmp" "$HOME/.config/steam-rom-manager/userData/userSettings.json"
+	"$HOME//steam-rom-manager/userData/userSettings.json"  > "$tmp"\
+	 && mv "$tmp" "$HOME//steam-rom-manager/userData/userSettings.json"
 	
 	tmp=$(mktemp)
 	jq -r --arg ROMSDIR "$romsPath" '.environmentVariables.romsDirectory = "\($ROMSDIR)"' \
-	"$HOME/.config/steam-rom-manager/userData/userSettings.json"  > "$tmp" \
-	&& mv "$tmp" "$HOME/.config/steam-rom-manager/userData/userSettings.json"
+	"$HOME//steam-rom-manager/userData/userSettings.json"  > "$tmp" \
+	&& mv "$tmp" "$HOME//steam-rom-manager/userData/userSettings.json"
 
-	sed -i "s|/run/media/mmcblk0p1/Emulation/roms|${romsPath}|g" "$HOME/.config/steam-rom-manager/userData/userConfigurations.json"
-	sed -i "s|/run/media/mmcblk0p1/Emulation/tools|${toolsPath}|g" "$HOME/.config/steam-rom-manager/userData/userConfigurations.json"
-	sed -i "s|/run/media/mmcblk0p1/Emulation/storage|${storagePath}|g" "$HOME/.config/steam-rom-manager/userData/userConfigurations.json"
-	sed -i "s|/home/deck|$HOME|g" "$HOME/.config/steam-rom-manager/userData/userConfigurations.json"
+	sed -i "s|/run/media/mmcblk0p1/Emulation/roms|${romsPath}|g" "$HOME//steam-rom-manager/userData/userConfigurations.json"
+	sed -i "s|/run/media/mmcblk0p1/Emulation/tools|${toolsPath}|g" "$HOME//steam-rom-manager/userData/userConfigurations.json"
+	sed -i "s|/run/media/mmcblk0p1/Emulation/storage|${storagePath}|g" "$HOME//steam-rom-manager/userData/userConfigurations.json"
+	sed -i "s|/home/deck|$HOME|g" "$HOME//steam-rom-manager/userData/userConfigurations.json"
 	echo -e "OK!"
 }

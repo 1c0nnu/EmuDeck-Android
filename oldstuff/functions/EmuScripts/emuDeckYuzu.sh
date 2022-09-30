@@ -27,7 +27,7 @@ Yuzu_init(){
     
     Yuzu_migrate
     
-    configEmuAI "yuzu" "config" "$HOME/.config/yuzu" "$EMUDECKGIT/configs/org.yuzu_emu.yuzu/config/yuzu" "true"
+    configEmuAI "yuzu" "config" "$HOME//yuzu" "$EMUDECKGIT/configs/org.yuzu_emu.yuzu/config/yuzu" "true"
     configEmuAI "yuzu" "data" "$HOME/.local/share/yuzu" "$EMUDECKGIT/configs/org.yuzu_emu.yuzu/data/yuzu" "true"
     
     Yuzu_setEmulationFolder
@@ -43,7 +43,7 @@ Yuzu_update(){
 
     Yuzu_migrate
     
-    configEmuAI "yuzu" "config" "$HOME/.config/yuzu" "$EMUDECKGIT/configs/org.yuzu_emu.yuzu/config/yuzu"
+    configEmuAI "yuzu" "config" "$HOME//yuzu" "$EMUDECKGIT/configs/org.yuzu_emu.yuzu/config/yuzu"
     configEmuAI "yuzu" "data" "$HOME/.local/share/yuzu" "$EMUDECKGIT/configs/org.yuzu_emu.yuzu/data/yuzu"
     
     Yuzu_setEmulationFolder
@@ -57,7 +57,7 @@ Yuzu_update(){
 #ConfigurePaths
 Yuzu_setEmulationFolder(){
     echo "Begin Yuzu Path Config"
-    configFile="$HOME/.config/yuzu/qt-config.ini"
+    configFile="$HOME//yuzu/qt-config.ini"
     screenshotDirOpt='Screenshots\\screenshot_path='
     gameDirOpt='Paths\\gamedirs\\4\\path='
     dumpDirOpt='dump_directory='
@@ -119,7 +119,7 @@ Yuzu_setupStorage(){
 #WipeSettings
 Yuzu_wipe(){
     echo "Begin Yuzu delete config directories"
-    rm -rf "$HOME/.config/yuzu"
+    rm -rf "$HOME//yuzu"
     rm -rf "$HOME/.local/share/yuzu"
 }
 
@@ -142,7 +142,7 @@ Yuzu_migrate(){
         #From -- > to
         migrationTable=()
         migrationTable+=("$HOME/.var/app/org.yuzu_emu.yuzu/data/yuzu" "$HOME/.local/share/yuzu")
-        migrationTable+=("$HOME/.var/app/org.yuzu_emu.yuzu/config/yuzu" "$HOME/.config/yuzu")
+        migrationTable+=("$HOME/.var/app/org.yuzu_emu.yuzu/config/yuzu" "$HOME//yuzu")
 
         migrateAndLinkConfig "$emu" "$migrationTable"
     fi

@@ -3,7 +3,7 @@
 SAVESYNC_toolName="EmuDeck SaveSync"
 SAVESYNC_toolType="AppImage"
 SAVESYNC_toolPath="$HOME/Applications/EmuDeck_SaveSync.AppImage"
-SAVESYNC_systemd_path="$HOME/.config/systemd/user"
+SAVESYNC_systemd_path="$HOME//systemd/user"
 #SAVESYNC_Shortcutlocation="$HOME/Desktop/EmuDeckBinUpdate.desktop"
 
 
@@ -26,7 +26,7 @@ SAVESYNC_setup(){
         systemctl --user stop emudeck_savesync.service
 
         mv "${toolsPath}/savesync/config.yml" "${toolsPath}/savesync/config.yml.bak"
-        mv "$HOME/.config/rclone/rclone.conf"  "$HOME/.config/rclone/rclone.conf.bak"
+        mv "$HOME//rclone/rclone.conf"  "$HOME//rclone/rclone.conf.bak"
 
         "$SAVESYNC_toolPath" "$emulationPath" --setup "$cloudProvider"
         echo "pausing before creating service"

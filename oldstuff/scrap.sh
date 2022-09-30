@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 touch ~/storage/shared/scrap.log  &> /dev/null
 echo "" > ~/storage/shared/scrap.log &> /dev/null

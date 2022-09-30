@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 echo -e "EmuDeck for ${GREEN}Android${NONE} ${RED}BETA 0.1.5${NONE}"
 echo -e  "${BOLD}You must hide the virtual keyboard to continue so you can read all the instructions${NONE}"
 echo -e  "If your controller is not being recognized you might need to connect a Keyboard."

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 while true; do
 	question=$(whiptail --title "Configure LCD Shader for Handhelds" \
    --radiolist "Enabling a LCD Shader simulates the old LCD Matrix screens of handheld systems" 10 80 4 \

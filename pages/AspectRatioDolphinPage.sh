@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 while true; do
 	question=$(whiptail --title "Aspect Ratio" \
    --radiolist "Choose your aspect ratio for your GameCube Games" 10 80 4 \

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 while true; do
 	question=$(whiptail --title "Pegasus Theme" \
    --checklist "What Pegasus theme do you want to install" 10 80 4 \

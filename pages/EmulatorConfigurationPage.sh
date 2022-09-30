@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 case $devicePower in
 "0")	

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 while true; do
 	question=$(whiptail --title "Configure CRT Shader for Classic 2D Games" \
    --radiolist "Enabling a CRT Shader gives your classic systems a faux retro CRT vibe" 10 80 4 \

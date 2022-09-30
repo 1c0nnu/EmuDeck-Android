@@ -23,7 +23,7 @@ Ryujinx_install(){
 Ryujinx_init(){
     echo "Begin Ryujinx Init"
 
-    configEmuAI "Ryujinx" "config" "$HOME/.config/Ryujinx" "$EMUDECKGIT/configs/Ryujinx" "true"
+    configEmuAI "Ryujinx" "config" "$HOME//Ryujinx" "$EMUDECKGIT/configs/Ryujinx" "true"
     
     Ryujinx_setEmulationFolder
     Ryujinx_setupStorage
@@ -36,7 +36,7 @@ Ryujinx_init(){
 Ryujinx_update(){
     echo "Begin Ryujinx update"
     
-    configEmuAI "yuzu" "config" "$HOME/.config/Ryujinx" "$EMUDECKGIT/configs/Ryujinx"
+    configEmuAI "yuzu" "config" "$HOME//Ryujinx" "$EMUDECKGIT/configs/Ryujinx"
     
     Ryujinx_setEmulationFolder
     Ryujinx_setupStorage
@@ -49,7 +49,7 @@ Ryujinx_update(){
 #ConfigurePaths
 Ryujinx_setEmulationFolder(){
     echo "Begin Ryujinx Path Config"
-#     configFile="$HOME/.config/yuzu/qt-config.ini"
+#     configFile="$HOME//yuzu/qt-config.ini"
 #     screenshotDirOpt='Screenshots\\screenshot_path='
 #     gameDirOpt='Paths\\gamedirs\\4\\path='
 #     dumpDirOpt='dump_directory='
@@ -76,12 +76,12 @@ Ryujinx_setEmulationFolder(){
 
     #Setup Bios symlinks
     unlink "${biosPath}/ryujinx/keys"    
-    mkdir -p "$HOME/.config/Ryujinx/system/"
+    mkdir -p "$HOME//Ryujinx/system/"
     mkdir -p "${biosPath}/ryujinx/"
-    ln -sn "$HOME/.config/Ryujinx/system" "${biosPath}/ryujinx/keys"
+    ln -sn "$HOME//Ryujinx/system" "${biosPath}/ryujinx/keys"
 
 
-    sed -i "s|/run/media/mmcblk0p1/Emulation/roms|${romsPath}|g" "$HOME/.config/Ryujinx/Config.json"
+    sed -i "s|/run/media/mmcblk0p1/Emulation/roms|${romsPath}|g" "$HOME//Ryujinx/Config.json"
 
 
 
@@ -90,7 +90,7 @@ Ryujinx_setEmulationFolder(){
 #SetupSaves
 Ryujinx_setupSaves(){
     echo "Begin Ryujinx save link" 
-    linkToSaveFolder ryujinx saves "$HOME/.config/Ryujinx/bis/user/" 
+    linkToSaveFolder ryujinx saves "$HOME//Ryujinx/bis/user/" 
 }
 
 
@@ -98,7 +98,7 @@ Ryujinx_setupSaves(){
 Ryujinx_setupStorage(){
     echo "Begin Ryujinx storage config"
     
-    origPath="$HOME/.config/"
+    origPath="$HOME//"
     mkdir -p "${storagePath}/ryujinx/"
     rsync -av "${origPath}/Ryujinx/games/" "${storagePath}/ryujinx/games/" && rm -rf "${origPath}Ryujinx/games"
     ln -ns "${storagePath}/ryujinx/games/" "${origPath}/Ryujinx/games" 
@@ -109,7 +109,7 @@ Ryujinx_setupStorage(){
 #WipeSettings
 Ryujinx_wipe(){
     echo "Begin Ryujinx delete config directories"
-    rm -rf "$HOME/.config/Ryujinx"
+    rm -rf "$HOME//Ryujinx"
 }
 
 
@@ -130,7 +130,7 @@ Ryujinx_migrate(){
 #         #From -- > to
 #         migrationTable=()
 #         migrationTable+=("$HOME/.var/app/org.yuzu_emu.yuzu/data/yuzu" "$HOME/.local/share/yuzu")
-#         migrationTable+=("$HOME/.var/app/org.yuzu_emu.yuzu/config/yuzu" "$HOME/.config/yuzu")
+#         migrationTable+=("$HOME/.var/app/org.yuzu_emu.yuzu/config/yuzu" "$HOME//yuzu")
 # 
 #         migrateAndLinkConfig "$emu" "$migrationTable"
 #     fi
@@ -149,8 +149,8 @@ Ryujinx_convertFromYuzu(){
     for entry in "$biosPath"/yuzu/firmware/*.nca
     do
         folder=${entry##*/}
-        mkdir -p "$HOME/.config/Ryujinx/bis/system/Contents/registered/$folder/"
-        cp "$entry" "$HOME/.config/Ryujinx/bis/system/Contents/registered/$folder/00"
+        mkdir -p "$HOME//Ryujinx/bis/system/Contents/registered/$folder/"
+        cp "$entry" "$HOME//Ryujinx/bis/system/Contents/registered/$folder/00"
         
     done
 }

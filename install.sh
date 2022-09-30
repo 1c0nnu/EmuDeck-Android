@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #Colors
 NONE='\033[00m'
 RED='\033[01;31m'
@@ -15,13 +15,29 @@ BLINK='\x1b[5m'
 #Setup Termux
 #
 
-setup_termux
+setupTermux(){
+	export DEBIAN_FRONTEND=noninteractive
+	apt-get update && 
+		apt-get -o "Dpkg::Options::=--force-confold"  upgrade -q -y --force-yes &&
+		apt-get -o "Dpkg::Options::=--force-confold"  dist-upgrade -q -y --force-yes
+	pkg autoclean
+	pkg update -y && pkg upgrade -y
+	pkg install git wget jq rsync unzip whiptail binutils build-essential liblz4 libuv ninja -y
+	
+	FOLDER=~/storage
+	if [ ! -d "$FOLDER" ]; then	
+		termux-setup-storage
+	fi
+	
+}
+
+setupTermux
 
 
 #
 #Clone Files
 #
-EMUDECKGIT="$HOME/.config/EmuDeck/backend"
+EMUDECKGIT="$HOME//EmuDeck/backend"
 if [ -d "$EMUDECKGIT" ]; then
 	cd $EMUDECKGIT && git pull && cd $HOME
 else
@@ -55,11 +71,11 @@ exec > >(tee "${LOGFILE}") 2>&1
 date "+%Y.%m.%d-%H:%M:%S %Z"
 
 #Mark if this not a fresh install
-#FOLDER="$HOME/.config/EmuDeck/"
+#FOLDER="$HOME//EmuDeck/"
 #if [ -d "$FOLDER" ]; then
-#	echo "" > "$HOME/.config/EmuDeck/.finished"
+#	echo "" > "$HOME//EmuDeck/.finished"
 #fi
-#SECONDTIME="$HOME/.config/EmuDeck/.finished"
+#SECONDTIME="$HOME//EmuDeck/.finished"
 
 
 
@@ -155,7 +171,7 @@ fi
 # Android 11 instructions
 
 # Bye bye screen
-echo "" > "$HOME/.config/EmuDeck/.finished"
+echo "" > "$HOME//EmuDeck/.finished"
 
 # source "$EMUDECKGIT/pages/EndPage.sh"
 

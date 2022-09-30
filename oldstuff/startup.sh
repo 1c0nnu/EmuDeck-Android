@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # export NEWT_COLORS="
 # root=,red

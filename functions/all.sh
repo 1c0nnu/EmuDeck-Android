@@ -1,5 +1,5 @@
-#!/bin/sh
-emuDecksettingsFile="$HOME/emudeck/settings.sh"
+#!/bin/bash
+emuDecksettingsFile="$HOME//emudeck/settings.sh"
 
 export NEWT_COLORS='
 window=,red

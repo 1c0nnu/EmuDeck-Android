@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 while true; do
 	question=$(whiptail --title "Choose your Device" \
    --radiolist "We tailor the experience depending on the selected device, each device has its own special configuration, different emulators and adjusted bezels." 10 80 4 \
