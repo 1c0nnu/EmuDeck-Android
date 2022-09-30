@@ -1,3 +1,27 @@
+function changeLine() {
+	local KEYWORD=$1; shift
+	local REPLACE=$1; shift
+	local FILE=$1
+
+	local OLD=$(escapeSedKeyword "$KEYWORD")
+	local NEW=$(escapeSedValue "$REPLACE")
+
+	echo "Updating: $FILE"
+	echo "Old: "$(cat "$FILE" | grep "^$OLD")
+	sed -i "/^${OLD}/c\\${NEW}" "$FILE"
+	echo "New: "$(cat "$FILE" | grep "^$OLD")
+
+}
+function escapeSedKeyword(){
+	local INPUT=$1;
+	printf '%s\n' "$INPUT" | sed -e 's/[]\/$*.^[]/\\&/g'
+}
+
+function escapeSedValue(){
+	local INPUT=$1
+	printf '%s\n' "$INPUT" | sed -e 's/[\/&]/\\&/g'
+}
+
 function createUpdateSettingsFile(){
 	#!/bin/bash
 
