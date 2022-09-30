@@ -9,7 +9,6 @@ devicePower=0 # 0, 1, 2
 deviceAR=169
 android=10
 
-
 #Default settings for all systems
 doSetupRA=true
 doSetupDolphin=true
@@ -27,8 +26,6 @@ doInstallCitra=false
 doInstallDuck=false
 doInstallPPSSPP=false
 #doInstallMelon=false
-doInstallCHD=false
-
 
 #Default RetroArch configuration 
 RABezels=true
@@ -41,20 +38,6 @@ toolsPath=~/Emulation/tools
 biosPath=~/Emulation/bios
 savesPath=~/Emulation/saves
 storagePath=~/Emulation/storage
-ESDEscrapData=~/Emulation/tools/downloaded_media
-
-#Default ESDE Theme
-esdeTheme="EPICNOIR"
-
-
-#Advanced settings
-doSelectWideScreen=false
-doRASignIn=false
-doRAEnable=false
-doESDEThemePicker=false
-doSelectEmulators=false
-doResetEmulators=false
-XemuWide=false
 
 #New UI settings
 achievementsPass=false

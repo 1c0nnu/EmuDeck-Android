@@ -5,38 +5,41 @@ function createUpdateSettingsFile(){
 		echo "#!/bin/bash"> "$emuDecksettingsFile"
 	fi
 	local defaultSettingsList=()	
-	defaultSettingsList+=("doSetupRA=true")
-	defaultSettingsList+=("doSetupDolphin=true")
-	defaultSettingsList+=("doSetupPCSX2=true")		
-	defaultSettingsList+=("doSetupCitra=true")
-	defaultSettingsList+=("doSetupDuck=true")
-	defaultSettingsList+=("doSetupRyujinx=true")
-	defaultSettingsList+=("doSetupPPSSPP=true")
-	#defaultSettingsList+=("doSetupMelon=true")
-	defaultSettingsList+=("doInstallRA=true")
-	defaultSettingsList+=("doInstallDolphin=true")
-	defaultSettingsList+=("doInstallPCSX2=true")
-	defaultSettingsList+=("doInstallCitra=true")
-	defaultSettingsList+=("doInstallDuck=true")
-	defaultSettingsList+=("doInstallPPSSPP=true")
-	#defaultSettingsList+=("doInstallMelon=false")
-	defaultSettingsList+=("RABezels=true")
-	defaultSettingsList+=("RAautoSave=false")
-	defaultSettingsList+=("emulationPath=$HOME/Emulation")
-	defaultSettingsList+=("romsPath=$HOME/Emulation/roms")
-	defaultSettingsList+=("toolsPath=$HOME/Emulation/tools")
-	defaultSettingsList+=("biosPath=$HOME/Emulation/bios")
-	defaultSettingsList+=("savesPath=$HOME/Emulation/saves")
-	defaultSettingsList+=("storagePath=$HOME/Emulation/storage")
-	defaultSettingsList+=("esdeTheme=EPICNOIR")
-	defaultSettingsList+=("achievementsPass=false")
-	defaultSettingsList+=("achievementsUser=false")
-	defaultSettingsList+=("arClassic3D=43")
-	defaultSettingsList+=("arDolphin=43")
-	defaultSettingsList+=("arSega=43")
-	defaultSettingsList+=("arSnes=43")
-	defaultSettingsList+=("RAHandClassic2D=false")
-	defaultSettingsList+=("RAHandHeldShader=false")
+	defaultSettingsList+=("expert=false");
+	defaultSettingsList+=("hasSDCARD=false");
+	defaultSettingsList+=("devicePower=0");
+	defaultSettingsList+=("deviceAR=169");
+	defaultSettingsList+=("android=10");
+	defaultSettingsList+=("doSetupRA=true");
+	defaultSettingsList+=("doSetupDolphin=true");
+	defaultSettingsList+=("doSetupPCSX2=true");
+	defaultSettingsList+=("doSetupCitra=true");
+	defaultSettingsList+=("doSetupDuck=true");
+	defaultSettingsList+=("doSetupPPSSPP=true");
+	defaultSettingsList+=("doInstallRA=false");
+	defaultSettingsList+=("doInstallDolphin=false");
+	defaultSettingsList+=("doInstallPCSX2=false");
+	defaultSettingsList+=("doInstallCitra=false");
+	defaultSettingsList+=("doInstallDuck=false");
+	defaultSettingsList+=("doInstallPPSSPP=false");
+	defaultSettingsList+=("RABezels=true");
+	defaultSettingsList+=("RAautoSave=false");
+	defaultSettingsList+=("emulationPath=~/Emulation");
+	defaultSettingsList+=("romsPath=~/Emulation/roms");
+	defaultSettingsList+=("toolsPath=~/Emulation/tools");
+	defaultSettingsList+=("biosPath=~/Emulation/bios");
+	defaultSettingsList+=("savesPath=~/Emulation/saves");
+	defaultSettingsList+=("storagePath=~/Emulation/storage");
+	defaultSettingsList+=("achievementsPass=false");
+	defaultSettingsList+=("achievementsUser=false");
+	defaultSettingsList+=("arClassic3D=43");
+	defaultSettingsList+=("arDolphin=43");
+	defaultSettingsList+=("arSega=43");
+	defaultSettingsList+=("arSnes=43");
+	defaultSettingsList+=("RAHandClassic2D=false");
+	defaultSettingsList+=("RAHandHeldShader=true");
+	defaultSettingsList+=("doSetupSaveSync=false");
+	
 
 	tmp=$(mktemp)
 	#sort "$emuDecksettingsFile" | uniq -u > "$tmp" && mv "$tmp" "$emuDecksettingsFile"

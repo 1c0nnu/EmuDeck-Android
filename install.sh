@@ -136,8 +136,9 @@ fi
 		# AR Gamecube		
 		# LCD Shader Handhelds		
 		# CRT Shader Handhelds
-		
-	#CHD compressor
+			
+
+# Android 11 instructions
 
 # Bye bye screen
 echo "" > "$HOME/.config/EmuDeck/.finished"
