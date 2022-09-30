@@ -4,7 +4,7 @@ if [ $hasSDCARD == true ]; then
 	
 	while true; do
 		question=$(whiptail --title "Choose your Storage" \
-   	--radiolist "Where do you want to store your roms? " 30 100 4 \
+   	--radiolist "Where do you want to store your roms? " 10 80 4 \
 		"INTERNAL" "We will create your rom folders on your Internal Storage" OFF \
 		"SDCARD" "We will create your rom folders on your SD Card" OFF \
    	3>&1 1<&2 2>&3)
