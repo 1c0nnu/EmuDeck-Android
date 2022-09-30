@@ -18,7 +18,7 @@ while true; do
 	question=$(whiptail --title "EmuDeck configuration mode" \
    --radiolist "Move using your DPAD and select your platforms with the Y button. Press the A button to select." 10 80 4 \
 	"EASY" "This is a 100% automatic mode. Install & Play" OFF \
-	"CUSTOM" "You will be able to configure Aspect Ratios, Bezels, Filters, RetroAchievments, Emulators, etc." OFF \
+	"CUSTOM" "You will be able tu custom what to install" OFF \
    3>&1 1<&2 2>&3)
 	case $question in
 		[EASY]* ) break;;
