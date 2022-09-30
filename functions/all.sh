@@ -17,6 +17,6 @@ else
 fi
 
 #Functions
-source "functions/helpers.sh"
-source "functions/setupTermux.sh"
-source "functions/setEmusByDefaultOnEasy.sh"
+source "$EMUDECKGIT/functions/helpers.sh"
+source "$EMUDECKGIT/functions/setupTermux.sh"
+source "$EMUDECKGIT/functions/setEmusByDefaultOnEasy.sh"
