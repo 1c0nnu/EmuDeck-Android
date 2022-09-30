@@ -10,13 +10,14 @@ deviceAR=169
 android=10
 
 #Default settings for all systems
-doSetupRA=true
-doSetupDolphin=true
-doSetupPCSX2=true
-doSetupCitra=true
-doSetupDuck=true
-doSetupPPSSPP=true
-#doSetupMelon=true
+doSetupRA=false
+doSetupDolphin=false
+doSetupPCSX2=false
+doSetupCitra=false
+doSetupDuck=false
+doSetupPPSSPP=false
+doSetupSkyline=false
+doSetupDrastic=false
 
 #Install all systems by default
 doInstallRA=false
@@ -25,7 +26,8 @@ doInstallPCSX2=false
 doInstallCitra=false
 doInstallDuck=false
 doInstallPPSSPP=false
-#doInstallMelon=false
+doInstallSkyline=false
+doSetupDrastic=false
 
 #Default RetroArch configuration 
 RABezels=true

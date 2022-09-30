@@ -57,7 +57,7 @@ case $question in
 		done
 		case $androidV in
 			"7")
-				setSetting android 10
+				setSetting android 7
 			;;
 			"9")
 				setSetting android 9
@@ -74,25 +74,20 @@ case $question in
 	"ANDROID")
 		while true; do
 			androidV=$(whiptail --title "Android Version" \
-	   	--radiolist "What Android Version are you running?" 10 80 4 \
-			"7" "Android 7. The version that comes preinstalled" ON \
-			"9" "Android 9" OFF \
-			"11" "Android 11" OFF \
+	   	--radiolist "What Android Version are you running?" 10 80 4 \		
+			"10" "Android 10 or older" OFF \
+			"11" "Android 11 or newer" OFF \
 	   	3>&1 1<&2 2>&3)
-			case $androidV in
-				[7]* ) break;;
-				[9]* ) break;;
+			case $androidV in				
+				[10]* ) break;;
 				[11]* ) break;;
 				* ) echo "Please answer yes or no.";;
 			esac
 		done
 		case $androidV in
-			"7")
+			"10")
 				setSetting android 10
 			;;
-			"9")
-				setSetting android 9
-			;;  
 			"11")
 				setSetting android 11
 			;;  
@@ -131,8 +126,9 @@ case $question in
 			"LOW" "It's an entry level Android Phone" OFF \
 		   3>&1 1<&2 2>&3)
 			case $cpuV in
-				[YES]* ) break;;
-				[NO]* ) break;;
+				[HIGH]* ) break;;
+				[MEDIUM]* ) break;;
+				[LOW]* ) break;;
 				* ) echo "Please answer yes or no.";;
 			esac
 		done
@@ -143,7 +139,7 @@ case $question in
 			"MEDIUM")
 				setSetting devicePower 1
 			;;  
-			"NO")
+			"LOW")
 				setSetting devicePower 0
 			;;
 			*)

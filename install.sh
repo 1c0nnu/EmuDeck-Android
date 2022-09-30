@@ -75,53 +75,63 @@ createUpdateSettingsFile
 # Welcome, Quick or custom?
 source "$EMUDECKGIT/pages/WelcomePage.sh"
 
-# Device?
+# Device? # Android 11?
 source "$EMUDECKGIT/pages/DeviceSelectorPage.sh"
 
 # Location
 source "$EMUDECKGIT/pages/RomStoragePage.sh"
-
-# Android 11?
-
 
 
 #
 ## Custom mode Questions
 #
 
-if [ $setupMode == 'CUSTOM' ]; then 
-	
-	
-	# Screen AR - Only Android
+if [ $expert == true ]; then 
 	
 	# Emulators
+	source "$EMUDECKGIT/pages/EmulatorSelectorPage.sh"
 	
 	# Overwrite configuration?
+	source "$EMUDECKGIT/pages/EmulatorConfigurationPage.sh"
 	
 	# Retroachievements
+	# source "$EMUDECKGIT/pages/RAAchievementsPage.sh"
 	
 	# Bezels
-	
+	# source "$EMUDECKGIT/pages/RABezelsPage.sh"
+
 	# AR Sega Classic
+	# source "$EMUDECKGIT/pages/AspectRatioSegaPage.sh"
 	
 	# AR SNES + NES
+	# source "$EMUDECKGIT/pages/AspectRatioSNESPage.sh"
 	
 	# AR 3D Classics
+	# source "$EMUDECKGIT/pages/AspectRatio3DPage.sh"
 	
 	# AR Gamecube
+	# source "$EMUDECKGIT/pages/AspectRatioDolphinPage.sh"
 	
 	# LCD Shader Handhelds
+	# source "$EMUDECKGIT/pages/ShadersHandheldsPage.sh"
 	
 	# CRT Shader Handhelds
+	# source "$EMUDECKGIT/pages/Shaders2DPage.sh"
 	
 	# Frontend
+	# source "$EMUDECKGIT/pages/PegasusInstallPage.sh"
 	
 	# Pegasus Theme
+	# source "$EMUDECKGIT/pages/PegasusThemePage.sh"
 
 
 fi
 
-# Installation..
+#Default Emus per system on Easy mode
+if [ $expert == false ]; then 
+	setEmusByDefaultOnEasy
+fi
+# Installation...
 
 	#Emulators installation
 
@@ -131,6 +141,7 @@ fi
 	
 		# Retroachievements
 		# RA Bezels
+
 		# AR Sega
 		# AR SNES+NES# AR 3D Classics		
 		# AR Gamecube		
@@ -143,39 +154,13 @@ fi
 # Bye bye screen
 echo "" > "$HOME/.config/EmuDeck/.finished"
 
+# source "$EMUDECKGIT/pages/EndPage.sh"
 
 
 
-# source "$EMUDECKGIT/pages/WelcomePage.sh"
-# source "$EMUDECKGIT/pages/VideoGuidePage.sh"
 # source "$EMUDECKGIT/pages/UpdateEmusPage.sh"
 # source "$EMUDECKGIT/pages/UninstallPage.sh"
 # source "$EMUDECKGIT/pages/ToolsAndStuffPage.sh"
-# source "$EMUDECKGIT/pages/ShadersHandheldsPage.sh"
-# source "$EMUDECKGIT/pages/Shaders2DPage.sh"
 # source "$EMUDECKGIT/pages/SettingsPage.sh"
-# source "$EMUDECKGIT/pages/RomStructurePage.sh"
-
 # source "$EMUDECKGIT/pages/ResetPage.sh"
-# source "$EMUDECKGIT/pages/RemotePlayWhateverPage.sh"
-# source "$EMUDECKGIT/pages/RAConfigPage.sh"
-# source "$EMUDECKGIT/pages/RABezelsPage.sh"
-# source "$EMUDECKGIT/pages/RAAchievementsPage.sh"
-# source "$EMUDECKGIT/pages/PowerToolsPage.sh"
-# source "$EMUDECKGIT/pages/PegasusThemePage.sh"
-# source "$EMUDECKGIT/pages/PegasusInstallPage.sh"
-# source "$EMUDECKGIT/pages/GyroDSUPage.sh"
-# source "$EMUDECKGIT/pages/ErrorPage.sh"
-# source "$EMUDECKGIT/pages/EndPage.sh"
-# source "$EMUDECKGIT/pages/EmulatorSelectorPage.sh"
-# source "$EMUDECKGIT/pages/EmulatorConfigurationPage.sh"
-# source "$EMUDECKGIT/pages/EmuGuidePage.sh"
-
-# source "$EMUDECKGIT/pages/CloudSyncPage.sh"
 # source "$EMUDECKGIT/pages/CheckBiosPage.sh"
-# source "$EMUDECKGIT/pages/CHDToolPage.sh"
-# source "$EMUDECKGIT/pages/ChangeLogPage.sh"
-# source "$EMUDECKGIT/pages/AspectRatioSNESPage.sh"
-# source "$EMUDECKGIT/pages/AspectRatioSegaPage.sh"
-# source "$EMUDECKGIT/pages/AspectRatioDolphinPage.sh"
-# source "$EMUDECKGIT/pages/AspectRatio3DPage.sh"

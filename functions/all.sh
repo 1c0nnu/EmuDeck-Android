@@ -19,3 +19,4 @@ fi
 #Functions
 source "functions/helpers.sh"
 source "functions/setupTermux.sh"
+source "functions/setEmusByDefaultOnEasy.sh"
