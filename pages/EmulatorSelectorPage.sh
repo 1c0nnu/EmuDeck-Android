@@ -2,7 +2,7 @@
 echo $devicePower
 read pepe
 case $devicePower in
-0)		
+'0')		
 		question=$(whiptail --title "Emulators" \
 	   --checklist "These are the emulators you can install. We've disabled those not recommended for your device. You can disable more emulators if you don't want to install all of them" 10 80 4 \
 		"RA" "RetroArch - Classic 2D and 3D Games" ON \
@@ -15,7 +15,7 @@ case $devicePower in
 	   3>&1 1<&2 2>&3)
 	
 ;;
-1)	
+'1')	
 		question=$(whiptail --title "Emulators" \
 	   --checklist "These are the emulators you can install. We've disabled those not recommended for your device. You can disable more emulators if you don't want to install all of them" 10 80 4 \
 		"RA" "RetroArch - Classic 2D and 3D Games" ON \
@@ -28,7 +28,7 @@ case $devicePower in
 	   3>&1 1<&2 2>&3)	
 	
 ;;
-2)
+'2')
 		question=$(whiptail --title "Emulators" \
 	   --checklist "These are the emulators you can install. We've disabled those not recommended for your device. You can disable more emulators if you don't want to install all of them" 10 80 4 \
 		"RA" "RetroArch - Classic 2D and 3D Games" ON \
