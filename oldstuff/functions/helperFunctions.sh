@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Global variables
-emuDecksettingsFile="$HOME/emudeck/settings.sh"
+emuDecksettingsFile="$HOME/storage/shared/emudeck/settings.sh"
 
 function getScreenAR(){
 	local productName

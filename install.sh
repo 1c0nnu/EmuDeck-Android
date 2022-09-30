@@ -18,6 +18,17 @@ BLINK='\x1b[5m'
 setup_termux
 
 
+#
+#Clone Files
+#
+EMUDECKGIT="$HOME/.config/EmuDeck/backend"
+if [ -d "$EMUDECKGIT" ]; then
+	cd $EMUDECKGIT && git pull && cd $HOME
+else
+	git clone https://github.com/EmuDeck/EmuDeck-Android.git "$EMUDECKGIT"
+	git checkout beta
+fi
+
 if [ !-d "$EMUDECKGIT" ]; then
 
 	echo "### Termux Mirrors seems to be down"  &>> ~/storage/shared/emudeck.log
@@ -30,24 +41,14 @@ if [ !-d "$EMUDECKGIT" ]; then
 	setup_termux
 fi
 
-#
-#Clone Files
-#
-EMUDECKGIT="$HOME/.config/EmuDeck/backend"
-if [ -d "$EMUDECKGIT" ]; then
-	cd $EMUDECKGIT && git pull && cd $HOME
-else
-	git clone https://github.com/EmuDeck/EmuDeck-Android.git "$EMUDECKGIT"
-	git checkout beta
-fi
 
 source "$EMUDECKGIT/functions/all.sh"
 
 #
 #Log file
 #
-LOGFILE="$HOME/emudeck/emudeck.log"
-mv "${LOGFILE}" "$HOME/emudeck/emudeck.last.log"
+LOGFILE="$HOME/storage/shared/emudeck/emudeck.log"
+mv "${LOGFILE}" "$HOME/storage/shared/emudeck/emudeck.last.log"
 
 echo "${@}" > "${LOGFILE}" #might as well log out the parameters of the run
 exec > >(tee "${LOGFILE}") 2>&1
