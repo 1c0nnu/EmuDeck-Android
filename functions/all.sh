@@ -1,5 +1,5 @@
 #!/bin/bash
-emuDecksettingsFile="$HOME/storage/shared/emudeck/settings.sh"
+emuDecksettingsFile="$HOME"/storage/shared/emudeck/settings.sh
 
 # export NEWT_COLORS='
 # window=,red
@@ -17,6 +17,6 @@ else
 fi
 
 #Functions
-source "$EMUDECKGIT/functions/helpers.sh"
-source "$EMUDECKGIT/functions/setupTermux.sh"
-source "$EMUDECKGIT/functions/setEmusByDefaultOnEasy.sh"
+source "$EMUDECKGIT"/functions/helpers.sh
+source "$EMUDECKGIT"/functions/setupTermux.sh
+source "$EMUDECKGIT"/functions/setEmusByDefaultOnEasy.sh
