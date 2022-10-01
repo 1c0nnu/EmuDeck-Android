@@ -132,7 +132,7 @@ configEmuFP(){
 	fi	
 	setMSG "Updating $name Config using $overwrite"	
 	
-	rsync -avhp --mkpath "$EMUDECKGIT/configs/${ID}" "$HOME/storage/shared" $overwrite
+	rsync -avhp --mkpath "$EMUDECKGIT/configs/${ID}" "$ID" $overwrite
 	
 
 }

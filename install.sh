@@ -30,14 +30,14 @@ setupTermux(){
 	fi
 	
 }
-
-#setupTermux
-
+EMUDECKGIT="$HOME/EmuDeck/backend"
+if [ ! -d "$FOLDER" ]; then	
+	setupTermux
+fi
 
 #
 #Clone Files
 #
-EMUDECKGIT="$HOME/EmuDeck/backend"
 if [ -d "$EMUDECKGIT" ]; then
 	cd $EMUDECKGIT && git checkout beta && git pull && cd $HOME
 else
@@ -74,12 +74,16 @@ date "+%Y.%m.%d-%H:%M:%S %Z"
 
 
 #Mark if this not a fresh install
-#FOLDER="$HOME/EmuDeck/"
-#if [ -d "$FOLDER" ]; then
-#	echo "" > "$HOME/EmuDeck/.finished"
-#fi
-#SECONDTIME="$HOME/EmuDeck/.finished"
-
+FOLDER="$HOME/EmuDeck/"
+if [ -d "$FOLDER" ]; then
+	echo "" > "$HOME/EmuDeck/.finished"
+fi
+FILE="$HOME/EmuDeck/.finished"
+if [ -f "SECONDTIME" ]; then
+	second=true
+else
+	second=false	
+fi
 
 
 
@@ -112,9 +116,10 @@ if [ $expert == 'true' ]; then
 	# Emulators	
 	source $EMUDECKGIT/pages/EmulatorSelectorPage.sh
  
- 	# Overwrite configuration?
- 	source "$EMUDECKGIT"/pages/EmulatorConfigurationPage.sh
- 	
+ 	if [ $second == true ]; then
+ 		# Overwrite configuration?
+ 		source "$EMUDECKGIT"/pages/EmulatorConfigurationPage.sh
+ 	fi
  	# Retroachievements
  	source "$EMUDECKGIT"/pages/RAAchievementsPage.sh
  	
@@ -156,61 +161,92 @@ if [ $expert == false ]; then
 fi
 # Installation...
 
+	#Folder creation	
+	if [ $romPathSelection == 'INTERNAL' ]; then
+		mkdir -p $emulationPath
+		mkdir -p $romsPath
+		#mkdir -p $toolsPath
+		#mkdir -p $savesPath
+		#mkdir -p $storagePath
+		rsync -r --ignore-existing "$EMUDECKGIT/roms/" "$romsPath" 
+	else
+		if [ $android -lt 11 ]; then
+			mkdir -p $emulationPath
+			mkdir -p $romsPath
+			#mkdir -p $toolsPath
+			#mkdir -p $savesPath
+			#mkdir -p $storagePath
+			rsync -r --ignore-existing "$EMUDECKGIT/roms/" "$romsPath" 
+		else
+			#We are forced to install everything on the shared volume since A>11 won't allow Termux to write anywhere else
+			mkdir -p $HOME/storage/shared/Emulation
+			mkdir -p $HOME/storage/shared/Emulation/roms
+			#mkdir -p $HOME/storage/shared/Emulation/tools
+			#mkdir -p $HOME/storage/shared/Emulation/saves			
+			rsync -r --ignore-existing "$EMUDECKGIT/roms/" "$HOME"/storage/shared/Emulation/roms
+		fi
+	fi
+
+	 
+	
+
 	#Already installed emulators?
 	checkEmus
 
+
+	#Setting up emulators	
+	if [ $doSetupRA == true ]; then
+		RetroArch_init
+	fi
+	if [ $doSetupDolphin == true ]; then
+		Dolphin_init
+	fi
+	if [ $doSetupPCSX2 == true ]; then
+		Pcsx2_init
+	fi
+	if [ $doSetupCitra == true ]; then
+		Citra_init
+	fi
+	if [ $doSetupDuck == true ]; then
+		Duckstation_init
+	fi
+	if [ $doSetupPPSSPP == true ]; then
+		PPSSPP_init
+	fi
+	if [ $doSetupSkyline == true ]; then
+		Skyline_init
+	fi
+	if [ $doSetupDrastic == true ]; then
+		echo ""
+	fi
+	
 	#Emulators installation
 	if [ $doInstallRA == true ] && [  $hasRA == false  ]; then
-		echo ""
+		RetroArch_install
 	fi
 	if [ $doInstallDolphin == true ] && [  $hasDolphin == false  ]; then
 		Dolphin_install
 	fi
 	if [ $doInstallPCSX2 == true ] && [  $hasPCSX2 == false  ]; then
-		echo ""
+		Pcsx2_install
 	fi
 	if [ $doInstallCitra == true ] && [  $hasCitra == false  ]; then
-		echo ""
+		Citra_install
 	fi
 	if [ $doInstallDuck == true ] && [  $hasDuck == false  ]; then
-		echo ""
+		Duckstation_install
 	fi
 	if [ $doInstallPPSSPP == true ] && [  $hasPPSSPP == false  ]; then
-		echo ""
+		PPSSPP_install
 	fi
 	if [ $doInstallSkyline == true ] && [  $hasSkyline == false  ]; then
-		echo ""
+		Skyline_install
 	fi
 	if [ $doInstallDrastic == true ] && [  $hasDrastic == false  ]; then
 		echo ""
 	fi
 
 
-	#Setting up emulators	
-	if [ $doSetupRA == true ]; then
-		echo ""
-	fi
-	if [ $doSetupDolphin == true ]; then
-		echo ""
-	fi
-	if [ $doSetupPCSX2 == true ]; then
-		echo ""
-	fi
-	if [ $doSetupCitra == true ]; then
-		echo ""
-	fi
-	if [ $doSetupDuck == true ]; then
-		echo ""
-	fi
-	if [ $doSetupPPSSPP == true ]; then
-		echo ""
-	fi
-	if [ $doSetupSkyline == true ]; then
-		echo ""
-	fi
-	if [ $doSetupDrastic == true ]; then
-		echo ""
-	fi
 
 	#Configuring emulators
 	
@@ -227,6 +263,8 @@ fi
 # Android 11 instructions
 
 # Bye bye screen
+source "$EMUDECKGIT"/pages/EndPage.sh"
+
 echo "" > "$HOME/EmuDeck/.finished"
 
 # source "$EMUDECKGIT"/pages/EndPage.sh"

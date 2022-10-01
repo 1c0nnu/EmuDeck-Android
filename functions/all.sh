@@ -24,3 +24,11 @@ source "$EMUDECKGIT"/functions/checkEmus.sh
 
 #EmuScripts
 source "$EMUDECKGIT"/functions/EmuScripts/emuDeckDolphin.sh
+
+source "$EMUDECKGIT"/functions/EmuScripts/emuDeckCitra.sh
+source "$EMUDECKGIT"/functions/EmuScripts/emuDeckDolphin.sh
+source "$EMUDECKGIT"/functions/EmuScripts/emuDeckDuckStation.sh
+source "$EMUDECKGIT"/functions/EmuScripts/emuDeckPcsx2.sh
+source "$EMUDECKGIT"/functions/EmuScripts/emuDeckPPSSPP.sh
+source "$EMUDECKGIT"/functions/EmuScripts/emuDeckSkyline.sh
+source "$EMUDECKGIT"/functions/EmuScripts/emuDeckRetroArch.sh

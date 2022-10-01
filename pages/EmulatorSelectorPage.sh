@@ -1,4 +1,15 @@
 #!/bin/bash
+
+
+setSetting doInstallRA false
+setSetting doInstallDolphin false
+setSetting doInstallPCSX2 false
+setSetting doInstallCitra false
+setSetting doInstallDuck false
+setSetting doInstallPPSSPP false
+setSetting doInstallSkyline false
+setSetting doInstallDrastic false
+
 case $devicePower in
 0)		
 		emulators=$(whiptail --title "Update emulator's configuration" \

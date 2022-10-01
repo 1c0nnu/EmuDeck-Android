@@ -1,9 +1,9 @@
 #!/bin/bash
 
 #variables
-Dolphin_emuName="Dolphin"
-Dolphin_emuType="FlatPak"
-Dolphin_emuPath="org.DolphinEmu.dolphin-emu"
+Dolphin_emuName="dolphin-mmjr"
+Dolphin_emuType="apk"
+Dolphin_emuPath="$HOME/storage/shared/dolphin-mmjr"
 Dolphin_releaseURL=""
 
 #cleanupOlderThings
@@ -17,7 +17,7 @@ Dolphin_install(){
 	local releaseURL="$(getLatestReleaseURLGH "Bankaimaster999/Dolphin-MMJR" "apk")"
 	setMSG "Installing ${Dolphin_emuName}"		
 	curl -L "$releaseURL" -o "${Dolphin_emuName}.apk"
-	xdg-open "${Dolphin_emuName}.apk"
+	xdg-open "${Dolphin_emuName}.apk"	
 }
 
 #ApplyInitialSettings
@@ -26,7 +26,7 @@ Dolphin_init(){
 	echo ""
 	configEmuFP "${Dolphin_emuName}" "${Dolphin_emuPath}" "true"
 	# Dolphin_setupStorage
-	# Dolphin_setEmulationFolder
+	Dolphin_setEmulationFolder
 	# Dolphin_setupSaves
 }
 
@@ -44,7 +44,7 @@ Dolphin_update(){
 Dolphin_setEmulationFolder(){
 	setMSG "${Dolphin_emuName}: Configure Emulation folder"
 	echo ""
-	configFile="$HOME/.var/app/org.DolphinEmu.dolphin-emu/config/dolphin-emu/Dolphin.ini"
+	configFile="$HOME/storage/shared/dolphin-mmjr/Config/Dolphin.ini"
 	gameDirOpt1='ISOPath0 = '
 	gameDirOpt1Setting='ISOPath0 = '"${romsPath}/gc"
 	gameDirOpt2='ISOPath1 = '
@@ -97,7 +97,7 @@ Dolphin_migrate(){
 Dolphin_wideScreenOn(){
 	setMSG "${Dolphin_emuName}: Widescreen On"
 	echo ""
-	configFile="$HOME/.var/app/org.DolphinEmu.dolphin-emu/config/dolphin-emu/GFX.ini"
+	configFile="$HOME/storage/shared/dolphin-mmjr/Config/GFX.ini"
 	wideScreenHack='wideScreenHack = '
 	wideScreenHackSetting='wideScreenHack = True'
 	aspectRatio='AspectRatio = '
@@ -110,7 +110,7 @@ Dolphin_wideScreenOn(){
 Dolphin_wideScreenOff(){
 	setMSG "${Dolphin_emuName}: Widescreen Off"
 	echo ""
-	configFile="$HOME/.var/app/org.DolphinEmu.dolphin-emu/config/dolphin-emu/GFX.ini"
+	configFile="$HOME/storage/shared/dolphin-mmjr/Config/GFX.ini"
 	wideScreenHack='wideScreenHack = '
 	wideScreenHackSetting='wideScreenHack = False'
 	aspectRatio='AspectRatio = '

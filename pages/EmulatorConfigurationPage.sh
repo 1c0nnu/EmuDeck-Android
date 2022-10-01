@@ -1,5 +1,14 @@
 #!/bin/bash
 
+setSetting doSetupRA false
+setSetting doSetupDolphin false
+setSetting doSetupPCSX2 false
+setSetting doSetupCitra false
+setSetting doSetupDuck false
+setSetting doSetupPPSSPP false
+setSetting doSetupSkyline false
+setSetting doSetupDrastic false
+
 case $devicePower in
 "0")	
 	
