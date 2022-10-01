@@ -1,8 +1,8 @@
 #!/bin/bash
 case $devicePower in
 0)		
-		emulators=$(whiptail --title "Emulators" \
-	   --checklist "These are the emulators you can install. We've disabled those not recommended for your device. You can disable more emulators if you don't want to install all of them" 10 80 4 \
+		emulators=$(whiptail --title "Update emulator's configuration" \
+	   --checklist "By default we will overwrite any configuration for the selected emulators." 10 80 4 \
 		"RA" "RetroArch - Classic 2D and 3D Games" ON \
 		"DOLPHIN" "Dolphin - GameCube and Wii" ON \
 		"DUCK" "Duckstation - Playstation 1" ON \
@@ -14,8 +14,8 @@ case $devicePower in
 	
 ;;
 1)	
-		emulators=$(whiptail --title "Emulators" \
-	   --checklist "These are the emulators you can install. We've disabled those not recommended for your device. You can disable more emulators if you don't want to install all of them" 10 80 4 \
+		emulators=$(whiptail --title "Update emulator's configuration" \
+	   --checklist "By default we will overwrite any configuration for the selected emulators." 10 80 4 \
 		"RA" "RetroArch - Classic 2D and 3D Games" ON \
 		"DOLPHIN" "Dolphin - GameCube and Wii" ON \
 		"DUCK" "Duckstation - Playstation 1" ON \
@@ -28,8 +28,8 @@ case $devicePower in
 ;;
 2)
 		
-		emulators=$(whiptail --title "Emulators" \
-	   --checklist "These are the emulators you can install. We've disabled those not recommended for your device. You can disable more emulators if you don't want to install all of them" 10 80 4 \
+		emulators=$(whiptail --title "Update emulator's configuration" \
+	   --checklist "By default we will overwrite any configuration for the selected emulators." 10 80 4 \
 		"RA" "RetroArch - Classic 2D and 3D Games" ON \
 		"DOLPHIN" "Dolphin - GameCube and Wii" ON \
 		"DUCK" "Duckstation - Playstation 1" ON \
