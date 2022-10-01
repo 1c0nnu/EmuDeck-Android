@@ -77,7 +77,7 @@ if [ -d "$FOLDER" ]; then
 	echo "" > "$HOME/EmuDeck/.finished"
 fi
 FILE="$HOME/EmuDeck/.finished"
-if [ -f "SECONDTIME" ]; then
+if [ -f $FILE ]; then
 	second=true
 else
 	second=false	
@@ -114,9 +114,8 @@ if [ $expert == 'true' ]; then
 	source $EMUDECKGIT/pages/EmulatorSelectorPage.sh
  
 	if [ $second == true ]; then
-		# Overwrite configuration?
-		echo ""
-		#source "$EMUDECKGIT"/pages/EmulatorConfigurationPage.sh
+		# Overwrite configuration?		
+		source "$EMUDECKGIT"/pages/EmulatorConfigurationPage.sh
 	fi
 	
 	# Retroachievements
