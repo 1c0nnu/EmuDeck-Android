@@ -381,6 +381,25 @@ RetroArch_setShadersMAT
 
 #Downloading Frontends
 
+if [ $doInstallPegasus == true ]; then
+	Pegasus_install
+fi
+if [ $doInstallDaijisho == true ]; then
+	Daijishou_install
+fi
+if [ $doInstallDig == true ]; then
+	Dig_install
+fi
+if [ $doInstallLaunchbox == true ]; then
+	Launchbox_install
+fi
+if [ $doInstallReset == true ]; then
+	ResetCollection_install
+fi
+if [ $doInstallArc == true ]; then
+	Arc_install
+fi
+
 
 # Android 11 instructions
 

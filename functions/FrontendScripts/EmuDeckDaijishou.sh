@@ -1,5 +1,5 @@
 #!/bin/bash
-function installDaijishou(){
+function Daijishou_install(){
 	installDaihisho=true
 	DIR=~/storage/shared/Android/data/com.magneticchen.daijishou
 	FOLDER=$(test -d "$DIR" && echo -n "true")

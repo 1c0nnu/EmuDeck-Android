@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function installArc(){
+function Arc_install(){
 	installArc=true
 	DIR=~/storage/shared/Android/data/com.magneticchen.daijishou
 	FOLDER=$(test -d "$DIR" && echo -n "true")

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function installLaunchbox(){
+function Launchbox_install(){
 	installLaunch=true
 	DIR=~/storage/shared/Android/data/com.magneticchen.daijishou
 	FOLDER=$(test -d "$DIR" && echo -n "true")
