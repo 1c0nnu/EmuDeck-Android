@@ -8,26 +8,26 @@ hasSDCARD=false
 devicePower=0
 deviceAR=169
 android=10
-
+#All Emus are off since their installation depends on the device selected
 #Default settings for all systems
-doSetupRA=true
-doSetupDolphin=true
-doSetupPCSX2=true
-doSetupCitra=true
-doSetupDuck=true
-doSetupPPSSPP=true
-doSetupSkyline=true
-doSetupDrastic=true
+doSetupRA=false
+doSetupDolphin=false
+doSetupPCSX2=false
+doSetupCitra=false
+doSetupDuck=false
+doSetupPPSSPP=false
+doSetupSkyline=false
+doSetupDrastic=false
 
 #Install all systems by default
-doInstallRA=true
-doInstallDolphin=true
-doInstallPCSX2=true
-doInstallCitra=true
-doInstallDuck=true
-doInstallPPSSPP=true
-doInstallSkyline=true
-doInstallDrastic=true
+doInstallRA=false
+doInstallDolphin=false
+doInstallPCSX2=false
+doInstallCitra=false
+doInstallDuck=false
+doInstallPPSSPP=false
+doInstallSkyline=false
+doInstallDrastic=false
 
 #Default RetroArch configuration 
 RABezels=false
