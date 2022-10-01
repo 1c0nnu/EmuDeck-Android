@@ -1,3 +1,4 @@
+#!/bin/bash
 function changeLine() {
 	local KEYWORD=$1; shift
 	local REPLACE=$1; shift
