@@ -385,6 +385,9 @@ fi
 RetroArch_setShadersCRT
 RetroArch_setShadersMAT
 
+#AR corrections
+RetroArch_169
+
 #Downloading Frontends
 
 if [ $doInstallPegasus == true ]; then
