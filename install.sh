@@ -454,6 +454,12 @@ if [ $doInstallArc == true ]; then
 	read pause
 fi
 
+#RA64 fixes - TO DO. Support only RA64?
+find $romsPath -type f -name "*.txt" -exec sed -i -e 's/com.retroarch\//com.retroarch.aarch64\//g' {} \;
+find $romsPath -type f -name "*.txt" -exec sed -i -e 's/-e DATADIR \/data\/data\/com.retroarch/-e DATADIR \/data\/data\/com.retroarch.aarch64/g' {} \;	
+find $romsPath -type f -name "*.txt" -exec sed -i -e 's/.browser.retroactivity/com.retroarch.browser.retroactivity/g' {} \;	
+find $romsPath -type f -name "*.txt" -exec sed -i -e 's/com.retroarch-1/com.retroarch.aarch64-1/g' {} \;	
+
 
 # Android 11 instructions
 
