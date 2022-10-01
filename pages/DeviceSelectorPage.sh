@@ -74,7 +74,7 @@ case $question in
 	"ANDROID")
 		while true; do
 			androidV=$(whiptail --title "What Android Version are you running?" \
-	   	--radiolist "What Android Version are you running?" 10 80 4 \		
+	   	--radiolist "What Android Version are you running?" 10 80 4 \
 			"10" "Android 10 or older" OFF \
 			"11" "Android 11 or newer" OFF \
 	   	3>&1 1<&2 2>&3)
