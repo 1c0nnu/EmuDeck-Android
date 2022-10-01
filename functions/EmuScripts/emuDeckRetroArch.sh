@@ -36,8 +36,8 @@ RetroArch_init(){
 	RetroArch_setUpCoreOptAll
 	RetroArch_setConfigAll
 	#Overlays, TO DO: do it properly
-	mkdir -p $RetroArch_emuPath/config/overlays
-	rsync -r --ignore-existing $EMUDECKGIT/configs/RetroArch/config/overlays  $RetroArch_emuPath/config/overlays
+	mkdir -p $RetroArch_emuPath/overlays/pegasus
+	rsync -r --ignore-existing $EMUDECKGIT/configs/RetroArch/overlays/pegasus/  $RetroArch_emuPath/overlays/pegasus/
 	
 	RetroArch_169
 }
