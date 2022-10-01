@@ -125,13 +125,13 @@ if [ $expert == 'true' ]; then
 	# Bezels
 	source "$EMUDECKGIT"/pages/RABezelsPage.sh
 
- 	if [ $deviceAR != 43 ]; then 
-	 	# AR Sega Classic
+	 if [ $deviceAR != 43 ]; then 
+		 # AR Sega Classic
 		source "$EMUDECKGIT"/pages/AspectRatioSegaPage.sh
 		
-	 	# AR SNES + NES
-	 	source "$EMUDECKGIT"/pages/AspectRatioSNESPage.sh
-	 	
+		 # AR SNES + NES
+		 source "$EMUDECKGIT"/pages/AspectRatioSNESPage.sh
+		 
 		# AR 3D Classics
 		source "$EMUDECKGIT"/pages/AspectRatio3DPage.sh
 		
@@ -224,43 +224,50 @@ fi
 #Emulators installation
 if [ $doInstallRA == true ] && [  $hasRA == false  ]; then
 	RetroArch_install
+	clear
 	echo -e  "Press the ${RED}A button${NONE} to install the next emulator"
 	read pause
 
 fi
 if [ $doInstallDolphin == true ] && [  $hasDolphin == false  ]; then
 	Dolphin_install
+	clear
 	echo -e  "Press the ${RED}A button${NONE} to install the next emulator"
 	read pause
 
 fi
 if [ $doInstallPCSX2 == true ] && [  $hasPCSX2 == false  ]; then
 	Pcsx2_install
+	clear
 	echo -e  "Press the ${RED}A button${NONE} to install the next emulator"
 	read pause
 
 fi
 if [ $doInstallCitra == true ] && [  $hasCitra == false  ]; then
 	Citra_install
+	clear
 	echo -e  "Press the ${RED}A button${NONE} to install the next emulator"
 	read pause
 
 fi
 if [ $doInstallDuck == true ] && [  $hasDuck == false  ]; then
 	Duckstation_install
+	clear
 	echo -e  "Press the ${RED}A button${NONE} to install the next emulator"
 	read pause
 
 fi
 if [ $doInstallPPSSPP == true ] && [  $hasPPSSPP == false  ]; then
 	PPSSPP_install
+	clear
 	echo -e  "Press the ${RED}A button${NONE} to install the next emulator"
 	read pause
 
 fi
 if [ $doInstallSkyline == true ] && [  $hasSkyline == false  ]; then
 	Skyline_install
-	echo -e  "Press the ${RED}A button${NONE} to install the next emulator"
+	clear
+	echo -e  "Press the ${RED}A button${NONE} to continue"
 	read pause
 
 fi
@@ -383,21 +390,68 @@ RetroArch_setShadersMAT
 
 if [ $doInstallPegasus == true ]; then
 	Pegasus_install
+	clear
+	echo -e  "Press the ${RED}A button${NONE} to install Pegasus Themes"
+	read pause
+	
+	echo -e "Downloading Pegasus Theme : RP Epic Noir..."
+	git clone https://github.com/dragoonDorise/RP-epic-noir.git ~/storage/shared/pegasus-frontend/themes/RP-epic-noir
+	cd ~/storage/shared/pegasus-frontend/themes/RP-epic-noir && git pull
+	echo -e "${GREEN}OK${NONE}"
+	
+	echo -e "Downloading Pegasus Theme : RP Switch..."
+	#We delete the theme, for previous users	
+	git clone https://github.com/dragoonDorise/RP-switch.git ~/storage/shared/pegasus-frontend/themes/RP-switch
+	cd ~/storage/shared/pegasus-frontend/themes/RP-switch && git pull
+	echo -e "${GREEN}OK${NONE}"
+	
+	echo -ne "Downloading Pegasus Theme : Retro Mega..."
+	git clone https://github.com/plaidman/retromega-next.git ~/storage/shared/pegasus-frontend/themes/retromega
+	cd ~/storage/shared/pegasus-frontend/themes/retromega && git pull
+	echo -e "${GREEN}OK${NONE}"
+	
+	if [ $deviceAR != 43 ]; then 
+		echo -ne "Downloading Pegasus Theme : GameOS..."
+		git clone https://github.com/PlayingKarrde/gameOS.git ~/storage/shared/pegasus-frontend/themes/gameOS
+		cd ~/storage/shared/pegasus-frontend/themes/gameOS && git pull
+		echo -e "${GREEN}OK${NONE}"
+	
+		echo -ne "Downloading Pegasus Theme : NeoRetro Dark..."
+		git clone https://github.com/TigraTT-Driver/neoretro-dark.git ~/storage/shared/pegasus-frontend/themes/neoretro-dark
+		cd ~/storage/shared/pegasus-frontend/themes/neoretro-dark && git pull
+		echo -e "${GREEN}OK${NONE}"
+	fi
+	
 fi
 if [ $doInstallDaijisho == true ]; then
 	Daijishou_install
+	clear
+	echo -e  "Press the ${RED}A button${NONE} to continue"
+	read pause
 fi
 if [ $doInstallDig == true ]; then
 	Dig_install
+	clear
+	echo -e  "Press the ${RED}A button${NONE} to continue"
+	read pause
 fi
 if [ $doInstallLaunchbox == true ]; then
 	Launchbox_install
+	clear
+	echo -e  "Press the ${RED}A button${NONE} to continue"
+	read pause
 fi
 if [ $doInstallReset == true ]; then
 	ResetCollection_install
+	clear
+	echo -e  "Press the ${RED}A button${NONE} to continue"
+	read pause
 fi
 if [ $doInstallArc == true ]; then
 	Arc_install
+	clear
+	echo -e  "Press the ${RED}A button${NONE} to continue"
+	read pause
 fi
 
 
