@@ -1,6 +1,6 @@
 #!/bin/bash
 while true; do
-	question=$(whiptail --title "Aspect Ratio" \
+	question=$(whiptail --title "Choose your aspect ratio for your Classic Sega Systems" \
    --radiolist "Choose your aspect ratio for your Classic Sega Systems" 10 80 4 \
 	"43" "4:3 Original TV Aspect Ratio" ON \
 	"32" "3:2 Less black bars, slight distortion " OFF \

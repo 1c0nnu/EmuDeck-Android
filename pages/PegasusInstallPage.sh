@@ -1,44 +1,33 @@
-while true; do
-	frontend=$(whiptail --title "Choose your frontend" \
+	frontends=$(whiptail --title "Choose your Frontend" \
    --checklist "Move using your DPAD and select your platforms with the Y button. Press the A button to select." 10 80 4 \
-	"PEGASUS" "Pegasus - Automatic configuration, you need to scrap your artwork on a PC" OFF \
+	"PEGASUS" "Pegasus - Automatic configuration" OFF \
 	"DAIJISHO" "Daihisho - Needs manual configuration" OFF \
 	"DIG" "Dig - Needs manual configuration" OFF \
 	"LAUNCHBOX" "Launchbox - Needs manual configuration" OFF \
 	"RESET" "Reset Collection - Paid - Needs manual configuration" OFF \
 	"ARC" "Arc Browser - Paid - Needs manual configuration" OFF \
    3>&1 1<&2 2>&3)
-	case $frontend in
-		[PEGASUS]* ) break;;
-		[DAIJISHO]* ) break;;
-		[DIG]* ) break;;
-		[LAUNCHBOX]* ) break;;
-		[RESET]* ) break;;
-		[ARC]* ) break;;
-		* ) echo "Please choose.";;
-	esac
- done
  
- case $question in
-	 "PEGASUS")
+ mapfile -t settingsFrontends <<< $frontends
+ 
+ for settingsFrontend in ${settingsFrontends[@]};
+  do
+	  if [[ $settingsFrontend == *"PEGASUS"* ]]; then
 		 setSetting doInstallPegasus true
-	 ;;
-	 "DAIJISHO")
+	 fi
+	 if [[ $settingsFrontend == *"DAIJISHO"* ]]; then
 		 setSetting doInstallDaijisho true
-	 ;;
-	 "DIG")
+	 fi
+	 if [[ $settingsFrontend == *"DIG"* ]]; then
 		 setSetting doInstallDig true
-	 ;;
-	 "LAUNCHBOX")
+	 fi
+	 if [[ $settingsFrontend == *"LAUNCHBOX"* ]]; then
 		 setSetting doInstallLaunchbox true
-	 ;;
-	 "RESET")
+	 fi
+	 if [[ $settingsFrontend == *"RESET"* ]]; then
 		 setSetting doInstallReset true
-	 ;;
-	 "ARC")
+	 fi
+	 if [[ $settingsFrontend == *"ARC"* ]]; then
 		 setSetting doInstallArc true
-	;;	 
-	 *)
-		 echo "default"
-	 ;;
- esac
+	 fi
+  done

@@ -58,7 +58,7 @@ if [ ! -d "$EMUDECKGIT" ]; then
 fi
 
 
-source "$EMUDECKGIT/functions/all.sh"
+source "$EMUDECKGIT"/functions/all.sh
 
 #
 #Log file
@@ -93,39 +93,40 @@ createUpdateSettingsFile
 #
 
 # Welcome, Quick or custom?
-source "$EMUDECKGIT/pages/WelcomePage.sh"
+#source "$EMUDECKGIT"/pages/WelcomePage.sh
 
 # Device? # Android 11?
-source "$EMUDECKGIT/pages/DeviceSelectorPage.sh"
+#source "$EMUDECKGIT"/pages/DeviceSelectorPage.sh
 
 # Location
-source "$EMUDECKGIT/pages/RomStoragePage.sh"
-
+#source "$EMUDECKGIT"/pages/RomStoragePage.sh
 
 #
 ## Custom mode Questions
 #
+source "$EMUDECKGIT"/pages/RAAchievementsPage.sh
+exit
 
-if [ $expert == true ]; then 
+if [ $expert == 'true' ]; then 
 	
-	# Emulators
-	source "$EMUDECKGIT/pages/EmulatorSelectorPage.sh"
-	
-	# Overwrite configuration?
-	source "$EMUDECKGIT/pages/EmulatorConfigurationPage.sh"
-	
-	# Retroachievements
-	source "$EMUDECKGIT/pages/RAAchievementsPage.sh"
-	
-	# Bezels
-	source "$EMUDECKGIT/pages/RABezelsPage.sh"
-
-	# AR Sega Classic
+	# Emulators	
+	source $EMUDECKGIT/pages/EmulatorSelectorPage.sh
+ 
+ 	# Overwrite configuration?
+ 	source "$EMUDECKGIT"/pages/EmulatorConfigurationPage.sh
+ 	
+ 	# Retroachievements
+ 	source "$EMUDECKGIT"/pages/RAAchievementsPage.sh
+ 	
+ 	# Bezels
+ 	source "$EMUDECKGIT/pages/RABezelsPage.sh"
+ 
+ 	# AR Sega Classic
 	source "$EMUDECKGIT/pages/AspectRatioSegaPage.sh"
 	
-	# AR SNES + NES
-	source "$EMUDECKGIT/pages/AspectRatioSNESPage.sh"
-	
+ 	# AR SNES + NES
+ 	source "$EMUDECKGIT/pages/AspectRatioSNESPage.sh"
+ 	
 	# AR 3D Classics
 	source "$EMUDECKGIT/pages/AspectRatio3DPage.sh"
 	
@@ -148,7 +149,7 @@ if [ $expert == true ]; then
 	fi
 
 fi
-
+exit
 #Default Emus per system on Easy mode
 if [ $expert == false ]; then 
 	setEmusByDefaultOnEasy

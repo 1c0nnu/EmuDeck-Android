@@ -1,40 +1,30 @@
 #!/bin/bash
-while true; do
-	question=$(whiptail --title "Pegasus Theme" \
-   --checklist "What Pegasus theme do you want to install" 10 80 4 \
-	"EPIC" "RP - Epic Noir" ON \
-	"SWITCH" "RP - Switch" OFF \
-	"MEGA" "Retro Mega" OFF \
-	"GAMEOS" "GameOS" OFF \
-	"NEORETRO" "NeoRetro Dark" OFF \
-   3>&1 1<&2 2>&3)
-	case $question in
-		[EPIC]* ) break;;
-		[SWITCH]* ) break;;
-		[MEGA]* ) break;;
-		[GAMEOS]* ) break;;
-		[NEORETRO]* ) break;;
-		* ) echo "Please select your theme.";;
-	esac
-done
+themesQ=$(whiptail --title "Pegasus Theme" \
+--checklist "What Pegasus theme do you want to install" 10 80 4 \
+"EPIC" "RP - Epic Noir" ON \
+"SWITCH" "RP - Switch" OFF \
+"MEGA" "Retro Mega" OFF \
+"GAMEOS" "GameOS" OFF \
+"NEORETRO" "NeoRetro Dark" OFF \
+3>&1 1<&2 2>&3)
 
-case $question in
-	 "EPIC")
+mapfile -t themes <<< themesQ
+ 
+ for theme in ${themes[@]};
+  do
+	  if [[ $theme == *"EPIC"* ]]; then
 		 setSetting doInstallThemeEpic true
-	 ;;
-	 "SWITCH")
+	 fi
+	 if [[ $theme == *"SWITCH"* ]]; then
 		 setSetting doInstallThemeSwitch true
-	 ;;
-	 "MEGA")
+	 fi
+	 if [[ $theme == *"MEGA"* ]]; then
 		 setSetting doInstallThemeMega true
-	 ;;
-	 "GAMEOS")
+	 fi
+	 if [[ $theme == *"GAMEOS"* ]]; then
 		 setSetting doInstallThemeGameOS true
-	 ;;
-	 "NEORETRO")
+	 fi
+	 if [[ $theme == *"NEORETRO"* ]]; then
 		 setSetting doInstallThemeNeoRetro true
-	 ;;
-	 *)
-		 echo "default"
-	 ;;
- esac
+	 fi
+  done

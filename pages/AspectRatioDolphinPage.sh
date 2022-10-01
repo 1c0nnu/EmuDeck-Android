@@ -1,6 +1,6 @@
 #!/bin/bash
 while true; do
-	question=$(whiptail --title "Aspect Ratio" \
+	question=$(whiptail --title "Choose your aspect ratio for your GameCube Games" \
    --radiolist "Choose your aspect ratio for your GameCube Games" 10 80 4 \
 	"43" "4:3 Original TV Aspect Ratio" ON \
 	"169" "16:9 Widescreen using WideScreen hacks" OFF \
