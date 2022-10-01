@@ -23,9 +23,7 @@ RetroArch_backupConfigs(){
 #Install
 RetroArch_install(){
 	setMSG "${RetroArch_emuName}: Install"
-	wget  -q --show-progress https://buildbot.libretro.com/stable/1.11.0/android/RetroArch_aarch64.apk -P ~/
-	installEmuFP "${RetroArch_emuName}" "${RetroArch_emuPath}"	
-	xdg-open ~/RetroArch_aarch64.apk					
+	wget  -q --show-progress https://buildbot.libretro.com/stable/1.11.0/android/RetroArch_aarch64.apk -P ~/ && xdg-open ~/RetroArch_aarch64.apk					
 }
 
 #ApplyInitialSettings

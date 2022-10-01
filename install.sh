@@ -137,7 +137,7 @@ if [ $expert == 'true' ]; then
 		
 		# AR Gamecube
 		source "$EMUDECKGIT"/pages/AspectRatioDolphinPage.sh
-	then 
+	fi 
 	
 	# LCD Shader Handhelds
 	source "$EMUDECKGIT"/pages/ShadersHandheldsPage.sh
