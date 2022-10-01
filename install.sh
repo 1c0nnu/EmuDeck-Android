@@ -93,10 +93,10 @@ createUpdateSettingsFile
 #
 
 # Welcome, Quick or custom?
-#source "$EMUDECKGIT"/pages/WelcomePage.sh
+source "$EMUDECKGIT"/pages/WelcomePage.sh
 
 # Device? # Android 11?
-#source "$EMUDECKGIT"/pages/DeviceSelectorPage.sh
+source "$EMUDECKGIT"/pages/DeviceSelectorPage.sh
 
 # Location
 #source "$EMUDECKGIT"/pages/RomStoragePage.sh
@@ -104,7 +104,7 @@ createUpdateSettingsFile
 #
 ## Custom mode Questions
 #
-source "$EMUDECKGIT"/pages/RAAchievementsPage.sh
+
 exit
 
 if [ $expert == 'true' ]; then 
@@ -119,33 +119,33 @@ if [ $expert == 'true' ]; then
  	source "$EMUDECKGIT"/pages/RAAchievementsPage.sh
  	
  	# Bezels
- 	source "$EMUDECKGIT/pages/RABezelsPage.sh"
+ 	source "$EMUDECKGIT"/pages/RABezelsPage.sh
  
  	# AR Sega Classic
-	source "$EMUDECKGIT/pages/AspectRatioSegaPage.sh"
+	source "$EMUDECKGIT"/pages/AspectRatioSegaPage.sh
 	
  	# AR SNES + NES
- 	source "$EMUDECKGIT/pages/AspectRatioSNESPage.sh"
+ 	source "$EMUDECKGIT"/pages/AspectRatioSNESPage.sh
  	
 	# AR 3D Classics
-	source "$EMUDECKGIT/pages/AspectRatio3DPage.sh"
+	source "$EMUDECKGIT"/pages/AspectRatio3DPage.sh
 	
 	# AR Gamecube
-	source "$EMUDECKGIT/pages/AspectRatioDolphinPage.sh"
+	source "$EMUDECKGIT"/pages/AspectRatioDolphinPage.sh
 	
 	# LCD Shader Handhelds
-	source "$EMUDECKGIT/pages/ShadersHandheldsPage.sh"
+	source "$EMUDECKGIT"/pages/ShadersHandheldsPage.sh
 	
 	# CRT Shader Handhelds
-	source "$EMUDECKGIT/pages/Shaders2DPage.sh"
+	source "$EMUDECKGIT"/pages/Shaders2DPage.sh
 	
 	# Frontend
-	source "$EMUDECKGIT/pages/PegasusInstallPage.sh"
+	source "$EMUDECKGIT"/pages/PegasusInstallPage.sh
 	
 	# Pegasus Theme
 	
 	if [ $doInstallPegasus == true ]; then
-		source "$EMUDECKGIT/pages/PegasusThemePage.sh"
+		source "$EMUDECKGIT"/pages/PegasusThemePage.sh
 	fi
 
 fi
@@ -229,13 +229,13 @@ fi
 # Bye bye screen
 echo "" > "$HOME/EmuDeck/.finished"
 
-# source "$EMUDECKGIT/pages/EndPage.sh"
+# source "$EMUDECKGIT"/pages/EndPage.sh"
 
 
 
-# source "$EMUDECKGIT/pages/UpdateEmusPage.sh"
-# source "$EMUDECKGIT/pages/UninstallPage.sh"
-# source "$EMUDECKGIT/pages/ToolsAndStuffPage.sh"
-# source "$EMUDECKGIT/pages/SettingsPage.sh"
-# source "$EMUDECKGIT/pages/ResetPage.sh"
-# source "$EMUDECKGIT/pages/CheckBiosPage.sh"
+# source "$EMUDECKGIT"/pages/UpdateEmusPage.sh"
+# source "$EMUDECKGIT"/pages/UninstallPage.sh"
+# source "$EMUDECKGIT"/pages/ToolsAndStuffPage.sh"
+# source "$EMUDECKGIT"/pages/SettingsPage.sh"
+# source "$EMUDECKGIT"/pages/ResetPage.sh"
+# source "$EMUDECKGIT"/pages/CheckBiosPage.sh"

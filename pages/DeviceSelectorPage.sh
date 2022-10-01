@@ -1,7 +1,7 @@
 #!/bin/bash
 while true; do
 	question=$(whiptail --title "Choose your Device" \
-   --radiolist "We tailor the experience depending on the selected device, each device has its own special configuration, different emulators and adjusted bezels." 10 80 4 \
+   --radiolist "We tailor the experience depending on the selected device, each device has its own special configuration, different emulators and adjusted bezels." 14 80 4 \
 	"RP2" "Retroid Pocket 2+" OFF \
 	"ODIN" "ODIN Base or Pro" OFF \
 	"ODINLITE" "ODIN Lite" OFF \
@@ -42,7 +42,7 @@ case $question in
 		setSetting devicePower 0
 		setSetting deviceAR 53
 		while true; do
-			androidV=$(whiptail --title "Android Version" \
+			androidV=$(whiptail --title "What Android Version are you running?" \
 		   --radiolist "What Android Version are you running?" 10 80 4 \
 			"7" "Android 7. The version that comes preinstalled" ON \
 			"9" "Android 9" OFF \
@@ -73,7 +73,7 @@ case $question in
 	;;  
 	"ANDROID")
 		while true; do
-			androidV=$(whiptail --title "Android Version" \
+			androidV=$(whiptail --title "What Android Version are you running?" \
 	   	--radiolist "What Android Version are you running?" 10 80 4 \		
 			"10" "Android 10 or older" OFF \
 			"11" "Android 11 or newer" OFF \
@@ -96,7 +96,7 @@ case $question in
 			;;
 		esac
 		while true; do
-			sdcardV=$(whiptail --title "SD Card" \
+			sdcardV=$(whiptail --title "Does your device have a SD Card?" \
 		   --radiolist "Does your device have a SD Card?" 10 80 4 \
 			"YES" "Yes" OFF \
 			"NO" "No" OFF \
@@ -119,7 +119,7 @@ case $question in
 			;;
 		esac
 		while true; do
-			cpuV=$(whiptail --title "Device CPU" \
+			cpuV=$(whiptail --title "What is your Android CPU power grade?" \
 		   --radiolist "What is your Android CPU power grade?" 10 80 4 \
 			"HIGH" "Snapdragon 845, Dimensity D900 or superior" OFF \
 			"MEDIUM" "It's a midrage Android Phone" OFF \
@@ -148,7 +148,7 @@ case $question in
 		esac
 		
 		while true; do
-			arV=$(whiptail --title "Screen Aspect Ratio" \
+			arV=$(whiptail --title "What is your Android Device Aspect Ratio?" \
 		   --radiolist "What is your Android Device Aspect Ratio?" 10 80 4 \
 			"169" "16:9" OFF \
 			"43" "4:3" OFF \
