@@ -165,7 +165,7 @@ function getLatestReleaseURLGH(){
 		url="https://api.github.com/repos/${repository}/releases/latest"
 	fi
 
-	url="$(curl -sL $url | jq -r ".assets[].browser_download_url" | grep -ve 'i386' | grep .${fileType}\$)"
+	url="$(curl -sL $url | jq -r ".assets[].browser_download_url" | grep .${fileType}\$)"
 	echo "$url"
 }
 
