@@ -114,27 +114,30 @@ if [ $expert == 'true' ]; then
 	# Emulators	
 	source $EMUDECKGIT/pages/EmulatorSelectorPage.sh
  
-	 if [ $second == true ]; then
-		 # Overwrite configuration?
-		 source "$EMUDECKGIT"/pages/EmulatorConfigurationPage.sh
-	 fi
-	 # Retroachievements
-	 source "$EMUDECKGIT"/pages/RAAchievementsPage.sh
-	 
-	 # Bezels
-	 source "$EMUDECKGIT"/pages/RABezelsPage.sh
- 
-	 # AR Sega Classic
-	source "$EMUDECKGIT"/pages/AspectRatioSegaPage.sh
+	if [ $second == true ]; then
+		# Overwrite configuration?
+		source "$EMUDECKGIT"/pages/EmulatorConfigurationPage.sh
+	fi
 	
-	 # AR SNES + NES
-	 source "$EMUDECKGIT"/pages/AspectRatioSNESPage.sh
-	 
-	# AR 3D Classics
-	source "$EMUDECKGIT"/pages/AspectRatio3DPage.sh
+	# Retroachievements
+	source "$EMUDECKGIT"/pages/RAAchievementsPage.sh
 	
-	# AR Gamecube
-	source "$EMUDECKGIT"/pages/AspectRatioDolphinPage.sh
+	# Bezels
+	source "$EMUDECKGIT"/pages/RABezelsPage.sh
+
+ 	if [ $deviceAR != 43 ]; then 
+	 	# AR Sega Classic
+		source "$EMUDECKGIT"/pages/AspectRatioSegaPage.sh
+		
+	 	# AR SNES + NES
+	 	source "$EMUDECKGIT"/pages/AspectRatioSNESPage.sh
+	 	
+		# AR 3D Classics
+		source "$EMUDECKGIT"/pages/AspectRatio3DPage.sh
+		
+		# AR Gamecube
+		source "$EMUDECKGIT"/pages/AspectRatioDolphinPage.sh
+	then 
 	
 	# LCD Shader Handhelds
 	source "$EMUDECKGIT"/pages/ShadersHandheldsPage.sh
@@ -146,7 +149,6 @@ if [ $expert == 'true' ]; then
 	source "$EMUDECKGIT"/pages/PegasusInstallPage.sh
 	
 	# Pegasus Theme
-	
 	if [ $doInstallPegasus == true ]; then
 		source "$EMUDECKGIT"/pages/PegasusThemePage.sh
 	fi
