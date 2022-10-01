@@ -156,9 +156,61 @@ if [ $expert == false ]; then
 fi
 # Installation...
 
-	#Emulators installation
+	#Already installed emulators?
+	checkEmus
 
-	#Setting up emulators
+	#Emulators installation
+	if [ $doInstallRA == true ] && [  $hasRA == false  ]; then
+		echo ""
+	fi
+	if [ $doInstallDolphin == true ] && [  $hasDolphin == false  ]; then
+		Dolphin_install
+	fi
+	if [ $doInstallPCSX2 == true ] && [  $hasPCSX2 == false  ]; then
+		echo ""
+	fi
+	if [ $doInstallCitra == true ] && [  $hasCitra == false  ]; then
+		echo ""
+	fi
+	if [ $doInstallDuck == true ] && [  $hasDuck == false  ]; then
+		echo ""
+	fi
+	if [ $doInstallPPSSPP == true ] && [  $hasPPSSPP == false  ]; then
+		echo ""
+	fi
+	if [ $doInstallSkyline == true ] && [  $hasSkyline == false  ]; then
+		echo ""
+	fi
+	if [ $doInstallDrastic == true ] && [  $hasDrastic == false  ]; then
+		echo ""
+	fi
+
+
+	#Setting up emulators	
+	if [ $doSetupRA == true ]; then
+		echo ""
+	fi
+	if [ $doSetupDolphin == true ]; then
+		echo ""
+	fi
+	if [ $doSetupPCSX2 == true ]; then
+		echo ""
+	fi
+	if [ $doSetupCitra == true ]; then
+		echo ""
+	fi
+	if [ $doSetupDuck == true ]; then
+		echo ""
+	fi
+	if [ $doSetupPPSSPP == true ]; then
+		echo ""
+	fi
+	if [ $doSetupSkyline == true ]; then
+		echo ""
+	fi
+	if [ $doSetupDrastic == true ]; then
+		echo ""
+	fi
 
 	#Configuring emulators
 	

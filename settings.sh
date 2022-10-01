@@ -27,7 +27,7 @@ doInstallCitra=false
 doInstallDuck=false
 doInstallPPSSPP=false
 doInstallSkyline=false
-doSetupDrastic=false
+doInstallDrastic=false
 
 #Default RetroArch configuration 
 RABezels=false

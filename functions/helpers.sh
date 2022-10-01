@@ -112,3 +112,40 @@ function setSetting () {
 	# shellcheck source=settings.sh
 	source "$emuDecksettingsFile"
 }
+
+function setMSG(){
+	echo $1
+}
+
+
+configEmuFP(){		
+	
+	name=$1
+	ID=$2
+	overwrite=$3
+	
+	if [[ $overwrite == 'true' ]]; then
+		overwrite="--backup --suffix=.bak"
+	else
+		overwrite="--ignore-existing"
+	fi	
+	setMSG "Updating $name Config using $overwrite"	
+	
+	rsync -avhp --mkpath "$EMUDECKGIT/configs/${ID}" "$HOME/storage/shared" $overwrite
+	
+
+}
+
+function getLatestReleaseURLGH(){	
+	local repository=$1
+	local fileType=$2
+	local url	
+	#local token=$(tokenGenerator)
+
+	if [ "$url" == "" ]; then
+		url="https://api.github.com/repos/${repository}/releases/latest"
+	fi
+
+	url="$(curl -sL $url | jq -r ".assets[].browser_download_url" | grep -ve 'i386' | grep .${fileType}\$)"
+	echo "$url"
+}
