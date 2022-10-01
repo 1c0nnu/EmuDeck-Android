@@ -160,13 +160,19 @@ function getLatestReleaseURLGH(){
 	local fileType=$2
 	local url	
 	#local token=$(tokenGenerator)
-
+# 
+# 	if [ "$url" == "" ]; then
+# 		url="https://api.github.com/repos/${repository}/releases/latest"
+# 	fi
+# 
+# 	url="$(curl -sL $url | jq -r ".assets[].browser_download_url" | grep .${fileType}\$)"
+# 	echo "$url"
+# 		
 	if [ "$url" == "" ]; then
-		url="https://api.github.com/repos/${repository}/releases/latest"
+		url="https://api.github.com/repos/$repository/releases"
 	fi
-
-	url="$(curl -sL $url | jq -r ".assets[].browser_download_url" | grep .${fileType}\$)"
-	echo "$url"
+	curl -fSs "$url" | \
+	jq -r '[ .[].assets[] | select(.name | endswith("'"$fileType"'")).browser_download_url ][0]'	
 }
 
 function updateOrAppendConfigLine(){
