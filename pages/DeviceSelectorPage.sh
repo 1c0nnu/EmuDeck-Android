@@ -13,7 +13,7 @@ while true; do
 		[ODIN]* ) break;;
 		[ODINLITE]* ) break;;
 		[RG552]* ) break;;
-		[GENERIC]* ) break;;
+		[ANDROID]* ) break;;
 		* ) echo "Please choose your device.";;
 	esac
 done
