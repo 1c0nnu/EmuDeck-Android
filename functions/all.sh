@@ -23,4 +23,4 @@ source "$EMUDECKGIT"/functions/setEmusByDefaultOnEasy.sh
 source "$EMUDECKGIT"/functions/checkEmus.sh
 
 #EmuScripts
-source "$EMUDECKGIT"/functions/EmuScrips/emuDeckDolphin.sh
+source "$EMUDECKGIT"/functions/EmuScripts/emuDeckDolphin.sh
