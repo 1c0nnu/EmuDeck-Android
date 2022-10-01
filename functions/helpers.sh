@@ -100,6 +100,7 @@ function setSetting () {
 		#insert setting to end
 		echo "variable not found in settings. Adding $var=$new_val to $emuDecksettingsFile"
 		sed -i -e '$a\'"$var=$new_val" "$emuDecksettingsFile"
+		#'nova fix
 	elif [[ ! $settingExists == '' ]]; then
 		echo "Old value $settingExists"
 			if [[ $settingExists == "$var=$new_val" ]]; then
