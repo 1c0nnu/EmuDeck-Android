@@ -4,8 +4,10 @@ RetroArch_emuName="RetroArch"
 RetroArch_emuType="apk"
 RetroArch_emuPath="$HOME/storage/shared/RetroArch"
 RetroArch_releaseURL=""
-RetroArch_configFile="$HOME/storage/shared/RetroArch/config/retroarch/retroarch.cfg"
+RetroArch_configFile="$HOME/Android/data/com.retroarch.aarch64/files/retroarch.cfg"
 RetroArch_coreConfigFolders="$HOME/storage/shared/RetroArch/config"
+
+
 
 #cleanupOlderThings
 RetroArch_cleanup(){
