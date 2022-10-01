@@ -16,7 +16,7 @@ if [ $hasSDCARD == true ]; then
 	done
 	
 	if [ $romPathSelection == 'INTERNAL' ]; then
-		PATH=$HOME/storage/shared/
+		PATH="$HOME/storage/shared/"
 	else		
 		SDPath=$(readlink ~/storage/external-1)
 		firstString=$SDPath
@@ -25,7 +25,7 @@ if [ $hasSDCARD == true ]; then
 		firstString=$sdcardID
 		secondString=""
 		sdcardID="${firstString/"/Android/data/com.termux/files"/"$secondString"}" 
-		PATH=$sdcardID
+		PATH="$sdcardID"
 		
 		
 		
@@ -33,10 +33,10 @@ if [ $hasSDCARD == true ]; then
 	
 
 else
-	PATH=$HOME/storage/shared/
+	PATH="$HOME/storage/shared/"
 fi
 
-echo $PATH;
+
 
 setSetting emulationPath $PATH/Emulation
 setSetting romsPath $PATH/Emulation/roms
