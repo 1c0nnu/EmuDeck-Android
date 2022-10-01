@@ -12,7 +12,7 @@ setSetting doSetupDrastic false
 case $devicePower in
 "0")	
 	
-		emulators==$(whiptail --title "Emulators" \
+		emulators==$(whiptail --title "Overwrrite Emulators Settings?" \
 	   --checklist "If you want to keep your custom setting for some emus, leave them unchecked. Checked means we will overwrite your configuration" 10 80 4 \
 		"RA" "RetroArch - Classic 2D and 3D Games" ON \
 		"DOLPHIN" "Dolphin - GameCube and Wii" ON \
@@ -26,7 +26,7 @@ case $devicePower in
 ;;
 "1")	
 	
-		emulators==$(whiptail --title "Emulators" \
+		emulators==$(whiptail --title "Overwrrite Emulators Settings?" \
 	   --checklist "If you want to keep your custom setting for some emus, leave them unchecked. Checked means we will overwrite your configuration" 10 80 4 \
 		"RA" "RetroArch - Classic 2D and 3D Games" ON \
 		"DOLPHIN" "Dolphin - GameCube and Wii" ON \
@@ -40,7 +40,7 @@ case $devicePower in
 ;;
 "2")
 	
-		emulators==$(whiptail --title "Emulators" \
+		emulators==$(whiptail --title "Overwrrite Emulators Settings?" \
 	   --checklist "If you want to keep your custom setting for some emus, leave them unchecked. Checked means we will overwrite your configuration" 10 80 4 \
 		"RA" "RetroArch - Classic 2D and 3D Games" ON \
 		"DOLPHIN" "Dolphin - GameCube and Wii" ON \
