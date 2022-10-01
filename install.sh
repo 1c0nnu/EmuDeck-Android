@@ -107,6 +107,9 @@ source "$EMUDECKGIT"/pages/RomStoragePage.sh
 ## Custom mode Questions
 #
 
+if [ $expert == 'false' ]; then 
+	cp "$EMUDECKGIT/settings.sh" "$emuDecksettingsFile"
+fi
 
 if [ $expert == 'true' ]; then 
 	
