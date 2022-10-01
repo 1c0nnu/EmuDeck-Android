@@ -24,7 +24,6 @@ source "$EMUDECKGIT"/functions/checkEmus.sh
 
 #EmuScripts
 source "$EMUDECKGIT"/functions/EmuScripts/emuDeckDolphin.sh
-
 source "$EMUDECKGIT"/functions/EmuScripts/emuDeckCitra.sh
 source "$EMUDECKGIT"/functions/EmuScripts/emuDeckDolphin.sh
 source "$EMUDECKGIT"/functions/EmuScripts/emuDeckDuckStation.sh
@@ -32,3 +31,11 @@ source "$EMUDECKGIT"/functions/EmuScripts/emuDeckPcsx2.sh
 source "$EMUDECKGIT"/functions/EmuScripts/emuDeckPPSSPP.sh
 source "$EMUDECKGIT"/functions/EmuScripts/emuDeckSkyline.sh
 source "$EMUDECKGIT"/functions/EmuScripts/emuDeckRetroArch.sh
+
+#Frontend Scripts
+source "$EMUDECKGIT"/functions/FrontendScripts/EmuDeckArc.sh
+source "$EMUDECKGIT"/functions/FrontendScripts/EmuDeckDaijishou.sh
+source "$EMUDECKGIT"/functions/FrontendScripts/EmuDeckDig.sh
+source "$EMUDECKGIT"/functions/FrontendScripts/EmuDeckLaunchbox.sh
+source "$EMUDECKGIT"/functions/FrontendScripts/EmuDeckPegasus.sh
+source "$EMUDECKGIT"/functions/FrontendScripts/EmuDeckResetCollection.sh

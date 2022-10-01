@@ -379,12 +379,16 @@ fi
 RetroArch_setShadersCRT
 RetroArch_setShadersMAT
 
-	
+#Downloading Frontends
+
 
 # Android 11 instructions
 
 # Bye bye screen
 source "$EMUDECKGIT"/pages/EndPage.sh
+
+#APK cleanup
+rm -rf $HOME/*.apk
 
 echo "" > "$HOME/EmuDeck/.finished"
 
