@@ -14,7 +14,7 @@ function checkEmus(){
 	hasSkyline=false
 	
 	#Retroarch?
-	FOLDER=$(test -d ~/storage/shared/RetroArch && echo -n "true")
+	FOLDER=$(test -d ~/storage/shared/Android/data/com.retroarch.aarch64 && echo -n "true")
 	case $FOLDER in
   	*"true"*)
 		hasRA=true
