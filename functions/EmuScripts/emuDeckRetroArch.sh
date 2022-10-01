@@ -2,7 +2,7 @@
 #variables
 RetroArch_emuName="RetroArch"
 RetroArch_emuType="apk"
-RetroArch_emuPath="$HOME/storage/shared"
+RetroArch_emuPath="$HOME/storage/shared/RetroArch"
 RetroArch_releaseURL=""
 RetroArch_configFile="$HOME/storage/shared/RetroArch/config/retroarch/retroarch.cfg"
 RetroArch_coreConfigFolders="$HOME/storage/shared/RetroArch/config"
@@ -22,10 +22,10 @@ RetroArch_backupConfigs(){
 
 #Install
 RetroArch_install(){
-
+	setMSG "${RetroArch_emuName}: Install"
 	wget  -q --show-progress https://buildbot.libretro.com/stable/1.11.0/android/RetroArch_aarch64.apk -P ~/
 	installEmuFP "${RetroArch_emuName}" "${RetroArch_emuPath}"	
-	xdg-open ~/emudeck/RetroArch_aarch64.apk	
+	xdg-open ~/RetroArch_aarch64.apk					
 }
 
 #ApplyInitialSettings
@@ -63,8 +63,9 @@ RetroArch_setEmulationFolder(){
 
 #SetupSaves
 RetroArch_setupSaves(){
-	linkToSaveFolder retroarch states "$HOME/.var/app/org.libretro.RetroArch/config/retroarch/states"
-	linkToSaveFolder retroarch saves "$HOME/.var/app/org.libretro.RetroArch/config/retroarch/saves"
+	#linkToSaveFolder retroarch states "$HOME/.var/app/org.libretro.RetroArch/config/retroarch/states"
+	#linkToSaveFolder retroarch saves "$HOME/.var/app/org.libretro.RetroArch/config/retroarch/saves"
+	echo "NYI"
 }
 
 
@@ -76,14 +77,16 @@ RetroArch_setupStorage(){
 
 #WipeSettings
 RetroArch_wipe(){
-   rm -rf "$HOME/.var/app/$RetroArch_emuPath"
+	echo "NYI"
+   #rm -rf "$HOME/.var/app/$RetroArch_emuPath"
    # prob not cause roms are here
 }
 
 
 #Uninstall
 RetroArch_uninstall(){
-	flatpak uninstall "$RetroArch_emuPath" --user -y
+	echo "NYI"
+	#flatpak uninstall "$RetroArch_emuPath" --user -y
 }
 
 #setABXYstyle
@@ -210,7 +213,7 @@ RetroArch_pcengine_bezelOn(){
 	RetroArch_setOverride 'pcengine.cfg' 'Beetle PCE Fast'  'aspect_ratio_index' '"21"'
 	RetroArch_setOverride 'pcengine.cfg' 'Beetle PCE Fast'  'custom_viewport_height' '"1200"'
 	RetroArch_setOverride 'pcengine.cfg' 'Beetle PCE Fast'  'custom_viewport_x' '"0"'
-	RetroArch_setOverride 'pcengine.cfg' 'Beetle PCE Fast'  'input_overlay' '"~/.var/app/org.libretro.RetroArch/config/retroarch/overlays/pegasus/pcengine.cfg"'
+	RetroArch_setOverride 'pcengine.cfg' 'Beetle PCE Fast'  'input_overlay' '"~/storage/shared/RetroArch/config/overlays/pegasus/pcengine.cfg"'
 	RetroArch_setOverride 'pcengine.cfg' 'Beetle PCE Fast'  'input_overlay_aspect_adjust_landscape' '"-0.150000"'
 	RetroArch_setOverride 'pcengine.cfg' 'Beetle PCE Fast'  'input_overlay_enable' '"true"'
 	RetroArch_setOverride 'pcengine.cfg' 'Beetle PCE Fast'  'input_overlay_scale_landscape' '"1.075000"'
@@ -218,7 +221,7 @@ RetroArch_pcengine_bezelOn(){
 	RetroArch_setOverride 'pcengine.cfg' 'Beetle PCE'  'aspect_ratio_index' '"21"'
 	RetroArch_setOverride 'pcengine.cfg' 'Beetle PCE'  'custom_viewport_height' '"1200"'
 	RetroArch_setOverride 'pcengine.cfg' 'Beetle PCE'  'custom_viewport_x' '"0"'
-	RetroArch_setOverride 'pcengine.cfg' 'Beetle PCE'  'input_overlay' '"~/.var/app/org.libretro.RetroArch/config/retroarch/overlays/pegasus/pcengine.cfg"'
+	RetroArch_setOverride 'pcengine.cfg' 'Beetle PCE'  'input_overlay' '"~/storage/shared/RetroArch/config/overlays/pegasus/pcengine.cfg"'
 	RetroArch_setOverride 'pcengine.cfg' 'Beetle PCE'  'input_overlay_aspect_adjust_landscape' '"-0.150000"'
 	RetroArch_setOverride 'pcengine.cfg' 'Beetle PCE'  'input_overlay_enable' '"true"'
 	RetroArch_setOverride 'pcengine.cfg' 'Beetle PCE'  'input_overlay_scale_landscape' '"1.075000"'
@@ -247,7 +250,7 @@ RetroArch_nes_setConfig(){
 }
 
 RetroArch_nes_bezelOn(){
-	RetroArch_setOverride 'nes.cfg' 'Mesen'  'input_overlay' '"~/.var/app/org.libretro.RetroArch/config/retroarch/overlays/pegasus/nes.cfg"'
+	RetroArch_setOverride 'nes.cfg' 'Mesen'  'input_overlay' '"~/storage/shared/RetroArch/config/overlays/pegasus/nes.cfg"'
 	RetroArch_setOverride 'nes.cfg' 'Mesen'  'input_overlay_auto_scale' '"false"'
 	RetroArch_setOverride 'nes.cfg' 'Mesen'  'input_overlay_enable' '"true"'
 	RetroArch_setOverride 'nes.cfg' 'Mesen'  'input_overlay_opacity' '"0.700000"'
@@ -258,7 +261,7 @@ RetroArch_nes_bezelOn(){
 	
 	
 	
-	RetroArch_setOverride 'nes.cfg' 'Nestopia'  'input_overlay' '"~/.var/app/org.libretro.RetroArch/config/retroarch/overlays/pegasus/nes.cfg"'
+	RetroArch_setOverride 'nes.cfg' 'Nestopia'  'input_overlay' '"~/storage/shared/RetroArch/config/overlays/pegasus/nes.cfg"'
 	RetroArch_setOverride 'nes.cfg' 'Nestopia'  'input_overlay_auto_scale' '"false"'
 	RetroArch_setOverride 'nes.cfg' 'Nestopia'  'input_overlay_enable' '"true"'
 	RetroArch_setOverride 'nes.cfg' 'Nestopia'  'input_overlay_opacity' '"0.700000"'
@@ -328,7 +331,7 @@ RetroArch_lynx_setConfig(){
 
 RetroArch_lynx_bezelOn(){
 	RetroArch_setOverride 'lynx.cfg' 'Beetle Lynx'  'aspect_ratio_index' '"21"'
-	RetroArch_setOverride 'lynx.cfg' 'Beetle Lynx'  'input_overlay' '"~/.var/app/org.libretro.RetroArch/config/retroarch/overlays/pegasus/lynx.cfg"'
+	RetroArch_setOverride 'lynx.cfg' 'Beetle Lynx'  'input_overlay' '"~/storage/shared/RetroArch/config/overlays/pegasus/lynx.cfg"'
 	RetroArch_setOverride 'lynx.cfg' 'Beetle Lynx'  'input_overlay_auto_scale' '"false"'
 	RetroArch_setOverride 'lynx.cfg' 'Beetle Lynx'  'input_overlay_enable' '"true"'
 	RetroArch_setOverride 'lynx.cfg' 'Beetle Lynx'  'input_overlay_opacity' '"0.700000"'
@@ -336,7 +339,7 @@ RetroArch_lynx_bezelOn(){
 	RetroArch_setOverride 'lynx.cfg' 'Beetle Lynx'  'video_scale_integer' '"false"'
 	
 	RetroArch_setOverride 'atarilynx.cfg' 'Handy'  'aspect_ratio_index' '"21"'
-	RetroArch_setOverride 'atarilynx.cfg' 'Handy'  'input_overlay' '"~/.var/app/org.libretro.RetroArch/config/retroarch/overlays/pegasus/lynx.cfg"'
+	RetroArch_setOverride 'atarilynx.cfg' 'Handy'  'input_overlay' '"~/storage/shared/RetroArch/config/overlays/pegasus/lynx.cfg"'
 	RetroArch_setOverride 'atarilynx.cfg' 'Handy'  'input_overlay_auto_scale' '"false"'
 	RetroArch_setOverride 'atarilynx.cfg' 'Handy'  'input_overlay_enable' '"true"'
 	RetroArch_setOverride 'atarilynx.cfg' 'Handy'  'input_overlay_opacity' '"0.700000"'
@@ -393,7 +396,7 @@ RetroArch_ngp_setConfig(){
 
 RetroArch_ngp_bezelOn(){
 	RetroArch_setOverride 'ngp.cfg' 'Beetle NeoPop'  'aspect_ratio_index' '"21"'
-	RetroArch_setOverride 'ngp.cfg' 'Beetle NeoPop'  'input_overlay' '"~/.var/app/org.libretro.RetroArch/config/retroarch/overlays/pegasus/ngpc.cfg"'
+	RetroArch_setOverride 'ngp.cfg' 'Beetle NeoPop'  'input_overlay' '"~/storage/shared/RetroArch/config/overlays/pegasus/ngpc.cfg"'
 	RetroArch_setOverride 'ngp.cfg' 'Beetle NeoPop'  'input_overlay_aspect_adjust_landscape' '"-0.310000"'
 	RetroArch_setOverride 'ngp.cfg' 'Beetle NeoPop'  'input_overlay_auto_scale' '"false"'
 	RetroArch_setOverride 'ngp.cfg' 'Beetle NeoPop'  'input_overlay_enable' '"true"'
@@ -421,7 +424,7 @@ RetroArch_ngpc_setConfig(){
 
 RetroArch_ngpc_bezelOn(){
 	RetroArch_setOverride 'ngpc.cfg' 'Beetle NeoPop'  'aspect_ratio_index' '"21"'
-	RetroArch_setOverride 'ngpc.cfg' 'Beetle NeoPop'  'input_overlay' '"~/.var/app/org.libretro.RetroArch/config/retroarch/overlays/pegasus/ngpc.cfg"'
+	RetroArch_setOverride 'ngpc.cfg' 'Beetle NeoPop'  'input_overlay' '"~/storage/shared/RetroArch/config/overlays/pegasus/ngpc.cfg"'
 	RetroArch_setOverride 'ngpc.cfg' 'Beetle NeoPop'  'input_overlay_aspect_adjust_landscape' '"-0.170000"'
 	RetroArch_setOverride 'ngpc.cfg' 'Beetle NeoPop'  'input_overlay_auto_scale' '"false"'
 	RetroArch_setOverride 'ngpc.cfg' 'Beetle NeoPop'  'input_overlay_enable' '"true"'
@@ -447,7 +450,7 @@ RetroArch_atari2600_setConfig(){
 }
 
 RetroArch_atari2600_bezelOn(){
-	RetroArch_setOverride 'atari2600.cfg' 'Stella'  'input_overlay' '"~/.var/app/org.libretro.RetroArch/config/retroarch/overlays/pegasus/atari2600.cfg"'
+	RetroArch_setOverride 'atari2600.cfg' 'Stella'  'input_overlay' '"~/storage/shared/RetroArch/config/overlays/pegasus/atari2600.cfg"'
 	RetroArch_setOverride 'atari2600.cfg' 'Stella'  'input_overlay_enable' '"true"'
 	RetroArch_setOverride 'atari2600.cfg' 'Stella'  'input_overlay_aspect_adjust_landscape' '"0.095000"'
 	RetroArch_setOverride 'atari2600.cfg' 'Stella'  'input_overlay_scale_landscape' '"1.070000"'
@@ -497,14 +500,14 @@ RetroArch_segacd_setConfig(){
 }
 
 RetroArch_segacd_bezelOn(){
-	RetroArch_setOverride 'megacd.cfg' 'Genesis Plus GX'  'input_overlay' '"~/.var/app/org.libretro.RetroArch/config/retroarch/overlays/pegasus/segacd.cfg"'
+	RetroArch_setOverride 'megacd.cfg' 'Genesis Plus GX'  'input_overlay' '"~/storage/shared/RetroArch/config/overlays/pegasus/segacd.cfg"'
 	RetroArch_setOverride 'megacd.cfg' 'Genesis Plus GX'  'input_overlay_auto_scale' '"false"'
 	RetroArch_setOverride 'megacd.cfg' 'Genesis Plus GX'  'input_overlay_enable' '"true"'
 	RetroArch_setOverride 'megacd.cfg' 'Genesis Plus GX'  'input_overlay_hide_in_menu' '"false"'
 	RetroArch_setOverride 'megacd.cfg' 'Genesis Plus GX'  'input_overlay_scale_landscape' '"1.170000'
 	RetroArch_setOverride 'megacd.cfg' 'Genesis Plus GX'  'aspect_ratio_index' '"0"'
 
-	RetroArch_setOverride 'segacd.cfg' 'Genesis Plus GX'  'input_overlay' '"~/.var/app/org.libretro.RetroArch/config/retroarch/overlays/pegasus/segacd.cfg"'
+	RetroArch_setOverride 'segacd.cfg' 'Genesis Plus GX'  'input_overlay' '"~/storage/shared/RetroArch/config/overlays/pegasus/segacd.cfg"'
 	RetroArch_setOverride 'segacd.cfg' 'Genesis Plus GX'  'input_overlay_auto_scale' '"false"'
 	RetroArch_setOverride 'segacd.cfg' 'Genesis Plus GX'  'input_overlay_enable' '"true"'
 	RetroArch_setOverride 'segacd.cfg' 'Genesis Plus GX'  'input_overlay_hide_in_menu' '"false"'
@@ -543,13 +546,13 @@ RetroArch_genesis_setConfig(){
 }
 
 RetroArch_genesis_bezelOn(){
-	RetroArch_setOverride 'genesis.cfg' 'Genesis Plus GX'  'input_overlay' '"~/.var/app/org.libretro.RetroArch/config/retroarch/overlays/pegasus/genesis.cfg"'
+	RetroArch_setOverride 'genesis.cfg' 'Genesis Plus GX'  'input_overlay' '"~/storage/shared/RetroArch/config/overlays/pegasus/genesis.cfg"'
 	RetroArch_setOverride 'genesis.cfg' 'Genesis Plus GX'  'input_overlay_auto_scale' '"false"'
 	RetroArch_setOverride 'genesis.cfg' 'Genesis Plus GX'  'input_overlay_enable' '"true"'
 	RetroArch_setOverride 'genesis.cfg' 'Genesis Plus GX'  'input_overlay_scale_landscape' '"1.170000"'	
 	RetroArch_setOverride 'genesis.cfg' 'Genesis Plus GX'  'aspect_ratio_index' '"0"'
 
-	RetroArch_setOverride 'megadrive.cfg' 'Genesis Plus GX'  'input_overlay' '"~/.var/app/org.libretro.RetroArch/config/retroarch/overlays/pegasus/genesis.cfg"'
+	RetroArch_setOverride 'megadrive.cfg' 'Genesis Plus GX'  'input_overlay' '"~/storage/shared/RetroArch/config/overlays/pegasus/genesis.cfg"'
 	RetroArch_setOverride 'megadrive.cfg' 'Genesis Plus GX'  'input_overlay_auto_scale' '"false"'
 	RetroArch_setOverride 'megadrive.cfg' 'Genesis Plus GX'  'input_overlay_enable' '"true"'
 	RetroArch_setOverride 'megadrive.cfg' 'Genesis Plus GX'  'input_overlay_scale_landscape' '"1.170000"'
@@ -590,14 +593,14 @@ RetroArch_gamegear_setConfig(){
 
 RetroArch_gamegear_bezelOn(){
 	RetroArch_setOverride 'gamegear.cfg' 'Genesis Plus GX'  'aspect_ratio_index' '"21"'
-	RetroArch_setOverride 'gamegear.cfg' 'Genesis Plus GX'  'input_overlay' '"~/.var/app/org.libretro.RetroArch/config/retroarch/overlays/pegasus/gg.cfg"'
+	RetroArch_setOverride 'gamegear.cfg' 'Genesis Plus GX'  'input_overlay' '"~/storage/shared/RetroArch/config/overlays/pegasus/gg.cfg"'
 	RetroArch_setOverride 'gamegear.cfg' 'Genesis Plus GX'  'input_overlay_aspect_adjust_landscape' '"-0.115000"'
 	RetroArch_setOverride 'gamegear.cfg' 'Genesis Plus GX'  'input_overlay_auto_scale' '"false"'
 	RetroArch_setOverride 'gamegear.cfg' 'Genesis Plus GX'  'input_overlay_enable' '"true"'
 	RetroArch_setOverride 'gamegear.cfg' 'Genesis Plus GX'  'input_overlay_scale_landscape' '"1.545000"'
 
 	RetroArch_setOverride 'gamegear.cfg' 'Gearsystem'  'aspect_ratio_index' '"21"'
-	RetroArch_setOverride 'gamegear.cfg' 'Gearsystem'  'input_overlay' '"~/.var/app/org.libretro.RetroArch/config/retroarch/overlays/pegasus/gg.cfg"'
+	RetroArch_setOverride 'gamegear.cfg' 'Gearsystem'  'input_overlay' '"~/storage/shared/RetroArch/config/overlays/pegasus/gg.cfg"'
 	RetroArch_setOverride 'gamegear.cfg' 'Gearsystem'  'input_overlay_aspect_adjust_landscape' '"-0.115000"'
 	RetroArch_setOverride 'gamegear.cfg' 'Gearsystem'  'input_overlay_auto_scale' '"false"'
 	RetroArch_setOverride 'gamegear.cfg' 'Gearsystem'  'input_overlay_enable' '"true"'
@@ -626,7 +629,7 @@ RetroArch_mastersystem_setConfig(){
 
 RetroArch_mastersystem_bezelOn(){
 	RetroArch_setOverride 'mastersystem.cfg' 'Genesis Plus GX'  'aspect_ratio_index' '"21"'
-	RetroArch_setOverride 'mastersystem.cfg' 'Genesis Plus GX'  'input_overlay' '"~/.var/app/org.libretro.RetroArch/config/retroarch/overlays/pegasus/mastersystem.cfg"'
+	RetroArch_setOverride 'mastersystem.cfg' 'Genesis Plus GX'  'input_overlay' '"~/storage/shared/RetroArch/config/overlays/pegasus/mastersystem.cfg"'
 	RetroArch_setOverride 'mastersystem.cfg' 'Genesis Plus GX'  'input_overlay_auto_scale' '"false"'
 	RetroArch_setOverride 'mastersystem.cfg' 'Genesis Plus GX'  'input_overlay_enable' '"true"'
 	RetroArch_setOverride 'mastersystem.cfg' 'Genesis Plus GX'  'input_overlay_scale_landscape' '"1.170000"'
@@ -656,7 +659,7 @@ RetroArch_sega32x_setConfig(){
 	RetroArch_setOverride 'sega32x.cfg' 'PicoDrive'  'input_player1_analog_dpad_mode' '"1"'
 }
 RetroArch_sega32x_bezelOn(){
-	RetroArch_setOverride 'sega32x.cfg' 'PicoDrive'  'input_overlay' '"~/.var/app/org.libretro.RetroArch/config/retroarch/overlays/pegasus/sega32x.cfg"'
+	RetroArch_setOverride 'sega32x.cfg' 'PicoDrive'  'input_overlay' '"~/storage/shared/RetroArch/config/overlays/pegasus/sega32x.cfg"'
 	RetroArch_setOverride 'sega32x.cfg' 'PicoDrive'  'input_overlay_auto_scale' '"false"'
 	RetroArch_setOverride 'sega32x.cfg' 'PicoDrive'  'input_overlay_enable' '"true"'
 	RetroArch_setOverride 'sega32x.cfg' 'PicoDrive'  'input_overlay_hide_in_menu' '"false"'
@@ -704,14 +707,14 @@ RetroArch_gba_MATshaderOff(){
 
 RetroArch_gb_bezelOn(){
 	RetroArch_setOverride 'gb.cfg' 'SameBoy'  'aspect_ratio_index' '"21"'
-	RetroArch_setOverride 'gb.cfg' 'SameBoy'  'input_overlay' '"~/.var/app/org.libretro.RetroArch/config/retroarch/overlays/pegasus/gb.cfg"'
+	RetroArch_setOverride 'gb.cfg' 'SameBoy'  'input_overlay' '"~/storage/shared/RetroArch/config/overlays/pegasus/gb.cfg"'
 	RetroArch_setOverride 'gb.cfg' 'SameBoy'  'input_overlay_auto_scale' '"false"'
 	RetroArch_setOverride 'gb.cfg' 'SameBoy'  'input_overlay_enable' '"true"'
 	RetroArch_setOverride 'gb.cfg' 'SameBoy'  'input_overlay_scale_landscape' '"1.860000"'
 	RetroArch_setOverride 'gb.cfg' 'SameBoy'  'input_overlay_y_offset_landscape' '"-0.150000"'
 
 	RetroArch_setOverride 'gb.cfg' 'Gambatte'  'aspect_ratio_index' '"21"'
-	RetroArch_setOverride 'gb.cfg' 'Gambatte'  'input_overlay' '"~/.var/app/org.libretro.RetroArch/config/retroarch/overlays/pegasus/gb.cfg"'
+	RetroArch_setOverride 'gb.cfg' 'Gambatte'  'input_overlay' '"~/storage/shared/RetroArch/config/overlays/pegasus/gb.cfg"'
 	RetroArch_setOverride 'gb.cfg' 'Gambatte'  'input_overlay_auto_scale' '"false"'
 	RetroArch_setOverride 'gb.cfg' 'Gambatte'  'input_overlay_enable' '"true"'
 	RetroArch_setOverride 'gb.cfg' 'Gambatte'  'input_overlay_scale_landscape' '"1.860000"'
@@ -754,14 +757,14 @@ RetroArch_gbc_setConfig(){
 
 RetroArch_gbc_bezelOn(){
 	RetroArch_setOverride 'gbc.cfg' 'SameBoy'  'aspect_ratio_index' '"21"'
-	RetroArch_setOverride 'gbc.cfg' 'SameBoy'  'input_overlay' '"~/.var/app/org.libretro.RetroArch/config/retroarch/overlays/pegasus/gbc.cfg"'
+	RetroArch_setOverride 'gbc.cfg' 'SameBoy'  'input_overlay' '"~/storage/shared/RetroArch/config/overlays/pegasus/gbc.cfg"'
 	RetroArch_setOverride 'gbc.cfg' 'SameBoy'  'input_overlay_auto_scale' '"false"'
 	RetroArch_setOverride 'gbc.cfg' 'SameBoy'  'input_overlay_enable' '"true"'
 	RetroArch_setOverride 'gbc.cfg' 'SameBoy'  'input_overlay_scale_landscape' '"1.870000"'
 	RetroArch_setOverride 'gbc.cfg' 'SameBoy'  'input_overlay_y_offset_landscape' '"-0.220000"'
 
 	RetroArch_setOverride 'gbc.cfg' 'Gambatte'  'aspect_ratio_index' '"21"'
-	RetroArch_setOverride 'gbc.cfg' 'Gambatte'  'input_overlay' '"~/.var/app/org.libretro.RetroArch/config/retroarch/overlays/pegasus/gbc.cfg"'
+	RetroArch_setOverride 'gbc.cfg' 'Gambatte'  'input_overlay' '"~/storage/shared/RetroArch/config/overlays/pegasus/gbc.cfg"'
 	RetroArch_setOverride 'gbc.cfg' 'Gambatte'  'input_overlay_auto_scale' '"false"'
 	RetroArch_setOverride 'gbc.cfg' 'Gambatte'  'input_overlay_enable' '"true"'
 	RetroArch_setOverride 'gbc.cfg' 'Gambatte'  'input_overlay_scale_landscape' '"1.870000"'
@@ -801,7 +804,7 @@ RetroArch_n64_wideScreenOff(){
 
 RetroArch_n64_bezelOn(){
 	RetroArch_setOverride 'n64.cfg' 'Mupen64Plus-Next'  'aspect_ratio_index' '"0"'
-	RetroArch_setOverride 'n64.cfg' 'Mupen64Plus-Next'  'input_overlay' '"~/.var/app/org.libretro.RetroArch/config/retroarch/overlays/pegasus/N64.cfg"'
+	RetroArch_setOverride 'n64.cfg' 'Mupen64Plus-Next'  'input_overlay' '"~/storage/shared/RetroArch/config/overlays/pegasus/N64.cfg"'
 	RetroArch_setOverride 'n64.cfg' 'Mupen64Plus-Next'  'input_overlay_aspect_adjust_landscape' '"0.085000"'
 	RetroArch_setOverride 'n64.cfg' 'Mupen64Plus-Next'  'input_overlay_enable' '"true"'
 	RetroArch_setOverride 'n64.cfg' 'Mupen64Plus-Next'  'input_overlay_scale_landscape' '"1.065000"'
@@ -817,7 +820,7 @@ RetroArch_atari800_setConfig(){
 
 RetroArch_atari800_bezelOn(){
 	RetroArch_setOverride 'atari800.cfg' 'Stella'  'aspect_ratio_index' '"0"'
-	RetroArch_setOverride 'atari800.cfg' 'Stella'  'input_overlay' '"~/.var/app/org.libretro.RetroArch/config/retroarch/overlays/pegasus/atari800.cfg"'
+	RetroArch_setOverride 'atari800.cfg' 'Stella'  'input_overlay' '"~/storage/shared/RetroArch/config/overlays/pegasus/atari800.cfg"'
 	RetroArch_setOverride 'atari800.cfg' 'Stella'  'input_overlay_enable' '"true"'
 	RetroArch_setOverride 'atari800.cfg' 'Stella'  'input_overlay_hide_in_menu' '"true"'
 	RetroArch_setOverride 'atari800.cfg' 'Stella'  'input_overlay_scale_landscape' '"1.175000"'
@@ -834,7 +837,7 @@ RetroArch_atari5200_setConfig(){
 
 RetroArch_atari5200_bezelOn(){
 	RetroArch_setOverride 'atari5200.cfg' 'Stella'  'aspect_ratio_index' '"0"'
-	RetroArch_setOverride 'atari5200.cfg' 'Stella'  'input_overlay' '"~/.var/app/org.libretro.RetroArch/config/retroarch/overlays/pegasus/atari5200.cfg"'
+	RetroArch_setOverride 'atari5200.cfg' 'Stella'  'input_overlay' '"~/storage/shared/RetroArch/config/overlays/pegasus/atari5200.cfg"'
 	RetroArch_setOverride 'atari5200.cfg' 'Stella'  'input_overlay_enable' '"true"'
 	RetroArch_setOverride 'atari5200.cfg' 'Stella'  'input_overlay_hide_in_menu' '"true"'
 	RetroArch_setOverride 'atari5200.cfg' 'Stella'  'input_overlay_scale_landscape' '"1.175000"'
@@ -847,7 +850,7 @@ RetroArch_atari5200_bezelOff(){
 
 RetroArch_dreamcast_bezelOn(){
 	RetroArch_setOverride 'dreamcast.cfg' 'Flycast'  'aspect_ratio_index' '"0"'
-	RetroArch_setOverride 'dreamcast.cfg' 'Flycast'  'input_overlay' '"~/.var/app/org.libretro.RetroArch/config/retroarch/overlays/pegasus/Dreamcast.cfg"'
+	RetroArch_setOverride 'dreamcast.cfg' 'Flycast'  'input_overlay' '"~/storage/shared/RetroArch/config/overlays/pegasus/Dreamcast.cfg"'
 	RetroArch_setOverride 'dreamcast.cfg' 'Flycast'  'input_overlay_aspect_adjust_landscape' '"0.110000"'
 	RetroArch_setOverride 'dreamcast.cfg' 'Flycast'  'input_overlay_enable' '"true"'
 	RetroArch_setOverride 'dreamcast.cfg' 'Flycast'  'input_overlay_scale_landscape' '"1.054998"'
@@ -872,20 +875,20 @@ RetroArch_saturn_setConfig(){
 
 RetroArch_saturn_bezelOn(){
 	RetroArch_setOverride 'saturn.cfg' 'Yabause'  'aspect_ratio_index' '"0"'
-	RetroArch_setOverride 'saturn.cfg' 'Yabause'  'input_overlay' '"~/.var/app/org.libretro.RetroArch/config/retroarch/overlays/pegasus/saturn.cfg"'
+	RetroArch_setOverride 'saturn.cfg' 'Yabause'  'input_overlay' '"~/storage/shared/RetroArch/config/overlays/pegasus/saturn.cfg"'
 	RetroArch_setOverride 'saturn.cfg' 'Yabause'  'input_overlay_enable' '"true"'
 	RetroArch_setOverride 'saturn.cfg' 'Yabause'  'input_overlay_scale_landscape' '"1.070000"'
 	RetroArch_setOverride 'saturn.cfg' 'Yabause'  'input_overlay_aspect_adjust_landscape' '"0.095000"'
 
 	RetroArch_setOverride 'saturn.cfg' 'YabaSanshiro'  'aspect_ratio_index' '"0"'
-	RetroArch_setOverride 'saturn.cfg' 'YabaSanshiro'  'input_overlay' '"~/.var/app/org.libretro.RetroArch/config/retroarch/overlays/pegasus/saturn.cfg"'
+	RetroArch_setOverride 'saturn.cfg' 'YabaSanshiro'  'input_overlay' '"~/storage/shared/RetroArch/config/overlays/pegasus/saturn.cfg"'
 	RetroArch_setOverride 'saturn.cfg' 'YabaSanshiro'  'input_overlay_enable' '"true"'
 	RetroArch_setOverride 'saturn.cfg' 'YabaSanshiro'  'input_overlay_scale_landscape' '"1.070000"'
 	RetroArch_setOverride 'saturn.cfg' 'YabaSanshiro'  'input_overlay_aspect_adjust_landscape' '"0.095000"'
 	
 	
 	RetroArch_setOverride 'saturn.cfg' 'Kronos'  'aspect_ratio_index' '"0"'
-	RetroArch_setOverride 'saturn.cfg' 'Kronos'  'input_overlay' '"~/.var/app/org.libretro.RetroArch/config/retroarch/overlays/pegasus/saturn.cfg"'
+	RetroArch_setOverride 'saturn.cfg' 'Kronos'  'input_overlay' '"~/storage/shared/RetroArch/config/overlays/pegasus/saturn.cfg"'
 	RetroArch_setOverride 'saturn.cfg' 'Kronos'  'input_overlay_enable' '"true"'
 	RetroArch_setOverride 'saturn.cfg' 'Kronos'  'input_overlay_scale_landscape' '"1.070000"'
 	RetroArch_setOverride 'saturn.cfg' 'Kronos'  'input_overlay_aspect_adjust_landscape' '"0.095000"'
@@ -913,7 +916,7 @@ RetroArch_snes_setConfig(){
 }
 
 RetroArch_snes_bezelOn(){
-	RetroArch_setOverride 'snes.cfg' 'Snes9x'  'input_overlay' '"~/.var/app/org.libretro.RetroArch/config/retroarch/overlays/pegasus/snes.cfg"'
+	RetroArch_setOverride 'snes.cfg' 'Snes9x'  'input_overlay' '"~/storage/shared/RetroArch/config/overlays/pegasus/snes.cfg"'
 	RetroArch_setOverride 'snes.cfg' 'Snes9x'  'input_overlay_auto_scale' '"false"'
 	RetroArch_setOverride 'snes.cfg' 'Snes9x'  'input_overlay_enable' '"true"'
 	RetroArch_setOverride 'snes.cfg' 'Snes9x'  'input_overlay_opacity' '"0.700000"'
@@ -935,11 +938,11 @@ RetroArch_snes_CRTshaderOff(){
 RetroArch_snes_ar43(){
 	RetroArch_setOverride 'snes.cfg' 'Snes9x'  'input_overlay_scale_landscape' '"1.170000"'
 	RetroArch_setOverride 'snes.cfg' 'Snes9x'  'input_overlay_aspect_adjust_landscape' '"0"'
-	RetroArch_setOverride 'snes.cfg' 'Snes9x'  'input_overlay' '"~/.var/app/org.libretro.RetroArch/config/retroarch/overlays/pegasus/snes.cfg"'
+	RetroArch_setOverride 'snes.cfg' 'Snes9x'  'input_overlay' '"~/storage/shared/RetroArch/config/overlays/pegasus/snes.cfg"'
 }
 
 RetroArch_snes_ar87(){
-	RetroArch_setOverride 'snes.cfg' 'Snes9x'  'input_overlay' '"~/.var/app/org.libretro.RetroArch/config/retroarch/overlays/pegasus/snes87.cfg"'
+	RetroArch_setOverride 'snes.cfg' 'Snes9x'  'input_overlay' '"~/storage/shared/RetroArch/config/overlays/pegasus/snes87.cfg"'
 	RetroArch_setOverride 'snes.cfg' 'Snes9x'  'input_overlay_scale_landscape' '"1.380000"'
 	RetroArch_setOverride 'snes.cfg' 'Snes9x'  'input_overlay_aspect_adjust_landscape' '"-0.170000"'
 	RetroArch_setOverride 'snes.cfg' 'Snes9x'  'aspect_ratio_index' '"21"'
@@ -1376,19 +1379,19 @@ RetroArch_SwanStation_wideScreenOff(){
 RetroArch_psx_bezelOn(){
 	RetroArch_setOverride 'psx.cfg' 'Beetle PSX HW' 'input_overlay_enable' '"true"'
 	RetroArch_setOverride 'psx.cfg' 'Beetle PSX HW' 'aspect_ratio_index' '"0"'
-	RetroArch_setOverride 'psx.cfg' 'Beetle PSX HW' 'input_overlay' '"~/.var/app/org.libretro.RetroArch/config/retroarch/overlays/pegasus/psx.cfg"'
+	RetroArch_setOverride 'psx.cfg' 'Beetle PSX HW' 'input_overlay' '"~/storage/shared/RetroArch/config/overlays/pegasus/psx.cfg"'
 	RetroArch_setOverride 'psx.cfg' 'Beetle PSX HW' 'input_overlay_aspect_adjust_landscape' '"0.100000"'
 	RetroArch_setOverride 'psx.cfg' 'Beetle PSX HW' 'input_overlay_enable' '"true"'
 	RetroArch_setOverride 'psx.cfg' 'Beetle PSX HW' 'input_overlay_scale_landscape' '"1.060000"'
 	RetroArch_setOverride 'psx.cfg' 'Beetle PSX' 'input_overlay_enable' '"true"'
 	RetroArch_setOverride 'psx.cfg' 'Beetle PSX' 'aspect_ratio_index' '"0"'
-	RetroArch_setOverride 'psx.cfg' 'Beetle PSX' 'input_overlay' '"~/.var/app/org.libretro.RetroArch/config/retroarch/overlays/pegasus/psx.cfg"'
+	RetroArch_setOverride 'psx.cfg' 'Beetle PSX' 'input_overlay' '"~/storage/shared/RetroArch/config/overlays/pegasus/psx.cfg"'
 	RetroArch_setOverride 'psx.cfg' 'Beetle PSX' 'input_overlay_aspect_adjust_landscape' '"0.100000"'
 	RetroArch_setOverride 'psx.cfg' 'Beetle PSX' 'input_overlay_enable' '"true"'
 	RetroArch_setOverride 'psx.cfg' 'Beetle PSX' 'input_overlay_scale_landscape' '"1.060000"'
 	RetroArch_setOverride 'psx.cfg' 'SwanStation' 'input_overlay_enable' '"true"'
 	RetroArch_setOverride 'psx.cfg' 'SwanStation' 'aspect_ratio_index' '"0"'
-	RetroArch_setOverride 'psx.cfg' 'SwanStation' 'input_overlay' '"~/.var/app/org.libretro.RetroArch/config/retroarch/overlays/pegasus/psx.cfg"'
+	RetroArch_setOverride 'psx.cfg' 'SwanStation' 'input_overlay' '"~/storage/shared/RetroArch/config/overlays/pegasus/psx.cfg"'
 	RetroArch_setOverride 'psx.cfg' 'SwanStation' 'input_overlay_aspect_adjust_landscape' '"0.100000"'
 	RetroArch_setOverride 'psx.cfg' 'SwanStation' 'input_overlay_enable' '"true"'
 	RetroArch_setOverride 'psx.cfg' 'SwanStation' 'input_overlay_scale_landscape' '"1.060000"'
@@ -1470,8 +1473,8 @@ RetroArch_installCores(){
 	#N-gage
 	#Game.com
 
-	mkdir -p "$HOME/.var/app/org.libretro.RetroArch/config/retroarch/cores"
-	raUrl="https://buildbot.libretro.com/nightly/linux/x86_64/latest/"
+	mkdir -p "$HOME/storage/shared/RetroArch/downloads"
+	raUrl="https://buildbot.libretro.com/nightly/android/latest/arm64-v8a/"
 	# RAcores=(bsnes_hd_beta_libretro.so flycast_libretro.so gambatte_libretro.so genesis_plus_gx_libretro.so \
 	# 		genesis_plus_gx_wide_libretro.so mednafen_lynx_libretro.so mednafen_ngp_libretro.so mednafen_wswan_libretro.so melonds_libretro.so \
 	# 		mesen_libretro.so mgba_libretro.so mupen64Plus-Next_libretro.so nestopia_libretro.so picodrive_libretro.so ppsspp_libretro.so snes9x_libretro.so \
@@ -1481,54 +1484,38 @@ RetroArch_installCores(){
 	# setMSG "Downloading RetroArch Cores for EmuDeck"
 	# for i in "${RAcores[@]}"
 	# do
-	# 	FILE=~/.var/app/org.libretro.RetroArch/config/retroarch/cores/${i}
+	# 	FILE=~/storage/shared/RetroArch/config/cores/${i}
 	# 	if [ -f "$FILE" ]; then
 	# 		echo "${i}...Already Downloaded"
 	# 	else
-	# 		curl $raUrl$i.zip --output ~/.var/app/org.libretro.RetroArch/config/retroarch/cores/${i}.zip 
-	# 		#rm ~/.var/app/org.libretro.RetroArch/config/retroarch/cores/${i}.zip
+	# 		curl $raUrl$i.zip --output ~/storage/shared/RetroArch/config/cores/${i}.zip 
+	# 		#rm ~/storage/shared/RetroArch/config/cores/${i}.zip
 	# 		echo "${i}...Downloaded!"
 	# 	fi
 	# done	
 	
 	#This is all the cores combined, and dupes taken out.
-	RAcores=(81_libretro.so a5200_libretro.so atari800_libretro.so blastem_libretro.so bluemsx_libretro.so bsnes_hd_beta_libretro.so bsnes_libretro.so \
-			bsnes_mercury_accuracy_libretro.so cap32_libretro.so chailove_libretro.so citra2018_libretro.so citra_libretro.so crocods_libretro.so desmume2015_libretro.so \
-			desmume_libretro.so dolphin_libretro.so dosbox_core_libretro.so dosbox_pure_libretro.so dosbox_svn_libretro.so easyrpg_libretro.so fbalpha2012_cps1_libretro.so \
-			fbalpha2012_cps3_libretro.so fbalpha2012_libretro.so fbalpha2012_neogeo_libretro.so fbneo_libretro.so fceumm_libretro.so flycast_libretro.so fmsx_libretro.so \
-			fbalpha2012_cps2_libretro.so freechaf_libretro.so freeintv_libretro.so frodo_libretro.so fuse_libretro.so gambatte_libretro.so gearboy_libretro.so gearsystem_libretro.so \
-			genesis_plus_gx_libretro.so genesis_plus_gx_wide_libretro.so gpsp_libretro.so gw_libretro.so handy_libretro.so hatari_libretro.so \
-			kronos_libretro.so lutro_libretro.so mame2000_libretro.so mame2003_plus_libretro.so mame2010_libretro.so \
-			mame_libretro.so mednafen_lynx_libretro.so mednafen_ngp_libretro.so mednafen_pce_fast_libretro.so mednafen_pce_libretro.so mednafen_pcfx_libretro.so mednafen_psx_hw_libretro.so \
-			mednafen_psx_libretro.so mednafen_saturn_libretro.so mednafen_supafaust_libretro.so mednafen_supergrafx_libretro.so mednafen_vb_libretro.so mednafen_wswan_libretro.so \
-			melonds_libretro.so mesen-s_libretro.so mesen_libretro.so mgba_libretro.so mu_libretro.so mupen64plus_next_libretro.so \
-			nekop2_libretro.so neocd_libretro.so nestopia_libretro.so np2kai_libretro.so nxengine_libretro.so o2em_libretro.so \
-			opera_libretro.so parallel_n64_libretro.so pcsx2_libretro.so pcsx_rearmed_libretro.so picodrive_libretro.so pokemini_libretro.so ppsspp_libretro.so prboom_libretro.so \
-			prosystem_libretro.so puae_libretro.so px68k_libretro.so quasi88_libretro.so quicknes_libretro.so race_libretro.so \
-			sameboy_libretro.so same_cdi_libretro.so scummvm_libretro.so smsplus_libretro.so snes9x2010_libretro.so snes9x_libretro.so squirreljme_libretro.so stella2014_libretro.so \
-			stella_libretro.so swanstation_libretro.so tgbdual_libretro.so theodore_libretro.so uzem_libretro.so vba_next_libretro.so vbam_libretro.so vecx_libretro.so \
-			vice_x128_libretro.so vice_x64_libretro.so vice_x64sc_libretro.so vice_xscpu64_libretro.so vice_xvic_libretro.so virtualjaguar_libretro.so x1_libretro.so \
-			yabasanshiro_libretro.so yabause_libretro.so)
+	RAcores=(81_libretro.so)
 	setMSG "Downloading RetroArch Cores for EmuDeck"
 	for i in "${RAcores[@]}"
 	do
-		FILE=~/.var/app/org.libretro.RetroArch/config/retroarch/cores/${i}
+		FILE=$HOME/storage/shared/RetroArch/downloads/${i}
 		if [ -f "$FILE" ]; then
 			echo "${i}...Already Downloaded"
 		else
-			curl $raUrl$i.zip --output ~/.var/app/org.libretro.RetroArch/config/retroarch/cores/${i}.zip 
-			#rm ~/.var/app/org.libretro.RetroArch/config/retroarch/cores/${i}.zip
+			curl $raUrl$i.zip --output $HOME/storage/shared/RetroArch/downloads/${i}.zip 
+			#rm ~/storage/shared/RetroArch/config/cores/${i}.zip
 			echo "${i}...Downloaded!"
 		fi
 	done
 
 	
-	for entry in ~/.var/app/org.libretro.RetroArch/config/retroarch/cores/*.zip
+	for entry in $HOME/storage/shared/RetroArch/downloads/*.zip
 	do
-		 unzip -o "$entry" -d ~/.var/app/org.libretro.RetroArch/config/retroarch/cores/ 
+		 unzip -o "$entry" -d $HOME/storage/shared/RetroArch/downloads/ 
 	done
 	
-	for entry in ~/.var/app/org.libretro.RetroArch/config/retroarch/cores/*.zip
+	for entry in $HOME/storage/shared/RetroArch/downloads/*.zip
 	do
 		 rm -f "$entry" 
 	done
