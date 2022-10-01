@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ $android -gt 11 ]; then
+if [ $android -lt 11 ]; then
 	question=$(whiptail --title "RetroAchievments" \
 	--inputbox "Do you want to configure RetroAchievments? Insert your username..." 10 80 4 \
 	3>&1 1<&2 2>&3)
