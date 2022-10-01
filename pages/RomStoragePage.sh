@@ -21,7 +21,7 @@ if [ $hasSDCARD == true ]; then
 		SDPath=$(readlink ~/storage/external-1)
 		firstString=$SDPath
 		secondString=""
-		sdcardID="${firstString/"/storage/"/"$secondString"}"     
+		sdcardID="${firstString/"/storage/"/"$secondString"}"
 		firstString=$sdcardID
 		secondString=""
 		sdcardID="${firstString/"/Android/data/com.termux/files"/"$secondString"}" 
