@@ -36,6 +36,9 @@ function createUpdateSettingsFile(){
 		echo "#!/bin/bash"> "$emuDecksettingsFile"
 	fi
 	local defaultSettingsList=()	
+	
+#!/bin/bash
+	
 	defaultSettingsList+=("expert=false");
 	defaultSettingsList+=("hasSDCARD=false");
 	defaultSettingsList+=("devicePower=0");
@@ -47,20 +50,24 @@ function createUpdateSettingsFile(){
 	defaultSettingsList+=("doSetupCitra=true");
 	defaultSettingsList+=("doSetupDuck=true");
 	defaultSettingsList+=("doSetupPPSSPP=true");
-	defaultSettingsList+=("doInstallRA=false");
-	defaultSettingsList+=("doInstallDolphin=false");
-	defaultSettingsList+=("doInstallPCSX2=false");
-	defaultSettingsList+=("doInstallCitra=false");
-	defaultSettingsList+=("doInstallDuck=false");
-	defaultSettingsList+=("doInstallPPSSPP=false");
-	defaultSettingsList+=("RABezels=true");
+	defaultSettingsList+=("doSetupSkyline=true");
+	defaultSettingsList+=("doSetupDrastic=true");
+	defaultSettingsList+=("doInstallRA=true");
+	defaultSettingsList+=("doInstallDolphin=true");
+	defaultSettingsList+=("doInstallPCSX2=true");
+	defaultSettingsList+=("doInstallCitra=true");
+	defaultSettingsList+=("doInstallDuck=true");
+	defaultSettingsList+=("doInstallPPSSPP=true");
+	defaultSettingsList+=("doInstallSkyline=true");
+	defaultSettingsList+=("doInstallDrastic=true");
+	defaultSettingsList+=("RABezels=false");
 	defaultSettingsList+=("RAautoSave=false");
-	defaultSettingsList+=("emulationPath=~/Emulation");
-	defaultSettingsList+=("romsPath=~/Emulation/roms");
-	defaultSettingsList+=("toolsPath=~/Emulation/tools");
-	defaultSettingsList+=("biosPath=~/Emulation/bios");
-	defaultSettingsList+=("savesPath=~/Emulation/saves");
-	defaultSettingsList+=("storagePath=~/Emulation/storage");
+	defaultSettingsList+=("emulationPath=$HOME/Emulation");
+	defaultSettingsList+=("romsPath=$HOME/Emulation/roms");
+	defaultSettingsList+=("toolsPath=$HOME/Emulation/tools");
+	defaultSettingsList+=("biosPath=$HOME/Emulation/bios");
+	defaultSettingsList+=("savesPath=$HOME/Emulation/saves");
+	defaultSettingsList+=("storagePath=$HOME/Emulation/storage");
 	defaultSettingsList+=("achievementsPass=false");
 	defaultSettingsList+=("achievementsUser=false");
 	defaultSettingsList+=("arClassic3D=43");
@@ -70,8 +77,19 @@ function createUpdateSettingsFile(){
 	defaultSettingsList+=("RAHandClassic2D=false");
 	defaultSettingsList+=("RAHandHeldShader=true");
 	defaultSettingsList+=("doSetupSaveSync=false");
+	defaultSettingsList+=("doInstallPegasus=false");
+	defaultSettingsList+=("doInstallDaijisho=false");
+	defaultSettingsList+=("doInstallDig=false");
+	defaultSettingsList+=("doInstallLaunchbox=false");
+	defaultSettingsList+=("doInstallReset=false");
+	defaultSettingsList+=("doInstallArc=false");
+	defaultSettingsList+=("doInstallThemeEpic=false");
+	defaultSettingsList+=("doInstallThemeSwitch=false");
+	defaultSettingsList+=("doInstallThemeMega=false");
+	defaultSettingsList+=("doInstallThemeGameOS=false");
+	defaultSettingsList+=("doInstallThemeNeoRetro=false");
 	
-
+	
 	tmp=$(mktemp)
 	#sort "$emuDecksettingsFile" | uniq -u > "$tmp" && mv "$tmp" "$emuDecksettingsFile"
 	

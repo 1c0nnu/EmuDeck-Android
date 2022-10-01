@@ -31,10 +31,9 @@ setupTermux(){
 	
 }
 EMUDECKGIT="$HOME/EmuDeck/backend"
-if [ ! -d "$FOLDER" ]; then	
+if [ ! -d "$EMUDECKGIT" ]; then	
 	setupTermux
 fi
-
 #
 #Clone Files
 #
@@ -103,35 +102,34 @@ source "$EMUDECKGIT"/pages/WelcomePage.sh
 source "$EMUDECKGIT"/pages/DeviceSelectorPage.sh
 
 # Location
-#source "$EMUDECKGIT"/pages/RomStoragePage.sh
+source "$EMUDECKGIT"/pages/RomStoragePage.sh
 
 #
 ## Custom mode Questions
 #
 
-exit
 
 if [ $expert == 'true' ]; then 
 	
 	# Emulators	
 	source $EMUDECKGIT/pages/EmulatorSelectorPage.sh
  
- 	if [ $second == true ]; then
- 		# Overwrite configuration?
- 		source "$EMUDECKGIT"/pages/EmulatorConfigurationPage.sh
- 	fi
- 	# Retroachievements
- 	source "$EMUDECKGIT"/pages/RAAchievementsPage.sh
- 	
- 	# Bezels
- 	source "$EMUDECKGIT"/pages/RABezelsPage.sh
+	 if [ $second == true ]; then
+		 # Overwrite configuration?
+		 source "$EMUDECKGIT"/pages/EmulatorConfigurationPage.sh
+	 fi
+	 # Retroachievements
+	 source "$EMUDECKGIT"/pages/RAAchievementsPage.sh
+	 
+	 # Bezels
+	 source "$EMUDECKGIT"/pages/RABezelsPage.sh
  
- 	# AR Sega Classic
+	 # AR Sega Classic
 	source "$EMUDECKGIT"/pages/AspectRatioSegaPage.sh
 	
- 	# AR SNES + NES
- 	source "$EMUDECKGIT"/pages/AspectRatioSNESPage.sh
- 	
+	 # AR SNES + NES
+	 source "$EMUDECKGIT"/pages/AspectRatioSNESPage.sh
+	 
 	# AR 3D Classics
 	source "$EMUDECKGIT"/pages/AspectRatio3DPage.sh
 	
@@ -154,7 +152,8 @@ if [ $expert == 'true' ]; then
 	fi
 
 fi
-exit
+
+
 #Default Emus per system on Easy mode
 if [ $expert == false ]; then 
 	setEmusByDefaultOnEasy
