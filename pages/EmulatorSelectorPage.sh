@@ -1,7 +1,7 @@
 #!/bin/bash
 case $devicePower in
 0)		
-		question=$(whiptail --title "Emulators" \
+		emulators=$(whiptail --title "Emulators" \
 	   --checklist "These are the emulators you can install. We've disabled those not recommended for your device. You can disable more emulators if you don't want to install all of them" 10 80 4 \
 		"RA" "RetroArch - Classic 2D and 3D Games" ON \
 		"DOLPHIN" "Dolphin - GameCube and Wii" ON \
@@ -14,7 +14,7 @@ case $devicePower in
 	
 ;;
 1)	
-		question=$(whiptail --title "Emulators" \
+		emulators=$(whiptail --title "Emulators" \
 	   --checklist "These are the emulators you can install. We've disabled those not recommended for your device. You can disable more emulators if you don't want to install all of them" 10 80 4 \
 		"RA" "RetroArch - Classic 2D and 3D Games" ON \
 		"DOLPHIN" "Dolphin - GameCube and Wii" ON \
@@ -28,7 +28,7 @@ case $devicePower in
 ;;
 2)
 		
-		question=$(whiptail --title "Emulators" \
+		emulators=$(whiptail --title "Emulators" \
 	   --checklist "These are the emulators you can install. We've disabled those not recommended for your device. You can disable more emulators if you don't want to install all of them" 10 80 4 \
 		"RA" "RetroArch - Classic 2D and 3D Games" ON \
 		"DOLPHIN" "Dolphin - GameCube and Wii" ON \
@@ -45,32 +45,29 @@ case $devicePower in
 ;;
 esac
 
-echo "yee"
-echo $question
-echo "yee"
-case $question in
-	"RA")
+mapfile -t settingsEmus <<< $emulators
+
+for settingsEmu in ${settingsEmus[@]};
+ do
+ 	if [[ $settingsEmu == *"RA"* ]]; then
 		setSetting doInstallRA true
-	;;
-	"DOLPHIN")
+	fi
+	if [[ $settingsEmu == *"DOLPHIN"* ]]; then
 		setSetting doInstallDolphin true
-	;;
-	"DUCK")
+	fi
+	if [[ $settingsEmu == *"DUCK"* ]]; then
 		setSetting doInstallDuck true
-	;;
-	"AETHERSX2")
+	fi
+	if [[ $settingsEmu == *"AETHERSX2"* ]]; then
 		setSetting doInstallPCSX2 true
-	;;
-	"CITRA")
+	fi
+	if [[ $settingsEmu == *"CITRA"* ]]; then
 		setSetting doInstallCitra true
-	;;
-	"PPSSPP")
+	fi
+	if [[ $settingsEmu == *"PPSSPP"* ]]; then
 		setSetting doInstallPPSSPP true
-	;;
-	"SKYLINE")
+	fi
+	if [[ $settingsEmu == *"SKYLINE"* ]]; then
 		setSetting doInstallSkyline true
-	;;
-	*)
-		echo "default"
-	;;
-esac
+	fi	
+ done
