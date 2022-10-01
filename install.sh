@@ -139,10 +139,10 @@ if [ $expert == 'true' ]; then
 	fi 
 	
 	# LCD Shader Handhelds
-	source "$EMUDECKGIT"/pages/ShadersHandheldsPage.sh
+	#source "$EMUDECKGIT"/pages/ShadersHandheldsPage.sh
 	
 	# CRT Shader Handhelds
-	source "$EMUDECKGIT"/pages/Shaders2DPage.sh
+	#source "$EMUDECKGIT"/pages/Shaders2DPage.sh
 	
 	# Frontend
 	source "$EMUDECKGIT"/pages/PegasusInstallPage.sh
@@ -386,8 +386,8 @@ fi
 #
 #New Shaders
 #	
-RetroArch_setShadersCRT
-RetroArch_setShadersMAT
+#RetroArch_setShadersCRT
+#RetroArch_setShadersMAT
 
 #AR corrections
 RetroArch_169
