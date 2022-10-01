@@ -31,11 +31,12 @@ function Pegasus_init(){
 	cp $EMUDECKGIT/configs/pegasus-frontend/settings.txt ~/storage/shared/pegasus-frontend
 	cp $EMUDECKGIT/configs/pegasus-frontend/game_dirs.txt ~/storage/shared/pegasus-frontend
 	if [ $romPathSelection == 'INTERNAL' ]; then
-		sed -i "s/0000-0000/emulated\/0\/Emulation\/roms/g" ~/storage/shared/pegasus-frontend/game_dirs.txt
+		sed -i "s/0000-0000/emulated\/0/g" ~/storage/shared/pegasus-frontend/game_dirs.txt
 	else
 		sed -i "s/0000-0000\//${sdcardID}\/Android\/data\/com.termux\/files\//g" ~/storage/shared/pegasus-frontend/game_dirs.txt
 	fi
 }
 
 
+#/storage/0000-0000/Emulation/roms/3ds
 
