@@ -13,7 +13,7 @@ setSetting doInstallDrastic false
 case $devicePower in
 0)		
 		emulators=$(whiptail --title "Install emulators" \
-	   --checklist "By default we will overwrite any configuration for the selected emulators." 14 80 4 \
+	   --checklist "We have selected the recommended emulators for your device" 14 80 4 \
 		"RA" "RetroArch - Classic 2D and 3D Games" ON \
 		"DOLPHIN" "Dolphin - GameCube and Wii" ON \
 		"DUCK" "Duckstation - Playstation 1" ON \
@@ -26,7 +26,7 @@ case $devicePower in
 ;;
 1)	
 		emulators=$(whiptail --title "Install emulators" \
-	   --checklist "By default we will overwrite any configuration for the selected emulators." 14 80 4 \
+	   --checklist "We have selected the recommended emulators for your device" 14 80 4 \
 		"RA" "RetroArch - Classic 2D and 3D Games" ON \
 		"DOLPHIN" "Dolphin - GameCube and Wii" ON \
 		"DUCK" "Duckstation - Playstation 1" ON \
@@ -40,7 +40,7 @@ case $devicePower in
 2)
 		
 		emulators=$(whiptail --title "Install emulators" \
-	   --checklist "By default we will overwrite any configuration for the selected emulators." 14 80 4 \
+	   --checklist "We have selected the recommended emulators for your device" 14 80 4 \
 		"RA" "RetroArch - Classic 2D and 3D Games" ON \
 		"DOLPHIN" "Dolphin - GameCube and Wii" ON \
 		"DUCK" "Duckstation - Playstation 1" ON \
