@@ -3,7 +3,7 @@
 case $devicePower in
 "0")	
 	
-		question=$(whiptail --title "Emulators" \
+		emulators==$(whiptail --title "Emulators" \
 	   --checklist "If you want to keep your custom setting for some emus, leave them unchecked. Checked means we will overwrite your configuration" 10 80 4 \
 		"RA" "RetroArch - Classic 2D and 3D Games" ON \
 		"DOLPHIN" "Dolphin - GameCube and Wii" ON \
@@ -17,7 +17,7 @@ case $devicePower in
 ;;
 "1")	
 	
-		question=$(whiptail --title "Emulators" \
+		emulators==$(whiptail --title "Emulators" \
 	   --checklist "If you want to keep your custom setting for some emus, leave them unchecked. Checked means we will overwrite your configuration" 10 80 4 \
 		"RA" "RetroArch - Classic 2D and 3D Games" ON \
 		"DOLPHIN" "Dolphin - GameCube and Wii" ON \
@@ -31,7 +31,7 @@ case $devicePower in
 ;;
 "2")
 	
-		question=$(whiptail --title "Emulators" \
+		emulators==$(whiptail --title "Emulators" \
 	   --checklist "If you want to keep your custom setting for some emus, leave them unchecked. Checked means we will overwrite your configuration" 10 80 4 \
 		"RA" "RetroArch - Classic 2D and 3D Games" ON \
 		"DOLPHIN" "Dolphin - GameCube and Wii" ON \
@@ -48,30 +48,29 @@ case $devicePower in
 esac
 
 
+mapfile -t settingsEmus <<< $emulators
 
-case $question in
-	"RA")
+for settingsEmu in ${settingsEmus[@]};
+ do
+	 if [[ $settingsEmu == *"RA"* ]]; then
 		setSetting doSetupRA true
-	;;
-	"DOLPHIN")
+	fi
+	if [[ $settingsEmu == *"DOLPHIN"* ]]; then
 		setSetting doSetupDolphin true
-	;;
-	"DUCK")
+	fi
+	if [[ $settingsEmu == *"DUCK"* ]]; then
 		setSetting doSetupDuck true
-	;;
-	"AETHERSX2")
+	fi
+	if [[ $settingsEmu == *"AETHERSX2"* ]]; then
 		setSetting doSetupPCSX2 true
-	;;
-	"CITRA")
+	fi
+	if [[ $settingsEmu == *"CITRA"* ]]; then
 		setSetting doSetupCitra true
-	;;
-	"PPSSPP")
+	fi
+	if [[ $settingsEmu == *"PPSSPP"* ]]; then
 		setSetting doSetupPPSSPP true
-	;;
-	"SKYLINE")
+	fi
+	if [[ $settingsEmu == *"SKYLINE"* ]]; then
 		setSetting doSetupSkyline true
-	;;
-	*)
-		echo "default"
-	;;
-esac
+	fi	
+ done
