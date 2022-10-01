@@ -1,7 +1,7 @@
 #!/bin/bash
 while true; do
 	question=$(whiptail --title "Choose your Device" \
-   --radiolist "We tailor the experience depending on the selected device, each device has its own special configuration, different emulators and adjusted bezels." 14 80 4 \
+   --radiolist "We tailor the experience depending on the selected device, each device has its own special configuration, different emulators and adjusted bezels." 10 80 4 \
 	"RP2" "Retroid Pocket 2+" OFF \
 	"ODIN" "ODIN Base or Pro" OFF \
 	"ODINLITE" "ODIN Lite" OFF \
