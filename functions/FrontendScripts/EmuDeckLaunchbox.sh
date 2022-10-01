@@ -10,6 +10,7 @@ function Launchbox_install(){
 		;;
 	esac
 	if [[  $installLaunch == true ]]; then
+		clear
 		echo -e  "Press the ${RED}A button${NONE} to go to LaunchBox website, when it is installed come back to continue the next steps"
 		read pause
 		termux-open "https://www.launchbox-app.com/android-download"

@@ -10,6 +10,7 @@ function Arc_install(){
 		;;
 	esac
 	if [[  $installArc == true ]]; then
+		clear
 		echo -e  "Press the ${RED}A button${NONE} to install Arc Browser, when it is installed come back to continue the next steps"
 		read pause
 		termux-open "https://play.google.com/store/apps/details?id=net.floatingpoint.android.arcturus"

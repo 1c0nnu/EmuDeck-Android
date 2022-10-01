@@ -17,6 +17,8 @@ function Pegasus_install(){
 		local releaseURL="$(getLatestReleaseURLGH "mmatyas/pegasus-frontend" "apk")"
 		setMSG "Installing Pegasus"		
 		curl -L "$releaseURL" -o "Pegasus.apk"
+		clear
+		echo -e  "Press the ${RED}A button${NONE} to install Pegasus, when it is installed come back to continue the next steps"
 		xdg-open "Pegasus.apk"
 		Pegasus_init
 	fi

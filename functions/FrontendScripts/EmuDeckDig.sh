@@ -10,6 +10,7 @@ function Dig_install(){
 		;;
 	esac
 	if [[  $installDig == true ]]; then
+		clear
 		echo -e  "Press the ${RED}A button${NONE} to install Dig, when it is installed come back to continue the next steps"
 		read pause
 		termux-open "https://play.google.com/store/apps/details?id=com.digdroid.alman.dig"	
