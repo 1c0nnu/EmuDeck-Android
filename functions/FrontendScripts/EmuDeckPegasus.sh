@@ -28,8 +28,8 @@ function Pegasus_init(){
 	mkdir -p ~/storage/shared/pegasus-frontend/themes
 	cp ~/storage/shared/pegasus-frontend/settings.txt ~/storage/shared/pegasus-frontend/settings.txt.bak
 	cp ~/storage/shared/pegasus-frontend/game_dirs.txt ~/storage/shared/pegasus-frontend/game_dirs.txt.bak
-	cp ~/emudeck/backend/internal/common/pegasus-frontend/settings.txt ~/storage/shared/pegasus-frontend
-	cp ~/emudeck/backend/internal/common/pegasus-frontend/game_dirs.txt ~/storage/shared/pegasus-frontend
+	cp $EMUDECKGIT/configs/pegasus-frontend/settings.txt ~/storage/shared/pegasus-frontend
+	cp $EMUDECKGIT/configs/pegasus-frontend/game_dirs.txt ~/storage/shared/pegasus-frontend
 	if [ $romPathSelection == 'INTERNAL' ]; then
 		sed -i "s/0000-0000/emulated\/0\/Emulation\/roms/g" ~/storage/shared/pegasus-frontend/game_dirs.txt
 	else
