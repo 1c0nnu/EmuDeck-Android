@@ -115,6 +115,7 @@ if [ $expert == 'true' ]; then
  
 	if [ $second == true ]; then
 		# Overwrite configuration?
+		echo ""
 		#source "$EMUDECKGIT"/pages/EmulatorConfigurationPage.sh
 	fi
 	
