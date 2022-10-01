@@ -40,7 +40,7 @@ RetroArch_init(){
 	#Overlays, TO DO: do it properly
 	mkdir -p $RetroArch_emuPath/overlays/pegasus
 	rsync -r --ignore-existing $EMUDECKGIT/configs/RetroArch/overlays/pegasus/  $RetroArch_emuPath/overlays/pegasus/
-	
+	rsync -r --ignore-existing $EMUDECKGIT/configs/RetroArch/config/  $RetroArch_emuPath/config/
 	RetroArch_169
 }
 
