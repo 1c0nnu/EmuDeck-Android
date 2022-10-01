@@ -45,8 +45,9 @@ case $devicePower in
 ;;
 esac
 
-
-
+echo "yee"
+echo $question
+echo "yee"
 case $question in
 	"RA")
 		setSetting doInstallRA true
