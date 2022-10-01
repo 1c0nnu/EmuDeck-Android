@@ -40,8 +40,7 @@ fi
 if [ -d "$EMUDECKGIT" ]; then
 	cd $EMUDECKGIT && git checkout beta && git pull && cd $HOME
 else
-	git clone https://github.com/EmuDeck/EmuDeck-Android.git "$EMUDECKGIT"
-	git checkout beta
+	git clone https://github.com/EmuDeck/EmuDeck-Android.git "$EMUDECKGIT" && git checkout beta
 fi
 
 if [ ! -d "$EMUDECKGIT" ]; then
