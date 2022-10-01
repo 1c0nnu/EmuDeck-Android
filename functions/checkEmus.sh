@@ -3,19 +3,19 @@ hasRedDream=false
 hasYaba=false
 hasMupen=false
 hasPPSSPP=false
-hasDuckstation=false
+hasDuck=false
 hasDrastic=false
-hasDolphinMMJ=false
-hasRetroArch=false
+hasDolphin=false
+hasRA=false
 hasCitra=false
-hasAether=false
+hasPCSX2=false
 hasSkyline=false
 
 #Retroarch?
 FOLDER=$(test -d ~/storage/shared/RetroArch && echo -n "true")
 case $FOLDER in
   *"true"*)
-	hasRetroArch=true
+	hasRA=true
 	;;
 esac
 
@@ -23,7 +23,7 @@ esac
 FOLDER=$(test -d ~/storage/shared/Android/data/xyz.aethersx2.android && echo "true")
 case $FOLDER in
   *"true"*)
-	hasAether=true
+	hasPCSX2=true
 esac
 #Citra?
 FOLDER=$(test -d ~/storage/shared/citra-emu && echo "true")
@@ -75,7 +75,7 @@ esac
 FOLDER=$(test -d ~/storage/shared/duckstation && echo "true")
 case $FOLDER in
   *"true"*)
-	hasDuckstation=true
+	hasDuck=true
 esac
 #Drastic
 FOLDER=$(test -d ~/storage/shared/DraStic && echo "true")
@@ -87,7 +87,7 @@ esac
 FOLDER=$(test -d ~/storage/shared/dolphin-mmjr && echo "true")
 case $FOLDER in
   *"true"*)
-	hasDolphinMMJ=true
+	hasDolphin=true
 esac
 
 #Citra?
