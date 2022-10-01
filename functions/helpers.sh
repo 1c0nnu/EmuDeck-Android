@@ -168,3 +168,21 @@ function getLatestReleaseURLGH(){
 	url="$(curl -sL $url | jq -r ".assets[].browser_download_url" | grep -ve 'i386' | grep .${fileType}\$)"
 	echo "$url"
 }
+
+function updateOrAppendConfigLine(){
+	local configFile=$1
+	local option=$2
+	local replacement=$3
+
+	local fullPath=$(dirname "$configFile")
+	mkdir -p "$fullPath"
+	touch "$configFile"
+	
+	local optionFound=$(grep -rnw  "$configFile" -e "$option")
+	if [[ "$optionFound" == '' ]]; then
+		echo "appending: $replacement to $configFile"
+		echo "$replacement" >> "$configFile"
+	else
+		changeLine "$option" "$replacement" "$configFile"
+	fi
+}
