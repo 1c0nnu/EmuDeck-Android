@@ -33,9 +33,9 @@ else
 	PATH=$HOME/storage/shared/
 fi
 
-# setSetting emulationPath "$PATH/Emulation"
-# setSetting romsPath "$PATH/Emulation/roms"
-# setSetting toolsPath "$PATH/Emulation/tools"
-# setSetting biosPath "$PATH/Emulation/bios"
-# setSetting savesPath "$PATH/Emulation/saves"
-# setSetting storagePath "$PATH/Emulation/storage"
+setSetting emulationPath "$PATH/Emulation"
+setSetting romsPath "$PATH/Emulation/roms"
+setSetting toolsPath "$PATH/Emulation/tools"
+setSetting biosPath "$PATH/Emulation/bios"
+setSetting savesPath "$PATH/Emulation/saves"
+setSetting storagePath "$PATH/Emulation/storage"
