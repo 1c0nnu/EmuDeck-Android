@@ -457,6 +457,7 @@ if [ $doInstallArc == true ]; then
 fi
 
 #RA64 fixes - TO DO. Support only RA64?
+echo -e  "Applying ${CYAN}RetroArch 64${NONE} fixes..."
 find $romsPath -type f -name "*.txt" -exec sed -i -e 's/com.retroarch\//com.retroarch.aarch64\//g' {} \;
 find $romsPath -type f -name "*.txt" -exec sed -i -e 's/-e DATADIR \/data\/data\/com.retroarch/-e DATADIR \/data\/data\/com.retroarch.aarch64/g' {} \;	
 find $romsPath -type f -name "*.txt" -exec sed -i -e 's/.browser.retroactivity/com.retroarch.browser.retroactivity/g' {} \;	
