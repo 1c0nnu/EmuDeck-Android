@@ -155,8 +155,9 @@ case $question in
 			"OTHER" "Another" OFF \
 		   3>&1 1<&2 2>&3)
 			case $arV in
-				[YES]* ) break;;
-				[NO]* ) break;;
+				[169]* ) break;;
+				[43]* ) break;;
+				[OTHER]* ) break;;
 				* ) echo "What AR do you have..";;
 			esac
 		done
