@@ -16,7 +16,7 @@ if [ $hasSDCARD == true ]; then
 	done
 	
 	if [ $romPathSelection == 'INTERNAL' ]; then
-		PATH="$HOME/storage/shared/"
+		PATH="$HOME/storage/shared"
 	else		
 		SDPath=$(readlink ~/storage/external-1)
 		firstString=$SDPath
@@ -33,7 +33,7 @@ if [ $hasSDCARD == true ]; then
 	
 
 else
-	PATH="$HOME/storage/shared/"
+	PATH="$HOME/storage/shared"
 fi
 
 
