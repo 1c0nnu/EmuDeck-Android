@@ -283,7 +283,7 @@ fi
 # Android 11 instructions
 
 # Bye bye screen
-source "$EMUDECKGIT"/pages/EndPage.sh"
+source "$EMUDECKGIT"/pages/EndPage.sh
 
 echo "" > "$HOME/EmuDeck/.finished"
 
