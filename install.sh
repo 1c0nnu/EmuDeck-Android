@@ -222,24 +222,45 @@ fi
 	#Emulators installation
 	if [ $doInstallRA == true ] && [  $hasRA == false  ]; then
 		RetroArch_install
+		echo -e  "Press the ${RED}A button${NONE} to install the next emulator"
+		read pause
+
 	fi
 	if [ $doInstallDolphin == true ] && [  $hasDolphin == false  ]; then
 		Dolphin_install
+		echo -e  "Press the ${RED}A button${NONE} to install the next emulator"
+		read pause
+
 	fi
 	if [ $doInstallPCSX2 == true ] && [  $hasPCSX2 == false  ]; then
 		Pcsx2_install
+		echo -e  "Press the ${RED}A button${NONE} to install the next emulator"
+		read pause
+
 	fi
 	if [ $doInstallCitra == true ] && [  $hasCitra == false  ]; then
 		Citra_install
+		echo -e  "Press the ${RED}A button${NONE} to install the next emulator"
+		read pause
+
 	fi
 	if [ $doInstallDuck == true ] && [  $hasDuck == false  ]; then
 		Duckstation_install
+		echo -e  "Press the ${RED}A button${NONE} to install the next emulator"
+		read pause
+
 	fi
 	if [ $doInstallPPSSPP == true ] && [  $hasPPSSPP == false  ]; then
 		PPSSPP_install
+		echo -e  "Press the ${RED}A button${NONE} to install the next emulator"
+		read pause
+
 	fi
 	if [ $doInstallSkyline == true ] && [  $hasSkyline == false  ]; then
 		Skyline_install
+		echo -e  "Press the ${RED}A button${NONE} to install the next emulator"
+		read pause
+
 	fi
 	if [ $doInstallDrastic == true ] && [  $hasDrastic == false  ]; then
 		echo ""
