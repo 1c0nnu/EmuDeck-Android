@@ -162,8 +162,16 @@ if [ $expert == false ]; then
 fi
 # Installation...
 
-	#Folder creation	
-	if [ $romPathSelection == 'INTERNAL' ]; then
+#Folder creation	
+if [ $romPathSelection == 'INTERNAL' ]; then
+	mkdir -p $emulationPath
+	mkdir -p $romsPath
+	#mkdir -p $toolsPath
+	#mkdir -p $savesPath
+	#mkdir -p $storagePath
+	rsync -r --ignore-existing "$EMUDECKGIT/roms/" "$romsPath" 
+else
+	if [ $android -lt 11 ]; then
 		mkdir -p $emulationPath
 		mkdir -p $romsPath
 		#mkdir -p $toolsPath
@@ -171,116 +179,207 @@ fi
 		#mkdir -p $storagePath
 		rsync -r --ignore-existing "$EMUDECKGIT/roms/" "$romsPath" 
 	else
-		if [ $android -lt 11 ]; then
-			mkdir -p $emulationPath
-			mkdir -p $romsPath
-			#mkdir -p $toolsPath
-			#mkdir -p $savesPath
-			#mkdir -p $storagePath
-			rsync -r --ignore-existing "$EMUDECKGIT/roms/" "$romsPath" 
-		else
-			#We are forced to install everything on the shared volume since A>11 won't allow Termux to write anywhere else
-			mkdir -p $HOME/storage/shared/Emulation
-			mkdir -p $HOME/storage/shared/Emulation/roms
-			#mkdir -p $HOME/storage/shared/Emulation/tools
-			#mkdir -p $HOME/storage/shared/Emulation/saves			
-			rsync -r --ignore-existing "$EMUDECKGIT/roms/" "$HOME"/storage/shared/Emulation/roms
+		#We are forced to install everything on the shared volume since A>11 won't allow Termux to write anywhere else
+		mkdir -p $HOME/storage/shared/Emulation
+		mkdir -p $HOME/storage/shared/Emulation/roms
+		#mkdir -p $HOME/storage/shared/Emulation/tools
+		#mkdir -p $HOME/storage/shared/Emulation/saves			
+		rsync -r --ignore-existing "$EMUDECKGIT/roms/" "$HOME"/storage/shared/Emulation/roms
+	fi
+fi
+
+ 
+
+
+#Already installed emulators?
+checkEmus
+
+
+#Setting up emulators	
+if [ $doSetupRA == true ]; then
+	RetroArch_init
+fi
+if [ $doSetupDolphin == true ]; then
+	Dolphin_init
+fi
+if [ $doSetupPCSX2 == true ]; then
+	Pcsx2_init
+fi
+if [ $doSetupCitra == true ]; then
+	Citra_init
+fi
+if [ $doSetupDuck == true ]; then
+	Duckstation_init
+fi
+if [ $doSetupPPSSPP == true ]; then
+	PPSSPP_init
+fi
+if [ $doSetupSkyline == true ]; then
+	Skyline_init
+fi
+if [ $doSetupDrastic == true ]; then
+	echo ""
+fi
+
+#Emulators installation
+if [ $doInstallRA == true ] && [  $hasRA == false  ]; then
+	RetroArch_install
+	echo -e  "Press the ${RED}A button${NONE} to install the next emulator"
+	read pause
+
+fi
+if [ $doInstallDolphin == true ] && [  $hasDolphin == false  ]; then
+	Dolphin_install
+	echo -e  "Press the ${RED}A button${NONE} to install the next emulator"
+	read pause
+
+fi
+if [ $doInstallPCSX2 == true ] && [  $hasPCSX2 == false  ]; then
+	Pcsx2_install
+	echo -e  "Press the ${RED}A button${NONE} to install the next emulator"
+	read pause
+
+fi
+if [ $doInstallCitra == true ] && [  $hasCitra == false  ]; then
+	Citra_install
+	echo -e  "Press the ${RED}A button${NONE} to install the next emulator"
+	read pause
+
+fi
+if [ $doInstallDuck == true ] && [  $hasDuck == false  ]; then
+	Duckstation_install
+	echo -e  "Press the ${RED}A button${NONE} to install the next emulator"
+	read pause
+
+fi
+if [ $doInstallPPSSPP == true ] && [  $hasPPSSPP == false  ]; then
+	PPSSPP_install
+	echo -e  "Press the ${RED}A button${NONE} to install the next emulator"
+	read pause
+
+fi
+if [ $doInstallSkyline == true ] && [  $hasSkyline == false  ]; then
+	Skyline_install
+	echo -e  "Press the ${RED}A button${NONE} to install the next emulator"
+	read pause
+
+fi
+if [ $doInstallDrastic == true ] && [  $hasDrastic == false  ]; then
+	echo ""
+fi
+
+
+
+#Configuring emulators
+
+# Retroachievements
+# RA Bezels
+# AR Sega
+# AR SNES+NES# AR 3D Classics		
+# AR Gamecube		
+# LCD Shader Handhelds		
+# CRT Shader Handhelds
+
+if [ $deviceAR != 43 ]; then
+	#New Aspect Ratios
+	#
+	
+	#Sega Games
+		#Master System
+		#Genesis
+		#Sega CD
+		#Sega 32X
+	
+	case $arSega in
+	  "32")	 
+		RetroArch_mastersystem_ar32
+		RetroArch_genesis_ar32
+		RetroArch_segacd_ar32
+		  RetroArch_sega32x_ar32	
+		;;  
+	  *)
+		RetroArch_mastersystem_ar43
+		RetroArch_genesis_ar43
+		  RetroArch_segacd_ar43
+		  RetroArch_sega32x_ar43
+		  if [ "$RABezels" == true ]; then	
+			  RetroArch_mastersystem_bezelOn
+			  RetroArch_genesis_bezelOn
+			  RetroArch_segacd_bezelOn
+			  RetroArch_sega32x_bezelOn
 		fi
-	fi
-
-	 
+	  ;;
+	esac	
 	
-
-	#Already installed emulators?
-	checkEmus
-
-
-	#Setting up emulators	
-	if [ $doSetupRA == true ]; then
-		RetroArch_init
-	fi
-	if [ $doSetupDolphin == true ]; then
-		Dolphin_init
-	fi
-	if [ $doSetupPCSX2 == true ]; then
-		Pcsx2_init
-	fi
-	if [ $doSetupCitra == true ]; then
-		Citra_init
-	fi
-	if [ $doSetupDuck == true ]; then
-		Duckstation_init
-	fi
-	if [ $doSetupPPSSPP == true ]; then
-		PPSSPP_init
-	fi
-	if [ $doSetupSkyline == true ]; then
-		Skyline_init
-	fi
-	if [ $doSetupDrastic == true ]; then
-		echo ""
+	#Snes and NES
+	case $arSnes in
+	  "87")
+		RetroArch_snes_ar87
+		RetroArch_nes_ar87
+	  ;;
+	  "32")
+			RetroArch_snes_ar32
+		  RetroArch_nes_ar32
+		;;  
+	  *)
+		RetroArch_snes_ar43
+		RetroArch_nes_ar43
+		if [ "$RABezels" == true ]; then	
+			RetroArch_snes_bezelOn
+		fi
+	  ;;
+	esac
+	
+	# Classic 3D Games
+		#Dreamcast
+		#PSX
+		#Nintendo 64
+		#Saturn
+		#Xbox
+	if [ "$arClassic3D" == 169 ]; then		
+		RetroArch_Beetle_PSX_HW_wideScreenOn
+		DuckStation_wideScreenOn
+		RetroArch_Flycast_wideScreenOn
+		Xemu_wideScreenOn
+		#"Bezels off"
+		RetroArch_Flycast_bezelOff
+		RetroArch_Beetle_PSX_HW_bezelOff
+		RetroArch_n64_wideScreenOn
+		RetroArch_SwanStation_wideScreenOn
+	else
+		#"SET 4:3"
+		RetroArch_Flycast_wideScreenOff
+		RetroArch_n64_wideScreenOff
+		RetroArch_Beetle_PSX_HW_wideScreenOff
+		RetroArch_SwanStation_wideScreenOff
+		
+		DuckStation_wideScreenOff
+		Xemu_wideScreenOff
+		#"Bezels on"
+		if [ "$RABezels" == true ]; then	
+			RetroArch_Flycast_bezelOn			
+			RetroArch_n64_bezelOn
+			RetroArch_psx_bezelOn
+		fi			
 	fi
 	
-	#Emulators installation
-	if [ $doInstallRA == true ] && [  $hasRA == false  ]; then
-		RetroArch_install
-		echo -e  "Press the ${RED}A button${NONE} to install the next emulator"
-		read pause
-
+	# GameCube
+	if [ "$arDolphin" == 169 ]; then	
+		Dolphin_wideScreenOn
+	else
+		Dolphin_wideScreenOff
 	fi
-	if [ $doInstallDolphin == true ] && [  $hasDolphin == false  ]; then
-		Dolphin_install
-		echo -e  "Press the ${RED}A button${NONE} to install the next emulator"
-		read pause
-
-	fi
-	if [ $doInstallPCSX2 == true ] && [  $hasPCSX2 == false  ]; then
-		Pcsx2_install
-		echo -e  "Press the ${RED}A button${NONE} to install the next emulator"
-		read pause
-
-	fi
-	if [ $doInstallCitra == true ] && [  $hasCitra == false  ]; then
-		Citra_install
-		echo -e  "Press the ${RED}A button${NONE} to install the next emulator"
-		read pause
-
-	fi
-	if [ $doInstallDuck == true ] && [  $hasDuck == false  ]; then
-		Duckstation_install
-		echo -e  "Press the ${RED}A button${NONE} to install the next emulator"
-		read pause
-
-	fi
-	if [ $doInstallPPSSPP == true ] && [  $hasPPSSPP == false  ]; then
-		PPSSPP_install
-		echo -e  "Press the ${RED}A button${NONE} to install the next emulator"
-		read pause
-
-	fi
-	if [ $doInstallSkyline == true ] && [  $hasSkyline == false  ]; then
-		Skyline_install
-		echo -e  "Press the ${RED}A button${NONE} to install the next emulator"
-		read pause
-
-	fi
-	if [ $doInstallDrastic == true ] && [  $hasDrastic == false  ]; then
-		echo ""
-	fi
-
-
-
-	#Configuring emulators
 	
-		# Retroachievements
-		# RA Bezels
+fi
 
-		# AR Sega
-		# AR SNES+NES# AR 3D Classics		
-		# AR Gamecube		
-		# LCD Shader Handhelds		
-		# CRT Shader Handhelds
-			
+
+#
+#New Shaders
+#	
+RetroArch_setShadersCRT
+RetroArch_setShadersMAT
+
+	
 
 # Android 11 instructions
 
