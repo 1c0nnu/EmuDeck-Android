@@ -286,7 +286,11 @@ fi
 # LCD Shader Handhelds		
 # CRT Shader Handhelds
 
+
+
 if [ $deviceAR != 43 ]; then
+	#Bezels
+	RetroArch_setBezels
 	#New Aspect Ratios
 	#
 	
