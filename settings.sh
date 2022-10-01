@@ -53,7 +53,7 @@ RAHandHeldShader=true
 doSetupSaveSync=false
 
 doInstallPegasus=false
-doInstallDaijisho=false
+doInstallDaijisho=true
 doInstallDig=false
 doInstallLaunchbox=false
 doInstallReset=false
