@@ -10,14 +10,14 @@ deviceAR=169
 android=10
 #All Emus are off since their installation depends on the device selected
 #Default settings for all systems
-doSetupRA=false
-doSetupDolphin=false
-doSetupPCSX2=false
-doSetupCitra=false
-doSetupDuck=false
-doSetupPPSSPP=false
-doSetupSkyline=false
-doSetupDrastic=false
+doSetupRA=true
+doSetupDolphin=true
+doSetupPCSX2=true
+doSetupCitra=true
+doSetupDuck=true
+doSetupPPSSPP=true
+doSetupSkyline=true
+doSetupDrastic=true
 
 #Install all systems by default
 doInstallRA=false
