@@ -2,7 +2,7 @@
 
 function Dig_install(){
 	installDig=true
-	DIR=~/storage/shared/Android/data/com.magneticchen.daijishou
+	DIR=~/storage/shared/Android/data/com.digdroid.alman.dig
 	FOLDER=$(test -d "$DIR" && echo -n "true")
 	case $FOLDER in
 	  *"true"*)

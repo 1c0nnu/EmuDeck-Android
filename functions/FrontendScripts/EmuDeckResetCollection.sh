@@ -2,7 +2,7 @@
 
 function ResetCollection_install(){
 	installReset=true
-	DIR=~/storage/shared/Android/data/com.magneticchen.daijishou
+	DIR=~/storage/shared/Android/data/com.retroloungelab.resetcollection
 	FOLDER=$(test -d "$DIR" && echo -n "true")
 	case $FOLDER in
 	  *"true"*)
