@@ -60,7 +60,7 @@ function createUpdateSettingsFile(){
 	defaultSettingsList+=("doInstallPPSSPP=false");
 	defaultSettingsList+=("doInstallSkyline=false");
 	defaultSettingsList+=("doInstallDrastic=false");
-	defaultSettingsList+=("RABezels=false");
+	defaultSettingsList+=("RABezels=true");
 	defaultSettingsList+=("RAautoSave=false");
 	defaultSettingsList+=("emulationPath=$HOME/Emulation");
 	defaultSettingsList+=("romsPath=$HOME/Emulation/roms");
