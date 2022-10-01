@@ -3,7 +3,7 @@
 #variables
 Skyline_emuName="Skyline"
 Skyline_emuType="apk"
-Skyline_emuPath="$HOME/storage/shared/Skyline-mmjr"
+Skyline_emuPath="$HOME/storage/shared/Skyline"
 Skyline_releaseURL=""
 
 #cleanupOlderThings
