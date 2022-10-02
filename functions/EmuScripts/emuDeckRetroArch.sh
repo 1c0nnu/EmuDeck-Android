@@ -4,7 +4,7 @@ RetroArch_emuName="RetroArch"
 RetroArch_emuType="apk"
 RetroArch_emuPath="$HOME/storage/shared/RetroArch"
 RetroArch_releaseURL=""
-RetroArch_configFile="$HOME/Android/data/com.retroarch.aarch64/files/retroarch.cfg"
+RetroArch_configFile="$HOME/storage/shared/Android/data/com.retroarch.aarch64/files/retroarch.cfg"
 RetroArch_coreConfigFolders="$HOME/storage/shared/RetroArch/config"
 
 
@@ -40,7 +40,8 @@ RetroArch_init(){
 	#Overlays, TO DO: do it properly
 	mkdir -p $RetroArch_emuPath/overlays/pegasus
 	rsync -r --ignore-existing $EMUDECKGIT/configs/RetroArch/overlays/pegasus/  $RetroArch_emuPath/overlays/pegasus/
-	rsync -r --ignore-existing $EMUDECKGIT/configs/RetroArch/config/  $RetroArch_emuPath/config/	
+	rsync -r --ignore-existing $EMUDECKGIT/configs/RetroArch/config/  $RetroArch_emuPath/config/
+	cp 	$EMUDECKGIT/configs/RetroArch/config/retroarch.cfg  $RetroArch_configFile
 }
 
 #update
