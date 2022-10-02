@@ -10,6 +10,15 @@ BOLD='\033[1m'
 UNDERLINE='\033[4m'
 BLINK='\x1b[5m'
 
+clear
+echo -e "EmuDeck for ${GREEN}Android${NONE} ${RED}BETA${NONE}"
+echo -e  "${BOLD}You must hide the virtual keyboard to continue so you can read all the instructions${NONE}"
+echo -e  "If your controller is not being recognized you might need to connect a Keyboard."
+echo -e  "Press the ${RED}A button${NONE} when ready"
+read clear
+clear
+
+
 # "1" "Update & Configure EmuDeck" ON \
 # "2" "Scrape your Roms (Android 10 only)" OFF \
 # "3" "Compress your Roms" OFF \
