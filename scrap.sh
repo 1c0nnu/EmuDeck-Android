@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-
+EMUDECKGIT="$HOME/EmuDeck/backend"
 source "$EMUDECKGIT"/functions/all.sh
 
 LOGFILE="$HOME/storage/shared/emudeck/scrap.log"
