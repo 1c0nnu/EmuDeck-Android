@@ -34,12 +34,12 @@ RABezels=true
 RAautoSave=false
 
 #Default installation folders
-emulationPath=$HOME/Emulation
-romsPath=$HOME/Emulation/roms
-toolsPath=$HOME/Emulation/tools
-biosPath=$HOME/Emulation/bios
-savesPath=$HOME/Emulation/saves
-storagePath=$HOME/Emulation/storage
+emulationPath=$HOME/storage/shared/Emulation
+romsPath=$HOME/storage/shared/Emulation/roms
+toolsPath=$HOME/storage/shared/Emulation/tools
+biosPath=$HOME/storage/shared/Emulation/bios
+savesPath=$HOME/storage/shared/Emulation/saves
+storagePath=$HOME/storage/shared/Emulation/storage
 
 #New UI settings
 achievementsPass=false

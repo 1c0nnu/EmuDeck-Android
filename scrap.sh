@@ -2,7 +2,8 @@
 #
 EMUDECKGIT="$HOME/EmuDeck/backend"
 source "$EMUDECKGIT"/functions/all.sh
-#romName="${firstString/"/data/data/com.termux/files/home/storage/$storageLocation/$system/"/"$secondString"}"   		
+
+
 storageLocation=shared/Emulation/roms
 romsPathFiltered=$HOME/storage/shared/Emulation/roms
 #romsPathFiltered=$HOME/storage/external-1/Emulation/roms
@@ -505,7 +506,7 @@ for scraper in ${scrapers[@]};
 				 #Cleaning up names
 				firstString=$entry
 				secondString=""
-				romName="${firstString/"/data/data/com.termux/files/home/storage/$storageLocation/$system/"/"$secondString"}"   		
+				romName="${firstString/"$romsPath/$system/"/"$secondString"}"   		
 				romNameNoExtension=${romName%.*}		
 				
 				startcapture=true
@@ -625,7 +626,7 @@ for scraper in ${scrapers[@]};
 				  #Cleaning up names
 				 firstString=$entry
 				 secondString=""
-				 romName="${firstString/"/data/data/com.termux/files/home/storage/$storageLocation/$system/"/"$secondString"}"   		
+				 romName="${firstString/"$romsPath/$system/"/"$secondString"}"   		
 				 romNameNoExtension=${romName%.*}		
 				 
 				 startcapture=true
@@ -726,9 +727,9 @@ for scraper in ${scrapers[@]};
 						urlMediaSs=$( jq -r  ".platform.$system.games.\"$romNameNoExtensionForLaunchbox\".medias.screenshot" <<< "${content}" )
 						urlMediaBox=$( jq -r  ".platform.$system.games.\"$romNameNoExtensionForLaunchbox\".medias.box2dfront" <<< "${content}" )
 						
-						wheelSavePath="./storage/$storageLocation/$system/media/wheel/$romNameNoExtension.png"
-						ssSavePath="./storage/$storageLocation/$system/media/screenshot/$romNameNoExtension.png"
-						box2dfrontSavePath="./storage/$storageLocation/$system/media/box2dfront/$romNameNoExtension.png"
+						wheelSavePath="$romsPath/$system/media/wheel/$romNameNoExtension.png"
+						ssSavePath="$romsPath/$system/media/screenshot/$romNameNoExtension.png"
+						box2dfrontSavePath="$romsPath/$system/media/box2dfront/$romNameNoExtension.png"
 
 						echo -e "Searching Images for $romNameNoExtension"		
 						
@@ -845,7 +846,7 @@ for scraper in ${scrapers[@]};
 				#Cleaning up names
 				firstString=$entry
 				secondString=""
-				romName="${firstString/"/data/data/com.termux/files/home/storage/$storageLocation/$system/"/"$secondString"}"
+				romName="${firstString/"$romsPath/$system/"/"$secondString"}"
 				romNameNoExtension=${romName%.*}
 				startcapture=true
 				
@@ -970,9 +971,9 @@ for scraper in ${scrapers[@]};
 						urlMediaWheelHD="https://www.screenscraper.fr/api2/mediaJeu.php?devid=djrodtc&devpassword=diFay35WElL&softname=zzz&ssid=${userSS}&sspassword=${passSS}&crc=&md5=&sha1=&systemeid=${ssID}&jeuid=${gameIDSS}&media=wheel-hd(wor)"			 
 						urlMediaSs="https://www.screenscraper.fr/api2/mediaJeu.php?devid=djrodtc&devpassword=diFay35WElL&softname=zzz&ssid=${userSS}&sspassword=${passSS}&crc=&md5=&sha1=&systemeid=${ssID}&jeuid=${gameIDSS}&media=ss(wor)"
 						urlMediaBox="https://www.screenscraper.fr/api2/mediaJeu.php?devid=djrodtc&devpassword=diFay35WElL&softname=zzz&ssid=${userSS}&sspassword=${passSS}&crc=&md5=&sha1=&systemeid=${ssID}&jeuid=${gameIDSS}&media=box-2D(wor)"		
-						wheelSavePath="./storage/$storageLocation/$system/media/wheel/$romNameNoExtension.png"
-						ssSavePath="./storage/$storageLocation/$system/media/screenshot/$romNameNoExtension.png"
-						box2dfrontSavePath="./storage/$storageLocation/$system/media/box2dfront/$romNameNoExtension.png"
+						wheelSavePath="$romsPath/$system/media/wheel/$romNameNoExtension.png"
+						ssSavePath="$romsPath/$system/media/screenshot/$romNameNoExtension.png"
+						box2dfrontSavePath="$romsPath/$system/media/box2dfront/$romNameNoExtension.png"
 
 						echo -e "Downloading Images for $romNameNoExtensionTrimmed - $gameIDSS"
 
@@ -1012,20 +1013,20 @@ for scraper in ${scrapers[@]};
 							fi
 
 							genre_array=$( jq -r '[foreach .response.jeu.genres[].noms[] as $item ([[],[]]; if $item.langue == "en" then $item.text else "" end)]' <<< "${content}" )
-							echo "" >> ./storage/$storageLocation/$system/metadata.pegasus.txt
-							echo "" >> ./storage/$storageLocation/$system/metadata.pegasus.txt
-							echo game: $romNameNoExtensionTrimmed >> ./storage/${storageLocation}/${system}/metadata.pegasus.txt
-							echo file: $romName >> ./storage/${storageLocation}/${system}/metadata.pegasus.txt
-							echo developer: $( jq -r  '.response.jeu.developpeur.text' <<< "${content}" ) >> ./storage/${storageLocation}/${system}/metadata.pegasus.txt
-							echo publisher: $( jq -r  '.response.jeu.editeur.text' <<< "${content}" ) >> ./storage/${storageLocation}/${system}/metadata.pegasus.txt
-							echo genre: $( jq '. - [""] | join(", ")' <<< "${genre_array}" ) | sed 's/[\"]//g' >> ./storage/${storageLocation}/${system}/metadata.pegasus.txt
-							echo description: $( jq -r  '.response.jeu.synopsis[0].text' <<< "${content}" ) >> ./storage/${storageLocation}/${system}/metadata.pegasus.txt
-							echo release: $( jq -r  '.response.jeu.dates[0].text' <<< "${content}" ) >> ./storage/${storageLocation}/${system}/metadata.pegasus.txt
-							echo players: $( jq -r  '.response.jeu.joueurs.text' <<< "${content}" ) >> ./storage/${storageLocation}/${system}/metadata.pegasus.txt
-							echo rating: $( jq -r  '.response.jeu.classifications[0].text' <<< "${content}" ) >> ./storage/${storageLocation}/${system}/metadata.pegasus.txt
-							echo assets.logo: ./media/wheel/$romNameNoExtension.png >> ./storage/$storageLocation/$system/metadata.pegasus.txt
-							echo assets.screenshot: ./media/screenshot/$romNameNoExtension.png >> ./storage/$storageLocation/$system/metadata.pegasus.txt
-							echo assets.boxfront: ./media/box2dfront/$romNameNoExtension.png >> ./storage/$storageLocation/$system/metadata.pegasus.txt
+							echo "" >> $romsPath/$system/metadata.pegasus.txt
+							echo "" >> $romsPath/$system/metadata.pegasus.txt
+							echo game: $romNameNoExtensionTrimmed >> ${romsPath}/${system}/metadata.pegasus.txt
+							echo file: $romName >> ${romsPath}/${system}/metadata.pegasus.txt
+							echo developer: $( jq -r  '.response.jeu.developpeur.text' <<< "${content}" ) >> ${romsPath}/${system}/metadata.pegasus.txt
+							echo publisher: $( jq -r  '.response.jeu.editeur.text' <<< "${content}" ) >> ${romsPath}/${system}/metadata.pegasus.txt
+							echo genre: $( jq '. - [""] | join(", ")' <<< "${genre_array}" ) | sed 's/[\"]//g' >> ${romsPath}/${system}/metadata.pegasus.txt
+							echo description: $( jq -r  '.response.jeu.synopsis[0].text' <<< "${content}" ) >> ${romsPath}/${system}/metadata.pegasus.txt
+							echo release: $( jq -r  '.response.jeu.dates[0].text' <<< "${content}" ) >> ${romsPath}/${system}/metadata.pegasus.txt
+							echo players: $( jq -r  '.response.jeu.joueurs.text' <<< "${content}" ) >> ${romsPath}/${system}/metadata.pegasus.txt
+							echo rating: $( jq -r  '.response.jeu.classifications[0].text' <<< "${content}" ) >> ${romsPath}/${system}/metadata.pegasus.txt
+							echo assets.logo: ./media/wheel/$romNameNoExtension.png >> $romsPath/$system/metadata.pegasus.txt
+							echo assets.screenshot: ./media/screenshot/$romNameNoExtension.png >> $romsPath/$system/metadata.pegasus.txt
+							echo assets.boxfront: ./media/box2dfront/$romNameNoExtension.png >> $romsPath/$system/metadata.pegasus.txt
 
 							echo -e "Metadata saved to ${system}/metadata.pegasus.txt"
 						fi
