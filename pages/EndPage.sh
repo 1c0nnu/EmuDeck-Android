@@ -78,13 +78,16 @@ if [ $doInstallPegasus == true ]; then
 		echo -e  "${RED}Pegasus Warning${NONE}"	
 	if [ $android -gt 10 ]; then
 		
-		echo -e  "The Pegasus Artwork Scrapper only works on if you keep your roms on your Internal Storage"
-		echo -e  "if you want to use your SD Card you need to connect your device on your computer to get your Artwork"
-		echo -e  "This doesn't apply if you have your SD Card formatted as Internal Storage"
-		echo -e  "We recommend using www.skraper.net"
-		echo -e  "Press the ${RED}A Button${NONE} to open a written guide of how to use Skraper"
-		read pause
-		termux-open "https://retrogamecorps.com/2021/04/02/quick-guide-skraper-for-retro-handheld-devices/"
+		if [ $romPathSelection != 'INTERNAL' ]; then		
+			echo -e  "The Pegasus Artwork Scrapper only works on if you keep your roms on your Internal Storage"
+			echo -e  "If you want to use your SD Card you need to rename the delete the pegasus-frontend/game_dirs.txt and rename pegasus-frontend/game_dirs_SD.txt to pegasus-frontend/game_dirs.txt"
+			echo -e  "You'll also need to connect your device on your computer to get your Artwork"
+			echo -e  "This doesn't apply if you have your SD Card formatted as Internal Storage"
+			echo -e  "We recommend using www.skraper.net"
+			echo -e  "Press the ${RED}A Button${NONE} to open a written guide of how to use Skraper"
+			read pause
+			termux-open "https://retrogamecorps.com/2021/04/02/quick-guide-skraper-for-retro-handheld-devices/"
+		fi
 	else
 		echo -e "Once you've copied your roms to their proper folders, you need to run our Pegasus Artwork Scrapper"
 		echo -e "Open Termux again when you've copied them and select the Pegasus Artwork Scrapper option"

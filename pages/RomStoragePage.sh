@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ $android -lt 11 ]; then
+
 	
 	if [ $hasSDCARD == true ]; then
 		
@@ -35,10 +35,8 @@ if [ $android -lt 11 ]; then
 		path="$HOME/storage/shared"
 	fi
 
-else
-
+if [ $android -gt 9 ]; then
 	path="$HOME/storage/shared"
-
 fi
 
 setSetting emulationPath $path/Emulation
