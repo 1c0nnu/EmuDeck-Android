@@ -3,8 +3,11 @@
 
 source "$EMUDECKGIT"/functions/all.sh
 
-touch ~/storage/shared/emudeck/scrap.log  &> /dev/null
-echo "" > ~/storage/shared/emudeck/scrap.log &> /dev/null
+LOGFILE="$HOME/storage/shared/emudeck/scrap.log"
+mv "${LOGFILE}" "$HOME/storage/shared/emudeck/scrap.last.log"
+echo "${@}" > "${LOGFILE}" #might as well log out the parameters of the run
+exec > >(tee "${LOGFILE}") 2>&1
+date "+%Y.%m.%d-%H:%M:%S %Z"
 
 get_sc_id(){
 	#SS ID systems
@@ -430,7 +433,7 @@ scrap_ss () {
 							echo -e "${GREEN}Found it!${NONE}"
 						
 						else				
-							echo $urlMedia >> ~/storage/shared/scrap.log &> /dev/null
+							echo $urlMedia
 							echo -e "${RED}NO IMG FOUND${NONE}"
 						fi
 					fi
@@ -945,14 +948,14 @@ for scraper in ${scrapers[@]};
 						if [[ $content == "" ]]; then
 							echo -e "Request failed to send for $romNameNoExtensionTrimmed, ${YELLOW}skipping${NONE}"
 							echo ""
-							echo "Request failed for $romNameNoExtensionTrimmed" >> ~/storage/shared/scrap.log
+							echo "Request failed for $romNameNoExtensionTrimmed"
 							continue;
 						fi
 						#Don't check art if screenscraper can't find a match
 						if [[ $content == *"Erreur"* ]]; then
 							echo -e "Couldn't find a match for $romNameNoExtensionTrimmed, ${YELLOW}skipping${NONE}"
 							echo ""
-							echo "Couldn't find a match for $romNameNoExtensionTrimmed" >> ~/storage/shared/scrap.log
+							echo "Couldn't find a match for $romNameNoExtensionTrimmed"
 							continue;
 						fi
 
