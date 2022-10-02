@@ -372,7 +372,11 @@ fi
 #RetroArch_setShadersMAT
 
 #AR corrections
-RetroArch_169
+
+if [ $deviceAR == 169 ]; then
+	RetroArch_169
+fi
+
 
 #Downloading Frontends
 
