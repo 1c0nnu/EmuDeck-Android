@@ -59,7 +59,7 @@ done
 
 if [[ $selected_option == "1" ]]
 then
-	/bin/bash ~/EmuDeck/backend/install.sh
+	/bin/bash ~/EmuDeck/backend/setup.sh
 fi
 
 if [[ $selected_option == "2" ]]
