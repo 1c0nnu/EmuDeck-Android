@@ -1,0 +1,275 @@
+2022-10-02T04:06:51 [i] Pegasus alpha16-42-g996720eb (2022-07-29)
+2022-10-02T04:06:51 [i] Running on Android  (10.0) (arm, android)
+2022-10-02T04:06:51 [i] Qt version 5.15.3
+2022-10-02T04:06:51 [i] Program settings loaded (`/storage/emulated/0/Android/data/org.pegasus_frontend.android/files/pegasus-frontend/settings.txt`)
+2022-10-02T04:06:51 [i] Found locale `ar`
+2022-10-02T04:06:51 [i] Found locale `bs`
+2022-10-02T04:06:51 [i] Found locale `de`
+2022-10-02T04:06:51 [i] Found locale `en-GB`
+2022-10-02T04:06:51 [i] Found locale `en`
+2022-10-02T04:06:51 [i] Found locale `es`
+2022-10-02T04:06:51 [i] Found locale `fr`
+2022-10-02T04:06:51 [i] Found locale `hu`
+2022-10-02T04:06:51 [i] Found locale `ja`
+2022-10-02T04:06:51 [i] Found locale `ko`
+2022-10-02T04:06:51 [i] Found locale `lt`
+2022-10-02T04:06:51 [i] Found locale `nl`
+2022-10-02T04:06:51 [i] Found locale `pt-BR`
+2022-10-02T04:06:51 [i] Found locale `ru`
+2022-10-02T04:06:51 [i] Found locale `zh-TW`
+2022-10-02T04:06:51 [i] Found locale `zh`
+2022-10-02T04:06:51 [i] Locale set to `en`
+2022-10-02T04:06:51 [i] Found theme `Pegasus Grid` at `:/themes/pegasus-theme-grid/`
+2022-10-02T04:06:51 [i] Found theme `shinretro` at `/storage/emulated/0/pegasus-frontend/themes/neoretro-dark/`
+2022-10-02T04:06:51 [i] Found theme `RP Epic Noir` at `/storage/emulated/0/pegasus-frontend/themes/RP-epic-noir/`
+2022-10-02T04:06:51 [i] Found theme `Retro Mega Next` at `/storage/emulated/0/pegasus-frontend/themes/retromega/`
+2022-10-02T04:06:51 [i] Found theme `RP Switch Theme` at `/storage/emulated/0/pegasus-frontend/themes/RP-switch/`
+2022-10-02T04:06:51 [i] Found theme `gameOS` at `/storage/emulated/0/pegasus-frontend/themes/gameOS/`
+2022-10-02T04:06:51 [i] Theme set to `Pegasus Grid` (`:/themes/pegasus-theme-grid/`)
+2022-10-02T04:06:51 [i] Gamepad: Connected device 0x9 (generic)
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/3do/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/3ds/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/amiga/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/amstradcpc/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/atarist/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/colecovision/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/cps1/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/cps2/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/cps3/metadata.pegasus.txt`
+2022-10-02T04:06:51 [e] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/cps3/metadata.pegasus.txt`, line 16: line starts with whitespace, but no attribute has been defined yet
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/daphne/metadata.pegasus.txt`
+2022-10-02T04:06:51 [e] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/daphne/metadata.pegasus.txt`, line 16: line starts with whitespace, but no attribute has been defined yet
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/doom/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/dos/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/dreamcast/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/fba/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/fbneo/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/gameandwatch/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/gamegear/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/gb/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/gba/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/gbc/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/gc/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/genesis/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/genesiswide/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/intellivision/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/lutro/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/lynx/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 20: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/aquajack.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 28: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/pitfall2.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 36: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/shdancer.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 44: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/twotiger.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 52: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/luckywld.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 60: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/poizone.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 68: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/karnovr.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 76: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/hustler.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 84: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/cclownz.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 92: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/dokaben.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 100: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/cninja.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 108: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/goldbug.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 116: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/aoh.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 124: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/hvysmsh.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 132: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/gticlub.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 140: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/ghouls.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 148: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/f1en.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 156: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/poitto.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 164: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/xexex.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 172: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/ldrun.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 180: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/searchar.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 188: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/gground.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 196: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/drgnunit.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 204: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/tengai.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 212: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/archrivl.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 220: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/cuebrick.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 228: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/tricktrp.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 236: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/nob.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 242: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/hasamu.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 250: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/rescue.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 258: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/ptblank2.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 266: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/rampart.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 274: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/spcking2.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 282: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/vasara.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 290: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/mrdig.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 298: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/eggventr.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 306: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/spinmast.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 314: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/uccops.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 322: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/rougien.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 330: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/chukatai.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 338: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/ldrun3.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 346: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/riot.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 354: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/msgogo.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 362: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/sfz2al.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 370: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/gslgr94u.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 378: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/splat.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 386: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/maze.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 394: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/rjammer.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 402: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/spdodgeb.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 408: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metmqstr.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 416: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/rockrage.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 424: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/matchit.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 430: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/gt3d.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 438: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/stonebal.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 446: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/ddonpach.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 454: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/fsoccer.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 462: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/disco.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 470: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/twinspri.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 478: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/wwjgtin.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 486: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/magdrop3.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 494: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/kamikaze.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 502: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/vmetal.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 510: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/cterrani.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 518: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/photoy2k.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 526: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/hoops96.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 534: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/passsht.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 542: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/agallet.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 550: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/cltchitr.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 558: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/ssoldier.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 566: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/mario.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 574: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/vsav.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 582: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/sonson.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 590: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/toutrun.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 598: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/amerdart.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 606: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/tutstomb.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 614: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/arkanoid.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 622: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/720.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 630: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/hal21.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 638: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/shocking.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 646: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/hotmind.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 654: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/fitegolf.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 662: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/zektor.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 670: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/qix.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 678: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/vandyke.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 686: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/rthun2.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 694: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/pzlbowl.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 702: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/dirtfoxj.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 710: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/multigm2.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 718: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/osman.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 726: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/ikari3.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 734: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/rsgun.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 742: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/upndown.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 750: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/astrof.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 758: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/toobin.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 766: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/arabfgt.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 774: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/fort2b.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 782: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/block.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 790: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/tndrcade.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 798: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/cosmos.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/metadata.pegasus.txt`, line 806: Game file `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mame/shadoww.zip` doesn't seem to exist
+2022-10-02T04:06:51 [w] Metafiles: 2424 other issues omitted
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/mastersystem/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/msx/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/n64/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/nds/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/neogeo/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/neogeocd/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/nes/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/ngp/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/ngpc/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/pcengine/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/pico8/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/ps2/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/psp/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/psx/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/quake_1/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/saturn/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/scripts/metadata.pegasus.txt`
+2022-10-02T04:06:51 [e] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/scripts/metadata.pegasus.txt`, line 5: line invalid, skipped
+2022-10-02T04:06:51 [e] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/scripts/metadata.pegasus.txt`, line 6: line invalid, skipped
+2022-10-02T04:06:51 [e] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/scripts/metadata.pegasus.txt`, line 7: line invalid, skipped
+2022-10-02T04:06:51 [e] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/scripts/metadata.pegasus.txt`, line 8: line invalid, skipped
+2022-10-02T04:06:51 [e] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/scripts/metadata.pegasus.txt`, line 9: line invalid, skipped
+2022-10-02T04:06:51 [e] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/scripts/metadata.pegasus.txt`, line 10: line invalid, skipped
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/scummvm/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/sega32x/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/segacd/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/snes/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/sneshd/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/tic80/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/vectrex/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/virtualboy/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/wii/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/wonderswan/metadata.pegasus.txt`
+2022-10-02T04:06:51 [e] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/wonderswan/metadata.pegasus.txt`, line 5: line invalid, skipped
+2022-10-02T04:06:51 [e] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/wonderswan/metadata.pegasus.txt`, line 6: line invalid, skipped
+2022-10-02T04:06:51 [e] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/wonderswan/metadata.pegasus.txt`, line 7: line invalid, skipped
+2022-10-02T04:06:51 [e] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/wonderswan/metadata.pegasus.txt`, line 8: line invalid, skipped
+2022-10-02T04:06:51 [e] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/wonderswan/metadata.pegasus.txt`, line 9: line invalid, skipped
+2022-10-02T04:06:51 [e] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/wonderswan/metadata.pegasus.txt`, line 10: line invalid, skipped
+2022-10-02T04:06:51 [e] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/wonderswan/metadata.pegasus.txt`, line 11: line invalid, skipped
+2022-10-02T04:06:51 [e] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/wonderswan/metadata.pegasus.txt`, line 12: line invalid, skipped
+2022-10-02T04:06:51 [e] Metafiles: `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/wonderswan/metadata.pegasus.txt`, line 13: line invalid, skipped
+2022-10-02T04:06:51 [i] Metafiles: Found `/storage/50B1-A163/Android/data/com.termux/files/Emulation/roms/zxspectrum/metadata.pegasus.txt`
+2022-10-02T04:06:51 [i] Metafiles: Finished searching in 133ms
+2022-10-02T04:06:51 [i] Media: Finished searching in 2ms
+2022-10-02T04:06:51 [i] Android Apps: 24 apps found
+2022-10-02T04:06:51 [i] Android Apps: Finished searching in 149ms
+2022-10-02T04:06:52 [i] Logiqx: Finished searching in 7ms
+2022-10-02T04:06:52 [i] Skraper Assets: 0 assets found
+2022-10-02T04:06:52 [i] Skraper Assets: Finished searching in 3ms
+2022-10-02T04:06:52 [i] Favorites: Finished searching in 0ms
+2022-10-02T04:06:52 [i] Playtime: Finished searching in 0ms
+2022-10-02T04:06:52 [i] Waiting for online sources...
+2022-10-02T04:06:52 [w] Android Apps: Downloading metadata for `com.android.documentsui` failed: Error transferring https://play.google.com/store/apps/details?id=com.android.documentsui&hl=en_US - server replied: Not Found
+2022-10-02T04:06:52 [w] Android Apps: Downloading metadata for `org.citra.emu` failed: Error transferring https://play.google.com/store/apps/details?id=org.citra.emu&hl=en_US - server replied: Not Found
+2022-10-02T04:06:52 [w] Android Apps: Downloading metadata for `com.sprd.screencapture` failed: Error transferring https://play.google.com/store/apps/details?id=com.sprd.screencapture&hl=en_US - server replied: Not Found
+2022-10-02T04:06:52 [w] Android Apps: Downloading metadata for `com.android.soundrecorder` failed: Error transferring https://play.google.com/store/apps/details?id=com.android.soundrecorder&hl=en_US - server replied: Not Found
+2022-10-02T04:06:52 [w] Android Apps: Downloading metadata for `com.odin.odinlauncher` failed: Error transferring https://play.google.com/store/apps/details?id=com.odin.odinlauncher&hl=en_US - server replied: Not Found
+2022-10-02T04:06:52 [w] Android Apps: Downloading metadata for `com.android.vending` failed: Error transferring https://play.google.com/store/apps/details?id=com.android.vending&hl=en_US - server replied: Not Found
+2022-10-02T04:06:52 [w] Android Apps: Downloading metadata for `com.odin.odinmusic` failed: Error transferring https://play.google.com/store/apps/details?id=com.odin.odinmusic&hl=en_US - server replied: Not Found
+2022-10-02T04:06:52 [w] Android Apps: Downloading metadata for `org.mm.jr` failed: Error transferring https://play.google.com/store/apps/details?id=org.mm.jr&hl=en_US - server replied: Not Found
+2022-10-02T04:06:52 [w] Android Apps: Downloading metadata for `com.odin.odincalendar01.debug` failed: Error transferring https://play.google.com/store/apps/details?id=com.odin.odincalendar01.debug&hl=en_US - server replied: Not Found
+2022-10-02T04:06:52 [w] Android Apps: Downloading metadata for `com.android.settings` failed: Error transferring https://play.google.com/store/apps/details?id=com.android.settings&hl=en_US - server replied: Not Found
+2022-10-02T04:06:52 [w] Android Apps: Downloading metadata for `skyline.emu` failed: Error transferring https://play.google.com/store/apps/details?id=skyline.emu&hl=en_US - server replied: Not Found
+2022-10-02T04:06:52 [w] Android Apps: Downloading metadata for `com.android.deskclock` failed: Error transferring https://play.google.com/store/apps/details?id=com.android.deskclock&hl=en_US - server replied: Not Found
+2022-10-02T04:06:52 [w] Android Apps: Downloading metadata for `com.android.gallery3d` failed: Error transferring https://play.google.com/store/apps/details?id=com.android.gallery3d&hl=en_US - server replied: Not Found
+2022-10-02T04:06:52 [i] Waiting for online sources took 442ms
+2022-10-02T04:06:52 [w] The collection 'Wonderswan' has no valid games, ignored
+2022-10-02T04:06:52 [w] The collection 'Vectrex' has no valid games, ignored
+2022-10-02T04:06:52 [w] The collection 'Super Nintendo Widescreen' has no valid games, ignored
+2022-10-02T04:06:52 [w] The collection 'Neo Geo' has no valid games, ignored
+2022-10-02T04:06:52 [w] The collection 'PlayStation 2' has no valid games, ignored
+2022-10-02T04:06:52 [w] The collection 'Neo Geo Pocket' has no valid games, ignored
+2022-10-02T04:06:52 [w] The collection 'PlayStation Portable' has no valid games, ignored
+2022-10-02T04:06:52 [w] The collection 'Scripts' has no valid games, ignored
+2022-10-02T04:06:52 [w] The collection 'Arcade (FBN)' has no valid games, ignored
+2022-10-02T04:06:52 [w] The collection 'Lutro' has no valid games, ignored
+2022-10-02T04:06:52 [w] The collection 'Nintendo Wii' has no valid games, ignored
+2022-10-02T04:06:52 [w] The collection 'Saturn' has no valid games, ignored
+2022-10-02T04:06:52 [w] The collection 'Nintendo DS' has no valid games, ignored
+2022-10-02T04:06:52 [w] The collection 'Sega CD' has no valid games, ignored
+2022-10-02T04:06:52 [w] The collection 'MSX/SVI/ColecoVision/SG-1000' has no valid games, ignored
+2022-10-02T04:06:52 [w] The collection 'Mame' has no valid games, ignored
+2022-10-02T04:06:52 [w] The collection 'ZX Spectrum (various)' has no valid games, ignored
+2022-10-02T04:06:52 [w] The collection 'Intellivision' has no valid games, ignored
+2022-10-02T04:06:52 [w] The collection 'Sega Genesis Widescreen' has no valid games, ignored
+2022-10-02T04:06:52 [w] The collection 'GameCube' has no valid games, ignored
+2022-10-02T04:06:52 [w] The collection 'CP System III' has no valid games, ignored
+2022-10-02T04:06:52 [w] The collection 'Arcade (FBA)' has no valid games, ignored
+2022-10-02T04:06:52 [w] The collection 'Neo Geo Pocket Color' has no valid games, ignored
+2022-10-02T04:06:52 [w] The collection 'CP System II' has no valid games, ignored
+2022-10-02T04:06:52 [w] The collection 'Arcade (Daphne)' has no valid games, ignored
+2022-10-02T04:06:52 [w] The collection '3DO' has no valid games, ignored
+2022-10-02T04:06:52 [w] The collection 'DooM' has no valid games, ignored
+2022-10-02T04:06:52 [w] The collection 'SNK Neo Geo CD' has no valid games, ignored
+2022-10-02T04:06:52 [w] The collection 'Game & Watch' has no valid games, ignored
+2022-10-02T04:06:52 [w] The collection 'DOS' has no valid games, ignored
+2022-10-02T04:06:52 [w] The collection 'TIC-80' has no valid games, ignored
+2022-10-02T04:06:52 [w] The collection 'Nintendo 3DS' has no valid games, ignored
+2022-10-02T04:06:52 [w] The collection 'Amiga' has no valid games, ignored
+2022-10-02T04:06:52 [w] The collection 'VirtualBoy' has no valid games, ignored
+2022-10-02T04:06:52 [w] The collection 'CPC/GX4000' has no valid games, ignored
+2022-10-02T04:06:52 [w] The collection 'Dreamcast' has no valid games, ignored
+2022-10-02T04:06:52 [w] The collection 'CP System I' has no valid games, ignored
+2022-10-02T04:06:52 [w] The collection 'ColecoVision' has no valid games, ignored
+2022-10-02T04:06:52 [w] The collection 'PC Engine' has no valid games, ignored
+2022-10-02T04:06:52 [w] The collection 'Sega 32X' has no valid games, ignored
+2022-10-02T04:06:52 [w] The collection 'Lynx' has no valid games, ignored
+2022-10-02T04:06:52 [w] The collection 'Quake Game Engine' has no valid games, ignored
+2022-10-02T04:06:52 [w] The collection 'Atari ST/STE/TT/Falcon' has no valid games, ignored
+2022-10-02T04:06:52 [w] The collection 'PlayStation' has no valid games, ignored
+2022-10-02T04:06:52 [w] The collection 'PICO8' has no valid games, ignored
+2022-10-02T04:06:52 [i] Game list post-processing took 2ms
+2022-10-02T04:06:52 [i] 34 games found
+2022-10-02T04:06:52 [w] DelegateModel::cancel: index out range 1 1
+2022-10-02T04:07:03 [i] Closing Pegasus, goodbye!
