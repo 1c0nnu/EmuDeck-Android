@@ -40,7 +40,7 @@ fi
 if [ -d "$EMUDECKGIT" ]; then
 	cd $EMUDECKGIT && git checkout beta && git pull && cd $HOME
 else
-	git clone https://github.com/EmuDeck/EmuDeck-Android.git "$EMUDECKGIT" && git checkout beta
+	git clone https://github.com/EmuDeck/EmuDeck-Android.git "$EMUDECKGIT" && cd $EMUDECKGIT && git checkout beta
 fi
 
 if [ ! -d "$EMUDECKGIT" ]; then
@@ -122,24 +122,24 @@ if [ $expert == 'true' ]; then
 	fi
 	
 	# Retroachievements
-	source "$EMUDECKGIT"/pages/RAAchievementsPage.sh
+	#source "$EMUDECKGIT"/pages/RAAchievementsPage.sh
 	
 	# Bezels
 	source "$EMUDECKGIT"/pages/RABezelsPage.sh
 
-	 if [ $deviceAR != 43 ]; then 
-		 # AR Sega Classic
-		source "$EMUDECKGIT"/pages/AspectRatioSegaPage.sh
-		
-		 # AR SNES + NES
-		 source "$EMUDECKGIT"/pages/AspectRatioSNESPage.sh
-		 
-		# AR 3D Classics
-		source "$EMUDECKGIT"/pages/AspectRatio3DPage.sh
-		
-		# AR Gamecube
-		source "$EMUDECKGIT"/pages/AspectRatioDolphinPage.sh
-	fi 
+	#  if [ $deviceAR != 43 ]; then 
+	# 	 # AR Sega Classic
+	 	source "$EMUDECKGIT"/pages/AspectRatioSegaPage.sh
+	# 	
+	# 	 # AR SNES + NES
+	 	 source "$EMUDECKGIT"/pages/AspectRatioSNESPage.sh
+	# 	 
+	# 	# AR 3D Classics
+	# 	source "$EMUDECKGIT"/pages/AspectRatio3DPage.sh
+	# 	
+	# 	# AR Gamecube
+	# 	source "$EMUDECKGIT"/pages/AspectRatioDolphinPage.sh
+	# fi 
 	
 	# LCD Shader Handhelds
 	#source "$EMUDECKGIT"/pages/ShadersHandheldsPage.sh
