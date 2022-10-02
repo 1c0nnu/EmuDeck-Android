@@ -484,6 +484,7 @@ for scraper in ${scrapers[@]};
 			 message=$device_name
 			 system="${message//'"'/}"            
 			 #ls $romsPath/$system
+			 echo $romsPath/$system
 			 mkdir -p $romsPath/$system/media &> /dev/null
 			 mkdir -p $romsPath/$system/media/screenshot &> /dev/null
 			 mkdir -p $romsPath/$system/media/box2dfront &> /dev/null
