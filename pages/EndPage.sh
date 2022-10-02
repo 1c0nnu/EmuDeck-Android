@@ -87,6 +87,6 @@ if [ $doInstallPegasus == true ]; then
 		echo -e "Open Termux again when you've copied them and select the Pegasus Artwork Scrapper option"
 	fi	
 fi
-echo -e
+echo -e ""
 echo -e  "Scroll Up to read all the final instructions and then press the ${RED}A Button${NONE} to Exit"
 read pause
