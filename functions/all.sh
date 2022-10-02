@@ -1,12 +1,32 @@
 #!/bin/bash
 emuDecksettingsFile="$HOME"/storage/shared/emudeck/settings.sh
 
-# export NEWT_COLORS='
-# window=,red
-# border=white,red
-# textbox=white,red
-# button=black,white
-# '
+NEWT_COLORS='
+root=white,cyan
+border=cyan,lightgray
+window=lightgray,lightgray
+shadow=cyan,gray
+title=cyan,lightgray
+button=cyan,cyan
+actbutton=white,cyan
+compactbutton=cyan,lightgray
+checkbox=cyan,lightgray
+actcheckbox=lightgray,cyan
+entry=cyan,lightgray
+disentry=gray,lightgray
+label=cyan,lightgray
+listbox=cyan,lightgray
+actlistbox=cyan,cyan
+sellistbox=lightgray,cyan
+actsellistbox=lightgray,cyan
+textbox=cyan,lightgray
+acttextbox=cyan,cyan
+emptyscale=,gray
+fullscale=,cyan
+helpline=white,cyan
+roottext=lightgrey,cyan
+'
+export NEWT_COLORS=$NEWT_COLORS
 
 #Settings
 if [ -f "$emuDecksettingsFile" ]; then
