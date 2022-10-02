@@ -165,31 +165,21 @@ fi
 # Installation...
 
 #Folder creation	
-if [ $romPathSelection == 'INTERNAL' ]; then
+if [ $android -lt 11 ]; then
 	mkdir -p $emulationPath
 	mkdir -p $romsPath
 	#mkdir -p $toolsPath
 	#mkdir -p $savesPath
 	#mkdir -p $storagePath
-	rsync -r --ignore-existing "$EMUDECKGIT/roms/" "$romsPath" 
+	rsync -ravhp --info=progress2 "$EMUDECKGIT/roms/" "$romsPath/"
 else
-	if [ $android -lt 11 ]; then
-		mkdir -p $emulationPath
-		mkdir -p $romsPath
-		#mkdir -p $toolsPath
-		#mkdir -p $savesPath
-		#mkdir -p $storagePath
-		rsync -r --ignore-existing "$EMUDECKGIT/roms/" "$romsPath" 
-	else
-		#We are forced to install everything on the shared volume since A>11 won't allow Termux to write anywhere else
-		mkdir -p $HOME/storage/shared/Emulation
-		mkdir -p $HOME/storage/shared/Emulation/roms
-		#mkdir -p $HOME/storage/shared/Emulation/tools
-		#mkdir -p $HOME/storage/shared/Emulation/saves			
-		rsync -r --ignore-existing "$EMUDECKGIT/roms/" "$HOME"/storage/shared/Emulation/roms
-	fi
+	#We are forced to install everything on the shared volume since A>11 won't allow Termux to write anywhere else
+	mkdir -p $HOME/storage/shared/Emulation
+	mkdir -p $HOME/storage/shared/Emulation/roms
+	#mkdir -p $HOME/storage/shared/Emulation/tools
+	#mkdir -p $HOME/storage/shared/Emulation/saves			
+	rsync -ravhp --info=progress2 "$EMUDECKGIT/roms/" "$HOME"/storage/shared/Emulation/roms
 fi
-
  
 
 
