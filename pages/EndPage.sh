@@ -12,22 +12,23 @@ UNDERLINE='\033[4m'
 BLINK='\x1b[5m'
 
 clear
-echo -e "EmuDeck has finished!"
+echo -e "${BOLD}EmuDeck has finished!${NONE}"
 echo ""
 echo -e "If you want to update or change your configuration just open Termux again"
 echo ""
 #Copy roms
 
-echo -e "${BOLD}How to add games${NONE}"
+echo -e "${BOLD}- How to add games${NONE}"
 
 if [ $romPathSelection != 'INTERNAL' ]; then
-	if [ $android -gt 10]; then		
+	if [ $android -gt 10 ]; then		
 		echo -e  "You need to manually move your roms folder before starting"
 		echo -e  "Open any File manager app and move the ${GREEN}/Emulation${NONE} folder to your SD Card"	
 		echo -e  "Now, connect your device to a computer and copy your roms to the proper folders ( each system has its own subfolder )"	
 	else
-		echo -e  "You can now remove your SD Card and start copying your roms!"
-		echo -e  "Insert your SD Card in your computer and copy your roms to the proper folders : ${GREEN}/Android/data/com.termux/files/Emulation/roms${NONE}. ( Each system has its own subfolder )"
+		echo -e "You can now remove your SD Card and start copying your roms!"
+		echo -e "Insert your SD Card in your computer and copy your roms to the proper folders :" 
+		echo -e "${GREEN}/Android/data/com.termux/files/Emulation/roms${NONE} ( Each system has its own subfolder )"
 	fi
 else
 		echo -e  "You can now start copying your roms!"	
@@ -35,35 +36,30 @@ else
 fi
 
 echo ""
-echo -e "${BOLD}How to launch your games${NONE}"
+echo -e "${BOLD}- How to launch your games${NONE}"
 #Easy
 if [ $expert == false ]; then
 	echo -e "We've installed for you Daijisho so you can use it as a frontend for all your systems"
 	echo -e "You need to Open Daijisho From your apps and manually configure it with your custom paths"
 	echo ""
-	echo -e "First, open Daijisho and select the Systems you want to use"
-	echo -e "by clicking on the Download Platforms button"
+	echo -e "First, open Daijisho and select the Systems you want to use by clicking on the Download Platforms button"
 	echo -e "Now click on Paths, Add more"
 	echo -e "Select the system folder ( ie: Super Nintendo )"
 	if [ $romPathSelection != 'INTERNAL' ]; then
-		if [ $android -gt 10]; then
-			echo -ne "SD Card: ${GREEN}Emulation/roms/snes${NONE}"
+		if [ $android -gt 10 ]; then
+			echo -e "SD Card: ${GREEN}Emulation/roms/snes${NONE}"
 		else
-			echo -ne "SD Card: ${GREEN}/Android/data/com.termux/files/Emulation/roms/snes${NONE}"
+			echo -e "SD Card: ${GREEN}/Android/data/com.termux/files/Emulation/roms/snes${NONE}"
 		fi
 	else
-		echo -ne "${GREEN}/Emulation/roms${NONE}"
+		echo -e "${GREEN}/Emulation/roms${NONE}"
 	fi
 	echo -e "Now press on Sync and Daijisho Will Start downloading artbox for your games!"
 	
 fi
 
-if [ $android -lt 11 ] && [ $romPathSelection != 'INTERNAL' ]; then
-	echo -e "${RED}IMPORTANT${NONE}"
-	echo -e "Be aware that if you delete the Termux app Android will ${RED}DELETE${NONE} the Termux folder on your SD Card including your roms"	
-fi
-
-echo -e "${BOLD}RetroArch Cores${NONE}"
+echo ""
+echo -e "${BOLD}- RetroArch Cores${NONE}"
 echo -e "You need to manually install your cores before playing games, open RetroArch and go to"
 echo -e "Main Menu -> Online Update -> Core Downloader"
 echo -e "and download at least these Cores:"
@@ -71,10 +67,16 @@ echo -e "Arcade (MAME 2003 Plus), Gambatte, Mesen, Snes9x - Current, Genesis Plu
 echo -e "If you want to emulate more systems you can download other cores too" 
 
 
+if [ $android -lt 11 ] && [ $romPathSelection != 'INTERNAL' ]; then
+	echo ""
+	echo -e "${RED}IMPORTANT${NONE}"
+	echo -e "Be aware that if you delete the Termux app Android will ${RED}DELETE${NONE} the Termux folder on your SD Card including your roms"	
+fi
+
 if [ $doInstallPegasus == true ]; then
 		echo ""
 		echo -e  "${RED}Pegasus Warning${NONE}"	
-	if [ $android -gt 10]; then
+	if [ $android -gt 10 ]; then
 		
 		echo -e  "The Pegasus Artwork Scrapper only works on Android 10 or older"
 		echo -e  "Since you are using a newer version you need to use an App on your computer to get your Artwork"
