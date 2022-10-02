@@ -308,7 +308,7 @@ if [ $deviceAR != 43 ]; then
 	#Bezels
 	RetroArch_setBezels
 	#New Aspect Ratios
-	#
+	
 	
 	#Sega Games
 		#Master System
@@ -316,45 +316,11 @@ if [ $deviceAR != 43 ]; then
 		#Sega CD
 		#Sega 32X
 	
-	case $arSega in
-	  "32")	 
-		RetroArch_mastersystem_ar32
-		RetroArch_genesis_ar32
-		RetroArch_segacd_ar32
-		  RetroArch_sega32x_ar32	
-		;;  
-	  *)
-		RetroArch_mastersystem_ar43
-		RetroArch_genesis_ar43
-		  RetroArch_segacd_ar43
-		  RetroArch_sega32x_ar43
-		  if [ "$RABezels" == true ]; then	
-			  RetroArch_mastersystem_bezelOn
-			  RetroArch_genesis_bezelOn
-			  RetroArch_segacd_bezelOn
-			  RetroArch_sega32x_bezelOn
-		fi
-	  ;;
-	esac	
+	RetroArch_setARSega
 	
 	#Snes and NES
-	case $arSnes in
-	  "87")
-		RetroArch_snes_ar87
-		RetroArch_nes_ar87
-	  ;;
-	  "32")
-			RetroArch_snes_ar32
-		  RetroArch_nes_ar32
-		;;  
-	  *)
-		RetroArch_snes_ar43
-		RetroArch_nes_ar43
-		if [ "$RABezels" == true ]; then	
-			RetroArch_snes_bezelOn
-		fi
-	  ;;
-	esac
+	RetroArch_setARNintendo
+	
 	
 	# Classic 3D Games
 		#Dreamcast
