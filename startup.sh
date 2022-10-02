@@ -25,13 +25,7 @@ while true; do
 	selected_option=$(whiptail --title "EmuDeck Menu" --radiolist "Move using your DPAD and select your options with the Y button. Press the A button to select." 20 80 15 \
 	"1" "Update & Configure EmuDeck" ON \
 	"2" "Scrape your Roms (Android 10 only)" OFF \
-	"3" "Compress your Roms" OFF \
-	"4" "Change SNES Aspect Ratio" OFF \
-	"5" "Turn Bezels ON/OFF" OFF \
-	"6" "Reset Screen Scraper credentials" OFF \
-	"7" "Uninstall EmuDeck" OFF \
 	"8" "Open Termux CLI" OFF \
-	"9" "Reinstall Termux dependencies" OFF \
 	"10" "Exit" OFF \
 	3>&1 1>&2 2>&3)
 	case $selected_option in
@@ -51,17 +45,17 @@ done
 
 if [[ $selected_option == "1" ]]
 then
-	/bin/bash ~/update.sh
+	/bin/bash ~/EmuDeck/backend/install.sh
 fi
 
 if [[ $selected_option == "2" ]]
 then
-	/bin/bash ~/scrap.sh
+	/bin/bash ~/EmuDeck/backend/scrap.sh
 fi
 
 if [[ $selected_option == "3" ]]
 then
-	/bin/bash ~/compress.sh
+	/bin/bash ~/EmuDeck/backend/compress.sh
 fi
 
 if [[ $selected_option == "4" ]]

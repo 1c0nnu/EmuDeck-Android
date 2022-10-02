@@ -1,16 +1,10 @@
 #!/bin/bash
 #
-touch ~/storage/shared/scrap.log  &> /dev/null
-echo "" > ~/storage/shared/scrap.log &> /dev/null
-useInternalStorage=false
-FILE=~/emudeck/.storageInternal
-if [ -f "$FILE" ]; then
-	useInternalStorage=true
-	storageLocation="shared/Emulation/roms"
-else
-	useInternalStorage=false
-	storageLocation="external-1/Emulation/roms"
-fi
+
+source "$EMUDECKGIT"/functions/all.sh
+
+touch ~/storage/shared/emudeck/scrap.log  &> /dev/null
+echo "" > ~/storage/shared/emudeck/scrap.log &> /dev/null
 
 get_sc_id(){
 	#SS ID systems
@@ -458,7 +452,7 @@ BOLD='\033[1m'
 UNDERLINE='\033[4m'
 BLINK='\x1b[5m'
 clear
-#cat ~/emudeck/backend/logo.ans
+#cat ~/EmuDeck/backend/logo.ans
  
  $selected_device_descriptions = "ALL"
 
@@ -486,11 +480,11 @@ for scraper in ${scrapers[@]};
 		 do
 			 message=$device_name
 			 system="${message//'"'/}"            
-			 #ls ~/storage/$storageLocation/$system
-			 mkdir -p ~/storage/$storageLocation/$system/media &> /dev/null
-			 mkdir -p ~/storage/$storageLocation/$system/media/screenshot &> /dev/null
-			 mkdir -p ~/storage/$storageLocation/$system/media/box2dfront &> /dev/null
-			 mkdir -p ~/storage/$storageLocation/$system/media/wheel &> /dev/null
+			 #ls $romsPath/$system
+			 mkdir -p $romsPath/$system/media &> /dev/null
+			 mkdir -p $romsPath/$system/media/screenshot &> /dev/null
+			 mkdir -p $romsPath/$system/media/box2dfront &> /dev/null
+			 mkdir -p $romsPath/$system/media/wheel &> /dev/null
 			 
 			 #Retroarch system folder name
 			 get_ra_alias $system
@@ -498,7 +492,7 @@ for scraper in ${scrapers[@]};
 			 echo -e "Scraping $system..."
 			 echo ""
 			 #Roms loop
-			 for entry in ~/storage/$storageLocation/$system/*
+			 for entry in $romsPath/$system/*
 			 do
 				 #Cleaning up names
 				firstString=$entry
@@ -528,7 +522,7 @@ for scraper in ${scrapers[@]};
 				 fi
 				 
 				#Directory Validation
-				DIR=~/storage/$storageLocation/$system/$romName
+				DIR=$romsPath/$system/$romName
 				if [ -d "$DIR" ]; then
 					startcapture=false
 				fi
@@ -566,28 +560,28 @@ for scraper in ${scrapers[@]};
 				if [ $startcapture == true ]; then
 						
 					#First Scan: Retroarch				
-					FILE=~/storage/$storageLocation/$system/media/screenshot/$romNameNoExtension.png
+					FILE=$romsPath/$system/media/screenshot/$romNameNoExtension.png
 					if [ -f "$FILE" ]; then
 						echo -e "Image already exists, ${YELLOW}ignoring${NONE}" &> /dev/null
 					else
 							
 						StatusString=$(wget --spider "http://thumbnails.libretro.com/$remoteSystem/Named_Snaps/$romNameNoExtension.png" 2>&1)
 						if [[ $StatusString == *"image/png"* ]] || [[ $StatusString == *"image/jpeg"* ]] || [[ $StatusString == *"image/jpg"* ]]; then
-							wget  -q --show-progress "http://thumbnails.libretro.com/$remoteSystem/Named_Snaps/$romNameNoExtension.png" -P ~/storage/$storageLocation/$system/media/screenshot/
+							wget  -q --show-progress "http://thumbnails.libretro.com/$remoteSystem/Named_Snaps/$romNameNoExtension.png" -P $romsPath/$system/media/screenshot/
 						else
 							echo -e "Image not found: $romNameNoExtension screenshot..."
 						fi
 						
 					fi
 					
-					FILE=~/storage/$storageLocation/$system/media/box2dfront/$romNameNoExtension.png
+					FILE=$romsPath/$system/media/box2dfront/$romNameNoExtension.png
 					if [ -f "$FILE" ]; then
 						echo -e "Image already exists, ${YELLOW}ignoring${NONE}" &> /dev/null
 					else
 					
 						StatusString=$(wget --spider "http://thumbnails.libretro.com/$remoteSystem/Named_Boxarts/$romNameNoExtension.png" 2>&1)
 						if [[ $StatusString == *"image/png"* ]] || [[ $StatusString == *"image/jpeg"* ]] || [[ $StatusString == *"image/jpg"* ]]; then
-							wget  -q --show-progress "http://thumbnails.libretro.com/$remoteSystem/Named_Boxarts/$romNameNoExtension.png" -P ~/storage/$storageLocation/$system/media/box2dfront/
+							wget  -q --show-progress "http://thumbnails.libretro.com/$remoteSystem/Named_Boxarts/$romNameNoExtension.png" -P $romsPath/$system/media/box2dfront/
 							echo -e ""
 						else
 							echo -e "Image not found: $romNameNoExtension box2dfront..."
@@ -611,14 +605,14 @@ for scraper in ${scrapers[@]};
 		 do
 			 message=$device_name
 			 system="${message//'"'/}"            
-			 #ls ~/storage/$storageLocation/$system
-			 mkdir -p ~/storage/$storageLocation/$system/media &> /dev/null
-			 mkdir -p ~/storage/$storageLocation/$system/media/screenshot &> /dev/null
-			 mkdir -p ~/storage/$storageLocation/$system/media/box2dfront &> /dev/null
-			 mkdir -p ~/storage/$storageLocation/$system/media/wheel &> /dev/null
+			 #ls $romsPath/$system
+			 mkdir -p $romsPath/$system/media &> /dev/null
+			 mkdir -p $romsPath/$system/media/screenshot &> /dev/null
+			 mkdir -p $romsPath/$system/media/box2dfront &> /dev/null
+			 mkdir -p $romsPath/$system/media/wheel &> /dev/null
 			 
 			#Roms loop
-			  for entry in ~/storage/$storageLocation/$system/*
+			  for entry in $romsPath/$system/*
 			  do
 				  #Cleaning up names
 				 firstString=$entry
@@ -648,7 +642,7 @@ for scraper in ${scrapers[@]};
 				 fi
 
 				 #Directory Validation
-				 DIR=~/storage/$storageLocation/$system/$romName
+				 DIR=$romsPath/$system/$romName
 				 if [ -d "$DIR" ]; then
 					 startcapture=false
 				 fi
@@ -700,17 +694,17 @@ for scraper in ${scrapers[@]};
 					 hasSs=false
 					 hasBox=false
 					 
-					FILE=~/storage/$storageLocation/$system/media/wheel/$romNameNoExtension.png
+					FILE=$romsPath/$system/media/wheel/$romNameNoExtension.png
 					if [ -f "$FILE" ]; then
 						 hasWheel=true
 					fi
 						
-					FILE=~/storage/$storageLocation/$system/media/screenshot/$romNameNoExtension.png
+					FILE=$romsPath/$system/media/screenshot/$romNameNoExtension.png
 					if [ -f "$FILE" ]; then
 						 hasSs=true
 					fi
 						
-					FILE=~/storage/$storageLocation/$system/media/box2dfront/$romNameNoExtension.png
+					FILE=$romsPath/$system/media/box2dfront/$romNameNoExtension.png
 					if [ -f "$FILE" ]; then
 						 hasBox=true
 					fi
@@ -718,7 +712,7 @@ for scraper in ${scrapers[@]};
 					 #We only search games with no art
 					 if [ $hasWheel == false ] || [ $hasSs == false ] || [ $hasBox == false ]; then
 						
-						content=$(cat ~/emudeck/backend/metadata.json)
+						content=$(cat ~/EmuDeck/backend/metadata.json)
 
 						urlMediaWheel=$( jq -r  ".platform.$system.games.\"$romNameNoExtensionForLaunchbox\".medias.wheel" <<< "${content}" )
 						urlMediaSs=$( jq -r  ".platform.$system.games.\"$romNameNoExtensionForLaunchbox\".medias.screenshot" <<< "${content}" )
@@ -814,10 +808,10 @@ for scraper in ${scrapers[@]};
 		do			
 			message=$device_name
 			system="${message//'"'/}"            
-			mkdir -p ~/storage/$storageLocation/$system/media &> /dev/null
-			mkdir -p ~/storage/$storageLocation/$system/media/screenshot &> /dev/null
-			mkdir -p ~/storage/$storageLocation/$system/media/box2dfront &> /dev/null
-			mkdir -p ~/storage/$storageLocation/$system/media/wheel &> /dev/null
+			mkdir -p $romsPath/$system/media &> /dev/null
+			mkdir -p $romsPath/$system/media/screenshot &> /dev/null
+			mkdir -p $romsPath/$system/media/box2dfront &> /dev/null
+			mkdir -p $romsPath/$system/media/wheel &> /dev/null
 				
 			#ScreenScraper system ID
 			get_sc_id $system
@@ -826,7 +820,7 @@ for scraper in ${scrapers[@]};
 			echo ""
 
 			#Check for metadata file
-			metadataFile=~/storage/$storageLocation/$system/metadata.pegasus.txt
+			metadataFile=$romsPath/$system/metadata.pegasus.txt
 			if [[ -f $metadataFile ]]; then
 				systemMetadata=$(cat $metadataFile)
 				fileExtensions=$(grep -E '^extensions' $metadataFile)
@@ -837,7 +831,7 @@ for scraper in ${scrapers[@]};
 			fi
 
 			#Roms loop
-			for entry in ~/storage/$storageLocation/$system/*
+			for entry in $romsPath/$system/*
 			do
 
 				#Cleaning up names
@@ -867,7 +861,7 @@ for scraper in ${scrapers[@]};
 				 fi
 
 				#Directory Validation
-				DIR=~/storage/$storageLocation/$system/$romName
+				DIR=$romsPath/$system/$romName
 				if [ -d "$DIR" ]; then
 					continue;
 				fi
@@ -913,17 +907,17 @@ for scraper in ${scrapers[@]};
 					hasBox=false
 					hasMetadata=false
 
-					FILE=~/storage/$storageLocation/$system/media/wheel/$romNameNoExtension.png
+					FILE=$romsPath/$system/media/wheel/$romNameNoExtension.png
 					if [ -f "$FILE" ]; then
 						hasWheel=true
 					fi
 
-					FILE=~/storage/$storageLocation/$system/media/screenshot/$romNameNoExtension.png
+					FILE=$romsPath/$system/media/screenshot/$romNameNoExtension.png
 					if [ -f "$FILE" ]; then
 						hasSs=true
 					fi
 
-					FILE=~/storage/$storageLocation/$system/media/box2dfront/$romNameNoExtension.png
+					FILE=$romsPath/$system/media/box2dfront/$romNameNoExtension.png
 					if [ -f "$FILE" ]; then
 						hasBox=true
 					fi
@@ -992,7 +986,7 @@ for scraper in ${scrapers[@]};
 							scrap_ss "$urlMediaBox" "$box2dfrontSavePath" "2D Box"
 						fi
 						#Wheel HD just in case
-						FILE=~/storage/$storageLocation/$system/media/wheel/$romNameNoExtension.png
+						FILE=$romsPath/$system/media/wheel/$romNameNoExtension.png
 						if [ -f "$FILE" ]; then
 							hasWheel=true
 						fi

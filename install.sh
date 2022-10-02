@@ -473,17 +473,17 @@ find $romsPath -type f -name "*.txt" -exec sed -i -e 's/com.retroarch-1/com.retr
 
 # Android 11 instructions
 
-# Bye bye screen
-source "$EMUDECKGIT"/pages/EndPage.sh
+
 
 #APK cleanup
 rm -rf $HOME/*.apk
 
 echo "" > "$HOME/EmuDeck/.finished"
-
+echo "/bin/bash ~/startup.sh" > ~/.bashrc
 # source "$EMUDECKGIT"/pages/EndPage.sh"
 
-
+# Bye bye screen
+source "$EMUDECKGIT"/pages/EndPage.sh
 
 # source "$EMUDECKGIT"/pages/UpdateEmusPage.sh"
 # source "$EMUDECKGIT"/pages/UninstallPage.sh"
