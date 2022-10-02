@@ -78,8 +78,9 @@ if [ $doInstallPegasus == true ]; then
 		echo -e  "${RED}Pegasus Warning${NONE}"	
 	if [ $android -gt 10 ]; then
 		
-		echo -e  "The Pegasus Artwork Scrapper only works on Android 10 or older"
-		echo -e  "Since you are using a newer version you need to use an App on your computer to get your Artwork"
+		echo -e  "The Pegasus Artwork Scrapper only works on if you keep your roms on your Internal Storage"
+		echo -e  "if you want to use your SD Card you need to connect your device on your computer to get your Artwork"
+		echo -e  "This doesn't apply if you have your SD Card formatted as Internal Storage"
 		echo -e  "We recommend using www.skraper.net"
 		echo -e  "Press the ${RED}A Button${NONE} to open a written guide of how to use Skraper"
 		read pause

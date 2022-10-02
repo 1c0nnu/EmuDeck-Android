@@ -52,15 +52,15 @@ RAHandClassic2D=false
 RAHandHeldShader=true
 doSetupSaveSync=false
 
-doInstallPegasus=false
+doInstallPegasus=true
 doInstallDaijisho=true
 doInstallDig=false
 doInstallLaunchbox=false
 doInstallReset=false
 doInstallArc=false
 
-doInstallThemeEpic=false
-doInstallThemeSwitch=false
-doInstallThemeMega=false
-doInstallThemeGameOS=false
-doInstallThemeNeoRetro=false
+doInstallThemeEpic=true
+doInstallThemeSwitch=true
+doInstallThemeMega=true
+doInstallThemeGameOS=true
+doInstallThemeNeoRetro=true
