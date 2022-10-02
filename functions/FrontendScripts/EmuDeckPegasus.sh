@@ -19,9 +19,9 @@ function Pegasus_install(){
 		curl -L "$releaseURL" -o "Pegasus.apk"
 		clear
 		echo -e  "Press the ${RED}A button${NONE} to install Pegasus, when it is installed come back to continue the next steps"
-		xdg-open "Pegasus.apk"
-		Pegasus_init
+		xdg-open "Pegasus.apk"		
 	fi
+	Pegasus_init
 
 }
 

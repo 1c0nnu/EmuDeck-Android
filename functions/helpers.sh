@@ -80,7 +80,7 @@ function createUpdateSettingsFile(){
 	defaultSettingsList+=("RAHandClassic2D=false");
 	defaultSettingsList+=("RAHandHeldShader=true");
 	defaultSettingsList+=("doSetupSaveSync=false");
-	defaultSettingsList+=("doInstallPegasus=false");
+	defaultSettingsList+=("doInstallPegasus=true");
 	defaultSettingsList+=("doInstallDaijisho=true");
 	defaultSettingsList+=("doInstallDig=false");
 	defaultSettingsList+=("doInstallLaunchbox=false");
