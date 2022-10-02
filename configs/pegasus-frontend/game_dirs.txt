@@ -24,6 +24,7 @@
 /storage/0000-0000/Emulation/roms/gba
 /storage/0000-0000/Emulation/roms/gbc
 /storage/0000-0000/Emulation/roms/gbc2players
+/storage/0000-0000/Emulation/roms/gamecube
 /storage/0000-0000/Emulation/roms/gc
 /storage/0000-0000/Emulation/roms/genesis
 /storage/0000-0000/Emulation/roms/genesiswide
