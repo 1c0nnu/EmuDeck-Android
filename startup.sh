@@ -113,6 +113,7 @@ fi
 
 if [[ $selected_option == "8" ]]
 then
+	cd $HOME
 	clear
 fi
 

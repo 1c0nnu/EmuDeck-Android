@@ -475,6 +475,8 @@ echo "cd $HOME/EmuDeck/backend/ && git pull && /bin/bash $HOME/EmuDeck/backend/s
 # Bye bye screen
 source "$EMUDECKGIT"/pages/EndPage.sh
 
+am startservice -a com.termux.service_stop com.termux/.app.TermuxService &> /dev/null
+
 # source "$EMUDECKGIT"/pages/UpdateEmusPage.sh"
 # source "$EMUDECKGIT"/pages/UninstallPage.sh"
 # source "$EMUDECKGIT"/pages/ToolsAndStuffPage.sh"
