@@ -2,7 +2,8 @@
 #
 EMUDECKGIT="$HOME/EmuDeck/backend"
 source "$EMUDECKGIT"/functions/all.sh
-
+#romName="${firstString/"/data/data/com.termux/files/home/storage/$storageLocation/$system/"/"$secondString"}"   		
+storageLocation=shared/Emulation/roms
 romsPathFiltered=$HOME/storage/shared/Emulation/roms
 #romsPathFiltered=$HOME/storage/external-1/Emulation/roms
 
