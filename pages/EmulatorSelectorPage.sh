@@ -9,6 +9,9 @@ setSetting doInstallDuck false
 setSetting doInstallPPSSPP false
 setSetting doInstallSkyline false
 setSetting doInstallDrastic false
+setSetting doInstallMupen false
+setSetting doInstallRedDream false
+setSetting doInstallYaba false
 
 case $devicePower in
 0)		
@@ -21,6 +24,10 @@ case $devicePower in
 		"CITRA" "Citra - Nintendo 3DS" OFF \
 		"PPSSPP" "PPSSPP - Sony PSP" ON \
 		"SKYLINE" "PPSSPP - Nintendo Switch" OFF \
+		"YABA" "Saturn - Yaba Sanshiro" ON \
+		"REDDREAM" "RedDream - Dreamcast" ON \
+		"DRASTIC" "Drastic - Nintendo DS" ON \
+		"MUPEN" "Mupen - Nintendo 64" OFF \
 	   3>&1 1<&2 2>&3)
 	
 ;;
@@ -34,6 +41,10 @@ case $devicePower in
 		"CITRA" "Citra - Nintendo 3DS" ON \
 		"PPSSPP" "PPSSPP - Sony PSP" ON \
 		"SKYLINE" "PPSSPP - Nintendo Switch" OFF \
+		"YABA" "Saturn - Yaba Sanshiro" OFF \
+		"REDDREAM" "RedDream - Dreamcast" OFF \
+		"DRASTIC" "Drastic - Nintendo DS" ON \
+		"MUPEN" "Mupen - Nintendo 64" OFF \
 	   3>&1 1<&2 2>&3)
 	
 ;;
@@ -48,6 +59,10 @@ case $devicePower in
 		"CITRA" "Citra - Nintendo 3DS" ON \
 		"PPSSPP" "PPSSPP - Sony PSP" ON \
 		"SKYLINE" "PPSSPP - Nintendo Switch" ON \
+		"YABA" "Saturn - Yaba Sanshiro" ON \
+		"REDDREAM" "RedDream - Dreamcast" OFF \
+		"DRASTIC" "Drastic - Nintendo DS" ON \
+		"MUPEN" "Mupen - Nintendo 64" OFF \
 	   3>&1 1<&2 2>&3)
 	
 ;;

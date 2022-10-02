@@ -11,7 +11,7 @@ function checkEmus(){
 	hasRA=false
 	hasCitra=false
 	hasPCSX2=false
-	hasSkyline=false
+	hasSkyline=false	
 	
 	#Retroarch?
 	FOLDER=$(test -d ~/storage/shared/Android/data/com.retroarch.aarch64 && echo -n "true")

@@ -4,6 +4,10 @@
 setEmusByDefaultOnEasy(){
 		
 	case $devicePower in
+		"0")	
+			setSetting doInstallMupen true
+			setSetting doInstallRedDream true
+		;;
 		"1")	
 			setSetting doSetupDolphin true
 			setSetting doSetupPCSX2 true
@@ -28,7 +32,5 @@ setEmusByDefaultOnEasy(){
 	setSetting doInstallRA true
 	setSetting doInstallDuck true
 	setSetting doInstallPPSSPP true
-	setSetting doSetupDrastic true
-	setSetting doSetupDrastic true
 
 }

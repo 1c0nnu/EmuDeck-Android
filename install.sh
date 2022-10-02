@@ -118,10 +118,10 @@ if [ $expert == 'true' ]; then
 	# Emulators	
 	source $EMUDECKGIT/pages/EmulatorSelectorPage.sh
  
-	if [ $second == true ]; then
-		# Overwrite configuration?		
-		source "$EMUDECKGIT"/pages/EmulatorConfigurationPage.sh
-	fi
+	# if [ $second == true ]; then
+	# 	# Overwrite configuration?		
+	# 	source "$EMUDECKGIT"/pages/EmulatorConfigurationPage.sh
+	# fi
 	
 	# Retroachievements
 	#source "$EMUDECKGIT"/pages/RAAchievementsPage.sh
@@ -193,27 +193,27 @@ checkEmus
 if [ $doSetupRA == true ]; then
 	RetroArch_init
 fi
-if [ $doSetupDolphin == true ]; then
-	Dolphin_init
-fi
-if [ $doSetupPCSX2 == true ]; then
-	Pcsx2_init
-fi
-if [ $doSetupCitra == true ]; then
-	Citra_init
-fi
-if [ $doSetupDuck == true ]; then
-	Duckstation_init
-fi
-if [ $doSetupPPSSPP == true ]; then
-	PPSSPP_init
-fi
-if [ $doSetupSkyline == true ]; then
-	Skyline_init
-fi
-if [ $doSetupDrastic == true ]; then
-	echo ""
-fi
+# if [ $doSetupDolphin == true ]; then
+# 	Dolphin_init
+# fi
+# if [ $doSetupPCSX2 == true ]; then
+# 	Pcsx2_init
+# fi
+# if [ $doSetupCitra == true ]; then
+# 	Citra_init
+# fi
+# if [ $doSetupDuck == true ]; then
+# 	Duckstation_init
+# fi
+# if [ $doSetupPPSSPP == true ]; then
+# 	PPSSPP_init
+# fi
+# if [ $doSetupSkyline == true ]; then
+# 	Skyline_init
+# fi
+# if [ $doSetupDrastic == true ]; then
+# 	echo ""
+# fi
 
 #Emulators installation
 if [ $doInstallRA == true ] && [  $hasRA == false  ]; then
@@ -266,10 +266,31 @@ if [ $doInstallSkyline == true ] && [  $hasSkyline == false  ]; then
 
 fi
 if [ $doInstallDrastic == true ] && [  $hasDrastic == false  ]; then
-	echo ""
+	Drastic_install
+	clear
+	echo -e  "Press the ${RED}A button${NONE} to continue"
+	read pause
 fi
+if [ $doInstallYaba == true ] && [  $hasYaba == false  ]; then
+	Yaba_install
+	clear
+	echo -e  "Press the ${RED}A button${NONE} to continue"
+	read pause
+fi
+if [ $doInstallMupen == true ] && [  $hasMupen == false  ]; then
+	Mupen_install
+	clear
+	echo -e  "Press the ${RED}A button${NONE} to continue"
+	read pause
 
+fi
+if [ $doInstallRedDream == true ] && [  $hasRedDream == false  ]; then
+	RedDream_install
+	clear
+	echo -e  "Press the ${RED}A button${NONE} to continue"
+	read pause
 
+fi
 
 #Configuring emulators
 

@@ -60,6 +60,9 @@ function createUpdateSettingsFile(){
 	defaultSettingsList+=("doInstallPPSSPP=false");
 	defaultSettingsList+=("doInstallSkyline=false");
 	defaultSettingsList+=("doInstallDrastic=false");
+	defaultSettingsList+=("doInstallMupen=false");
+	defaultSettingsList+=("doInstallRedDream=false");
+	defaultSettingsList+=("doInstallYaba=false");
 	defaultSettingsList+=("RABezels=true");
 	defaultSettingsList+=("RAautoSave=false");
 	defaultSettingsList+=("emulationPath=$HOME/Emulation");

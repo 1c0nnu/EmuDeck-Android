@@ -28,6 +28,9 @@ doInstallDuck=false
 doInstallPPSSPP=false
 doInstallSkyline=false
 doInstallDrastic=false
+doInstallMupen=false
+doInstallRedDream=false
+doInstallYaba=false
 
 #Default RetroArch configuration 
 RABezels=true
