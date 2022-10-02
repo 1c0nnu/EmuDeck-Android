@@ -9,6 +9,8 @@ WHITE='\033[01;37m'
 BOLD='\033[1m'
 UNDERLINE='\033[4m'
 BLINK='\x1b[5m'
+EMUDECKGIT="$HOME/EmuDeck/backend"
+source "$EMUDECKGIT"/functions/all.sh
 
 clear
 echo -e "EmuDeck for ${GREEN}Android${NONE} ${RED}BETA${NONE}"
