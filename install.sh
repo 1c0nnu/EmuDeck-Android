@@ -94,8 +94,14 @@ createUpdateSettingsFile
 # UI Start
 #
 
+
+
 # Welcome, Quick or custom?
 source "$EMUDECKGIT"/pages/WelcomePage.sh
+
+if [ $expert == 'false' ]; then 
+	cp "$EMUDECKGIT/settings.sh" "$emuDecksettingsFile"
+fi
 
 # Device? # Android 11?
 source "$EMUDECKGIT"/pages/DeviceSelectorPage.sh
@@ -106,10 +112,6 @@ source "$EMUDECKGIT"/pages/RomStoragePage.sh
 #
 ## Custom mode Questions
 #
-
-if [ $expert == 'false' ]; then 
-	cp "$EMUDECKGIT/settings.sh" "$emuDecksettingsFile"
-fi
 
 if [ $expert == 'true' ]; then 
 	
