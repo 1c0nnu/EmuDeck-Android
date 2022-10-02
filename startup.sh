@@ -24,7 +24,7 @@ BLINK='\x1b[5m'
 while true; do
 	selected_option=$(whiptail --title "EmuDeck Menu" --radiolist "Move using your DPAD and select your options with the Y button. Press the A button to select." 20 80 15 \
 	"1" "Update & Configure EmuDeck" ON \
-	"2" "Scrape your Roms (Android 10 only)" OFF \
+	"2" "Pegasus Artwork Scrapper (Android 10 only)" OFF \
 	"8" "Open Termux CLI" OFF \
 	"10" "Exit" OFF \
 	3>&1 1>&2 2>&3)
