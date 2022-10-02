@@ -37,7 +37,7 @@ fi
 echo ""
 echo -e "${BOLD}How to launch your games${NONE}"
 #Easy
-if [ $expert == false]; then
+if [ $expert == false ]; then
 	echo -e "We've installed for you Daijisho so you can use it as a frontend for all your systems"
 	echo -e "You need to Open Daijisho From your apps and manually configure it with your custom paths"
 	echo ""
@@ -58,7 +58,7 @@ if [ $expert == false]; then
 	
 fi
 
-if [ $android -lt 11] && [ $romPathSelection != 'INTERNAL' ]; then
+if [ $android -lt 11 ] && [ $romPathSelection != 'INTERNAL' ]; then
 	echo -e "${RED}IMPORTANT${NONE}"
 	echo -e "Be aware that if you delete the Termux app Android will ${RED}DELETE${NONE} the Termux folder on your SD Card including your roms"	
 fi
@@ -87,6 +87,6 @@ if [ $doInstallPegasus == true ]; then
 		echo -e "Open Termux again when you've copied them and select the Pegasus Artwork Scrapper option"
 	fi	
 fi
-
-echo -e  "Press the ${RED}A Button${NONE} to Exit"
+echo -e
+echo -e  "Scroll Up to read all the final instructions and then press the ${RED}A Button${NONE} to Exit"
 read pause
