@@ -479,7 +479,7 @@ find $romsPath -type f -name "*.txt" -exec sed -i -e 's/com.retroarch-1/com.retr
 rm -rf $HOME/*.apk
 
 echo "" > "$HOME/EmuDeck/.finished"
-echo "/bin/bash ~/startup.sh" > ~/.bashrc
+echo "cd $HOME/EmuDeck/backend/ && git pull && /bin/bash $HOME/EmuDeck/backend/startup.sh" > ~/.bashrc
 # source "$EMUDECKGIT"/pages/EndPage.sh"
 
 # Bye bye screen
