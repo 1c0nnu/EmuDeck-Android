@@ -778,11 +778,11 @@ for scraper in ${scrapers[@]};
 		
 		#We check for existing credentials
 		userStored=false
-		FILE=~/emudeck/.screenScraperUser
+		FILE=~/EmuDeck/.screenScraperUser
 		if [ -f "$FILE" ]; then
 			userStored=true
-			userSS=$(cat ~/emudeck/.screenScraperUser)
-			passSS=$(cat ~/emudeck/.screenScraperPass)
+			userSS=$(cat ~/EmuDeck/.screenScraperUser)
+			passSS=$(cat ~/EmuDeck/.screenScraperPass)
 		fi
 		
 		if [ $userStored == false ]; then
@@ -799,10 +799,10 @@ for scraper in ${scrapers[@]};
 			echo -e "Now I'm going to ask for your username and password. ${BOLD}These will never be read or used outside this scraper${NONE}"
 			echo -e "What is your ScreenScraper user? Type it and press the ${RED}A button${NONE}"
 			read user
-			echo $user > ~/emudeck/.screenScraperUser
+			echo $user > ~/EmuDeck/.screenScraperUser
 			echo -e "What is your ScreenScraper password? Type it and press the ${RED}A button${NONE}"
 			read pass
-			echo $pass > ~/emudeck/.screenScraperPass
+			echo $pass > ~/EmuDeck/.screenScraperPass
 			
 			echo -e "${GREEN}Thanks!${NONE}"
 			echo -e "You can change the credentials later by opening Termux again"
