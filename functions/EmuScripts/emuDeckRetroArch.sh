@@ -25,7 +25,13 @@ RetroArch_backupConfigs(){
 #Install
 RetroArch_install(){
 	setMSG "${RetroArch_emuName}: Install"
-	wget  -q --show-progress https://buildbot.libretro.com/stable/1.11.0/android/RetroArch_aarch64.apk -P ~/ && xdg-open ~/RetroArch_aarch64.apk					
+	
+	if [ $device == 'RP2' ]; then
+		wget  -q --show-progress https://buildbot.libretro.com/stable/1.11.0/android/RetroArch.apk -P ~/ && xdg-open ~/RetroArch.apk
+	else
+		wget  -q --show-progress https://buildbot.libretro.com/stable/1.11.0/android/RetroArch_aarch64.apk -P ~/ && xdg-open ~/RetroArch_aarch64.apk
+	fi
+	
 }
 
 #ApplyInitialSettings

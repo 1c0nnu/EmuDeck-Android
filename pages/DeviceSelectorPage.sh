@@ -1,15 +1,17 @@
 #!/bin/bash
 while true; do
-	question=$(whiptail --title "Choose your Device" \
+	device=$(whiptail --title "Choose your Device" \
    --radiolist "We tailor the experience depending on the selected device, each device has its own special configuration, different emulators and adjusted bezels." 10 80 4 \
-	"RP2" "Retroid Pocket 2+" OFF \
+	"RP2" "Retroid Pocket 2" OFF \
+	"RP2+" "Retroid Pocket 2+" OFF \
 	"ODIN" "ODIN Base or Pro" OFF \
 	"ODINLITE" "ODIN Lite" OFF \
 	"RG552" "Anbernic RG552" OFF \
 	"ANDROID" "Other Android Device" OFF \
    3>&1 1<&2 2>&3)
-	case $question in
+	case $device in
 		[RP2]* ) break;;
+		[RP2+]* ) break;;
 		[ODIN]* ) break;;
 		[ODINLITE]* ) break;;
 		[RG552]* ) break;;
@@ -18,13 +20,19 @@ while true; do
 	esac
 done
 
-case $question in
+case $device in
   "RP2")
 		setSetting hasSDCARD true
-		setSetting devicePower 1
+		setSetting devicePower 0
 		setSetting deviceAR 43
-		setSetting android 10
+		setSetting android 9
   ;;
+  "RP2+")
+		  setSetting hasSDCARD true
+		  setSetting devicePower 1
+		  setSetting deviceAR 43
+		  setSetting android 10
+	;;
   "ODIN")
 		setSetting hasSDCARD true
 		setSetting devicePower 2
