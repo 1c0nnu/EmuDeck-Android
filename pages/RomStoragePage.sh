@@ -38,7 +38,7 @@
 		path="$HOME/storage/shared"
 	fi
 
-if [ $android -gt 9 ]; then
+if [ $android -gt 10 ]; then
 	path="$HOME/storage/shared"
 fi
 
