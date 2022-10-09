@@ -47,7 +47,20 @@ RetroArch_init(){
 	mkdir -p $RetroArch_emuPath/overlays/pegasus
 	rsync -r --ignore-existing $EMUDECKGIT/configs/RetroArch/overlays/pegasus/  $RetroArch_emuPath/overlays/pegasus/
 	rsync -r --ignore-existing $EMUDECKGIT/configs/RetroArch/config/  $RetroArch_emuPath/config/
-	cp $EMUDECKGIT/configs/RetroArch/retroarch.cfg $RetroArch_configFile
+	
+	find "$RetroArch_coreConfigFolders" -type f -name "*.cfg" -o -type f -name "*.opt" -o -type f -name "*.slangp" -o -type f -name "*.glslp"| while read -r backupfile
+	do
+		cp -vp "$backupfile" "$backupfile.bak"
+						
+		updateOrAppendConfigLine "$backupfile" "input_enable_hotkey_btn =" 'input_enable_hotkey_btn = "109"'
+		updateOrAppendConfigLine "$backupfile" "input_hold_fast_forward_axis =" 'input_hold_fast_forward_axis = "+9"'
+		updateOrAppendConfigLine "$backupfile" "input_load_state_btn =" 'input_load_state_btn = "102"'
+		updateOrAppendConfigLine "$backupfile" "input_menu_toggle_gamepad_combo =" 'input_menu_toggle_gamepad_combo = "2"'
+		updateOrAppendConfigLine "$backupfile" "input_quit_gamepad_combo =" 'input_quit_gamepad_combo = "4"'
+		updateOrAppendConfigLine "$backupfile" "input_save_state_btn =" 'input_save_state_btn = "103"'
+		updateOrAppendConfigLine "$backupfile" "input_exit_emulator_btn =" 'input_exit_emulator_btn = "108"'
+		
+	done
 }
 
 #update
