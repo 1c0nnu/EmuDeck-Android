@@ -32,30 +32,59 @@ clear
 # "9" "Reinstall Termux dependencies" OFF \
 # "10" "Exit" OFF \
 
-while true; do
-	selected_option=$(whiptail --title "EmuDeck Menu" --radiolist "Move using your DPAD and select your options with the Y button. Press the A button to select." 20 80 15 \
-	"1" "Update & Configure EmuDeck" ON \
-	"2" "Pegasus Artwork Scrapper" OFF \
-	"3" "Change Nintendo Aspect Ratio" OFF \
-	"4" "Change Sega Aspect Ratio" OFF \
-	"5" "Turn Bezels ON/OFF" OFF \
-	"6" "Open Termux CLI" OFF \
-	"10" "Exit" OFF \
-	3>&1 1>&2 2>&3)
-	case $selected_option in
-		[1]* ) break;;
-		[2]* ) break;;
-		[3]* ) break;;
-		[4]* ) break;;
-		[5]* ) break;;
-		[6]* ) break;;
-		[7]* ) break;;
-		[8]* ) break;;
-		[9]* ) break;;
-		[10]* ) break;;
-		* ) echo "Please hide your keyboard";;
-	esac
-done
+
+if [ $android -gt 10 ] && [ $romPath != 'INTERNAL' ]; then
+	while true; do
+		selected_option=$(whiptail --title "EmuDeck Menu" --radiolist "Move using your DPAD and select your options with the Y button. Press the A button to select." 20 80 15 \
+		"1" "Update & Configure EmuDeck" ON \
+		"3" "Change Nintendo Aspect Ratio" OFF \
+		"4" "Change Sega Aspect Ratio" OFF \
+		"5" "Turn Bezels ON/OFF" OFF \
+		"6" "Open Termux CLI" OFF \
+		"10" "Exit" OFF \
+		3>&1 1>&2 2>&3)
+		case $selected_option in
+			[1]* ) break;;
+			[3]* ) break;;
+			[4]* ) break;;
+			[5]* ) break;;
+			[6]* ) break;;
+			[7]* ) break;;
+			[8]* ) break;;
+			[9]* ) break;;
+			[10]* ) break;;
+			* ) echo "Please hide your keyboard";;
+		esac
+	done
+else
+	while true; do
+		selected_option=$(whiptail --title "EmuDeck Menu" --radiolist "Move using your DPAD and select your options with the Y button. Press the A button to select." 20 80 15 \
+		"1" "Update & Configure EmuDeck" ON \
+		"2" "Pegasus Artwork Scrapper" OFF \
+		"3" "Change Nintendo Aspect Ratio" OFF \
+		"4" "Change Sega Aspect Ratio" OFF \
+		"5" "Turn Bezels ON/OFF" OFF \
+		"6" "Open Termux CLI" OFF \
+		"10" "Exit" OFF \
+		3>&1 1>&2 2>&3)
+		case $selected_option in
+			[1]* ) break;;
+			[2]* ) break;;
+			[3]* ) break;;
+			[4]* ) break;;
+			[5]* ) break;;
+			[6]* ) break;;
+			[7]* ) break;;
+			[8]* ) break;;
+			[9]* ) break;;
+			[10]* ) break;;
+			* ) echo "Please hide your keyboard";;
+		esac
+	done
+
+fi
+
+
 
 if [[ $selected_option == "1" ]]
 then
