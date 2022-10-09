@@ -46,7 +46,7 @@ case $device in
 		setSetting android 11
 	;;  
 	"RG552")		
-		setSetting hasSDCARD false
+		setSetting hasSDCARD true
 		setSetting devicePower 0
 		setSetting deviceAR 53
 		while true; do
