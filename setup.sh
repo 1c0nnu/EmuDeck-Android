@@ -173,14 +173,14 @@ if [ $android -lt 11 ]; then
 	#mkdir -p $toolsPath
 	#mkdir -p $savesPath
 	#mkdir -p $storagePath
-	rsync -ravhp --info=progress2 "$EMUDECKGIT/roms/" "$romsPath/"
+	rsync -ravhp --ignore-times --info=progress2 "$EMUDECKGIT/roms/" "$romsPath/"
 else
 	#We are forced to install everything on the shared volume since A>11 won't allow Termux to write anywhere else
 	mkdir -p $HOME/storage/shared/Emulation
 	mkdir -p $HOME/storage/shared/Emulation/roms
 	#mkdir -p $HOME/storage/shared/Emulation/tools
 	#mkdir -p $HOME/storage/shared/Emulation/saves			
-	rsync -ravhp --info=progress2 "$EMUDECKGIT/roms/" "$HOME"/storage/shared/Emulation/roms
+	rsync -ravhp --ignore-times --info=progress2 "$EMUDECKGIT/roms/" "$HOME"/storage/shared/Emulation/roms
 fi
  
 
