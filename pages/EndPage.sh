@@ -20,7 +20,7 @@ echo ""
 
 echo -e "${BOLD}- How to add games${NONE}"
 
-if [ $romPath != 'INTERNAL' ]; then
+if [ $romPath == 'SDCARD' ]; then
 	if [ $android -gt 10 ]; then		
 		echo -e  "You need to manually move your roms folder before starting"
 		echo -e  "Open any File manager app and move the ${GREEN}/Emulation${NONE} folder to your SD Card"	
@@ -45,7 +45,7 @@ if [ $expert == false ]; then
 	echo -e "First, open Daijisho and select the Systems you want to use by clicking on the Download Platforms button"
 	echo -e "Now click on Paths, Add more"
 	echo -e "Select the system folder ( ie: Super Nintendo )"
-	if [ $romPath != 'INTERNAL' ]; then
+	if [ $romPath == 'SDCARD' ]; then
 		if [ $android -gt 10 ]; then
 			echo -e "SD Card: ${GREEN}Emulation/roms/snes${NONE}"
 		else
@@ -77,7 +77,7 @@ if [ $doInstallPegasus == true ]; then
 		echo ""
 		echo -e  "${RED}Pegasus Warning${NONE}"	
 	if [ $android -gt 10 ]; then
-		if [ $romPath != 'INTERNAL' ]; then		
+		if [ $romPath == 'SDCARD' ]; then
 			echo -e  "The Pegasus Artwork Scrapper only works on if you keep your roms on your Internal Storage"			
 			echo -e  "So you'll also need to connect your device on your computer to get your Artwork"			
 			echo -e  "We recommend using www.skraper.net"

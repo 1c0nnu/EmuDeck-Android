@@ -9,14 +9,14 @@
 			"INTERNAL" "We will create your rom folders on your Internal Storage" OFF \
 			"SDCARD" "We will create your rom folders on your SD Card ( not formated as external)" OFF \
    		3>&1 1<&2 2>&3)
-			case $romPath in
+			case $romPathSelection in
 				[INTERNAL]* ) break;;
 				[SDCARD]* ) break;;
 				* ) echo "Please choose your Storage.";;
 			esac
 		done
 		
-		setSetting romPath $romPath
+		setSetting romPath $romPathSelection
 		
 		
 		if [ $romPath == 'INTERNAL' ]; then
