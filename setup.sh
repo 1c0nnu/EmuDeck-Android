@@ -450,7 +450,7 @@ fi
 
 if [ $device != 'RP2' ]; then
 	echo -e  "Applying ${CYAN}RetroArch 64${NONE} fixes..."
-	find $romsPath -type f -name "*.txt" -exec sed -i -e 's/com.retroarch\//com.retroarch.aarch64\//g' {} \;
+	find $romsPath -type f -name "*.txt" -exec sed -i -e 's/com.retroarch\/.browser.retroactivity.RetroActivityFuture/com.retroarch.aarch64\/com.retroarch.browser.retroactivity.RetroActivityFuture/g' {} \;
 	find $romsPath -type f -name "*.txt" -exec sed -i -e 's/-e DATADIR \/data\/data\/com.retroarch/-e DATADIR \/data\/data\/com.retroarch.aarch64/g' {} \;	
 	find $romsPath -type f -name "*.txt" -exec sed -i -e 's/.browser.retroactivity/com.retroarch.browser.retroactivity/g' {} \;	
 	find $romsPath -type f -name "*.txt" -exec sed -i -e 's/com.retroarch-1/com.retroarch.aarch64-1/g' {} \;	
