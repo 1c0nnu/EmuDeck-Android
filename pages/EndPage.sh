@@ -77,13 +77,11 @@ if [ $doInstallPegasus == true ]; then
 		echo ""
 		echo -e  "${RED}Pegasus Warning${NONE}"	
 	if [ $android -gt 10 ]; then
-		
 		if [ $romPathSelection != 'INTERNAL' ]; then		
-			echo -e  "The Pegasus Artwork Scrapper only works on if you keep your roms on your Internal Storage"
-			echo -e  "If you want to use your SD Card you need to rename the delete the pegasus-frontend/game_dirs.txt and rename pegasus-frontend/game_dirs_SD.txt to pegasus-frontend/game_dirs.txt"
-			echo -e  "You'll also need to connect your device on your computer to get your Artwork"
-			echo -e  "This doesn't apply if you have your SD Card formatted as Internal Storage"
+			echo -e  "The Pegasus Artwork Scrapper only works on if you keep your roms on your Internal Storage"			
+			echo -e  "So you'll also need to connect your device on your computer to get your Artwork"			
 			echo -e  "We recommend using www.skraper.net"
+			echo -e  "Remember to manually copy the Emulation folder from your Internal Storage to your SD Card"
 			echo -e  "Press the ${RED}A Button${NONE} to open a written guide of how to use Skraper"
 			read pause
 			termux-open "https://retrogamecorps.com/2021/04/02/quick-guide-skraper-for-retro-handheld-devices/"
