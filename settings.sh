@@ -8,6 +8,7 @@ hasSDCARD=false
 devicePower=0
 deviceAR=169
 android=10
+romPath=false
 #All Emus are off since their installation depends on the device selected
 #Default settings for all systems
 doSetupRA=true

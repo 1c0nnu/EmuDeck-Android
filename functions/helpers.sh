@@ -44,6 +44,7 @@ function createUpdateSettingsFile(){
 	defaultSettingsList+=("devicePower=0");
 	defaultSettingsList+=("deviceAR=169");
 	defaultSettingsList+=("android=10");
+	defaultSettingsList+=("romPath=false");
 	defaultSettingsList+=("doSetupRA=true");
 	defaultSettingsList+=("doSetupDolphin=true");
 	defaultSettingsList+=("doSetupPCSX2=true");
