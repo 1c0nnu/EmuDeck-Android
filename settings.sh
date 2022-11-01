@@ -56,7 +56,7 @@ RAHandClassic2D=false
 RAHandHeldShader=true
 doSetupSaveSync=false
 
-doInstallPegasus=true
+doInstallPegasus=false
 doInstallDaijisho=true
 doInstallDig=false
 doInstallLaunchbox=false
