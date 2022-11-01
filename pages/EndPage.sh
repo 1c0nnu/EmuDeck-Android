@@ -20,19 +20,13 @@ echo ""
 
 echo -e "${BOLD}- How to add games${NONE}"
 
-if [ $romPath == 'SDCARD' ]; then
-	if [ $android -gt 10 ]; then		
+if [ $romPath == 'SDCARD' ]; then	
 		echo -e  "You need to manually move your roms folder before starting"
-		echo -e  "Open any File manager app and move the ${GREEN}/Emulation${NONE} folder to your SD Card"	
+		echo -e  "Open any File manager app and move the ${GREEN}/Emulation${NONE} folder to your SD Card root"	
 		echo -e  "Now, connect your device to a computer and copy your roms to the proper folders ( each system has its own subfolder )"	
-	else
-		echo -e "You can now remove your SD Card and start copying your roms!"
-		echo -e "Insert your SD Card in your computer and copy your roms to the proper folders :" 
-		echo -e "${GREEN}/Android/data/com.termux/files/Emulation/roms${NONE} ( Each system has its own subfolder )"
-	fi
 else
 		echo -e  "You can now start copying your roms!"	
-		echo -e  "Connect your device to a computer and and copy them over this folder: ${GREEN}/Emulation/roms${NONE}"	
+		echo -e  "Connect your device to a computer and copy your roms to the proper folders ( each system has its own subfolder ) inside ${GREEN}/Emulation/roms${NONE}"
 fi
 
 echo ""
