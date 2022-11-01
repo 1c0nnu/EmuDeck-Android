@@ -38,9 +38,9 @@
 		path="$HOME/storage/shared"
 	fi
 
-if [ $android -gt 10 ]; then
+#if [ $android -gt 10 ]; then
 	path="$HOME/storage/shared"
-fi
+#fi
 
 setSetting emulationPath $path/Emulation
 
