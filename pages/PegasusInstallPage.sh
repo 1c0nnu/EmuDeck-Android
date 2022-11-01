@@ -1,14 +1,26 @@
+#!/bin/bash
+
+if [ $android -gt 10 ]; then
 	frontends=$(whiptail --title "Choose your Frontend" \
    --checklist "Move using your DPAD and select your platforms with the Y button. Press the A button to select." 10 80 4 \
-	"PEGASUS" "Pegasus - Automatic configuration" OFF \
-	"DAIJISHO" "Daihisho - Needs manual configuration" OFF \
-	"DIG" "Dig - Needs manual configuration" OFF \
-	"LAUNCHBOX" "Launchbox - Needs manual configuration" OFF \
-	"RESET" "Reset Collection - Paid - Needs manual configuration" OFF \
-	"ARC" "Arc Browser - Paid - Needs manual configuration" OFF \
+	"PEGASUS" "Pegasus - You'll need to scrap your artwork on a PC" OFF \
+	"DAIJISHO" "Daihisho - Recommended" OFF \
+	"DIG" "Dig" OFF \
+	"RESET" "Reset Collection - Paid" OFF \
+	"ARC" "Arc Browser - Paid" OFF \
    3>&1 1<&2 2>&3)
- 
+ else
+ 	frontends=$(whiptail --title "Choose your Frontend" \
+	--checklist "Move using your DPAD and select your platforms with the Y button. Press the A button to select." 10 80 4 \
+	 "PEGASUS" "Pegasus - Automatic configuration" OFF \
+	 "DAIJISHO" "Daihisho - Recommended" OFF \
+	 "DIG" "Dig" OFF \
+	 "RESET" "Reset Collection - Paid" OFF \
+	 "ARC" "Arc Browser - Paid" OFF \
+	3>&1 1<&2 2>&3)
+ fi
  mapfile -t settingsFrontends <<< $frontends
+ 
  
  for settingsFrontend in ${settingsFrontends[@]};
   do
