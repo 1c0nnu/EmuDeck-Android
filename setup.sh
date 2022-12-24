@@ -215,6 +215,82 @@ fi
 # 	echo ""
 # fi
 
+#Emulators installation
+if [ $doInstallRA == true ] && [  $hasRA == false  ]; then
+	RetroArch_install
+	clear
+	echo -e  "Press the ${RED}A button${NONE} to install the next emulator"
+	read pause
+
+fi
+if [ $doInstallDolphin == true ] && [  $hasDolphin == false  ]; then
+	Dolphin_install
+	clear
+	echo -e  "Press the ${RED}A button${NONE} to install the next emulator"
+	read pause
+
+fi
+if [ $doInstallPCSX2 == true ] && [  $hasPCSX2 == false  ]; then
+	Pcsx2_install
+	clear
+	echo -e  "Press the ${RED}A button${NONE} to install the next emulator"
+	read pause
+
+fi
+if [ $doInstallCitra == true ] && [  $hasCitra == false  ]; then
+	Citra_install
+	clear
+	echo -e  "Press the ${RED}A button${NONE} to install the next emulator"
+	read pause
+
+fi
+if [ $doInstallDuck == true ] && [  $hasDuck == false  ]; then
+	Duckstation_install
+	clear
+	echo -e  "Press the ${RED}A button${NONE} to install the next emulator"
+	read pause
+
+fi
+if [ $doInstallPPSSPP == true ] && [  $hasPPSSPP == false  ]; then
+	PPSSPP_install
+	clear
+	echo -e  "Press the ${RED}A button${NONE} to install the next emulator"
+	read pause
+
+fi
+if [ $doInstallSkyline == true ] && [  $hasSkyline == false  ]; then
+	Skyline_install
+	clear
+	echo -e  "Press the ${RED}A button${NONE} to continue"
+	read pause
+
+fi
+if [ $doInstallDrastic == true ] && [  $hasDrastic == false  ]; then
+	Drastic_install
+	clear
+	echo -e  "Press the ${RED}A button${NONE} to continue"
+	read pause
+fi
+if [ $doInstallYaba == true ] && [  $hasYaba == false  ]; then
+	Yaba_install
+	clear
+	echo -e  "Press the ${RED}A button${NONE} to continue"
+	read pause
+fi
+if [ $doInstallMupen == true ] && [  $hasMupen == false  ]; then
+	Mupen_install
+	clear
+	echo -e  "Press the ${RED}A button${NONE} to continue"
+	read pause
+
+fi
+if [ $doInstallRedDream == true ] && [  $hasRedDream == false  ]; then
+	RedDream_install
+	clear
+	echo -e  "Press the ${RED}A button${NONE} to continue"
+	read pause
+
+fi
 
 #Configuring emulators
 
@@ -381,84 +457,9 @@ if [ $device != 'RP2' ]; then
 fi
 
 
+# Android 11 instructions
 
-#Emulators installation
-#Moved to the end to prevent Android killing Termux
-if [ $doInstallRA == true ] && [  $hasRA == false  ]; then
-	RetroArch_install
-	clear
-	#echo -e  "Press the ${RED}A button${NONE} to install the next emulator"
-	#read pause
 
-fi
-if [ $doInstallDolphin == true ] && [  $hasDolphin == false  ]; then
-	Dolphin_install
-	clear
-	#echo -e  "Press the ${RED}A button${NONE} to install the next emulator"
-	#read pause
-
-fi
-if [ $doInstallPCSX2 == true ] && [  $hasPCSX2 == false  ]; then
-	Pcsx2_install
-	clear
-	#echo -e  "Press the ${RED}A button${NONE} to install the next emulator"
-	#read pause
-
-fi
-if [ $doInstallCitra == true ] && [  $hasCitra == false  ]; then
-	Citra_install
-	clear
-	#echo -e  "Press the ${RED}A button${NONE} to install the next emulator"
-	#read pause
-
-fi
-if [ $doInstallDuck == true ] && [  $hasDuck == false  ]; then
-	Duckstation_install
-	clear
-	#echo -e  "Press the ${RED}A button${NONE} to install the next emulator"
-	#read pause
-
-fi
-if [ $doInstallPPSSPP == true ] && [  $hasPPSSPP == false  ]; then
-	PPSSPP_install
-	clear
-	#echo -e  "Press the ${RED}A button${NONE} to install the next emulator"
-	#read pause
-
-fi
-if [ $doInstallSkyline == true ] && [  $hasSkyline == false  ]; then
-	Skyline_install
-	clear
-	#echo -e  "Press the ${RED}A button${NONE} to continue"
-	#read pause
-
-fi
-if [ $doInstallDrastic == true ] && [  $hasDrastic == false  ]; then
-	Drastic_install
-	clear
-	#echo -e  "Press the ${RED}A button${NONE} to continue"
-	#read pause
-fi
-if [ $doInstallYaba == true ] && [  $hasYaba == false  ]; then
-	Yaba_install
-	clear
-	#echo -e  "Press the ${RED}A button${NONE} to continue"
-	#read pause
-fi
-if [ $doInstallMupen == true ] && [  $hasMupen == false  ]; then
-	Mupen_install
-	clear
-	#echo -e  "Press the ${RED}A button${NONE} to continue"
-	#read pause
-
-fi
-if [ $doInstallRedDream == true ] && [  $hasRedDream == false  ]; then
-	RedDream_install
-	clear
-	#echo -e  "Press the ${RED}A button${NONE} to continue"
-	#read pause
-
-fi
 
 #APK cleanup
 rm -rf $HOME/*.apk
@@ -469,8 +470,6 @@ echo "cd $HOME/EmuDeck/backend/ && git pull && /bin/bash $HOME/EmuDeck/backend/s
 
 # Bye bye screen
 source "$EMUDECKGIT"/pages/EndPage.sh
-
-
 
 am startservice -a com.termux.service_stop com.termux/.app.TermuxService &> /dev/null
 
